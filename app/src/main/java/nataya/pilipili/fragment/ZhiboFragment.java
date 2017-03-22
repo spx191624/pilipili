@@ -3,6 +3,7 @@ package nataya.pilipili.fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
@@ -65,14 +66,8 @@ public class ZhiboFragment extends BaseFragment {
 
     private void processData(String context) {
         ZhiboBean zhiboBean = JSON.parseObject(context, ZhiboBean.class);
-        for (int i = 0; i < 5; i++) {
-            urls.add(zhiboBean.getData().getBanner().get(0).getImg());
-        }
-        bannerZhibo.setImageLoader(new GlideImageLoder());
-        bannerZhibo.setImages(urls);
-        bannerZhibo.setBannerStyle(BannerConfig.NOT_INDICATOR);
-        bannerZhibo.isAutoPlay(false);
-        bannerZhibo.start();
+        initBanner(zhiboBean);
+
 
 
         adapter = new MyRecycleViewAdapter(getContext(),zhiboBean.getData());
@@ -81,6 +76,17 @@ public class ZhiboFragment extends BaseFragment {
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recycleviewZhibo.setLayoutManager(manager);
 
+    }
+
+    private void initBanner(ZhiboBean zhiboBean) {
+        for (int i = 0; i < 5; i++) {
+            urls.add(zhiboBean.getData().getBanner().get(0).getImg());
+        }
+        bannerZhibo.setImageLoader(new GlideImageLoder());
+        bannerZhibo.setImages(urls);
+        bannerZhibo.setBannerStyle(BannerConfig.NOT_INDICATOR);
+        bannerZhibo.isAutoPlay(false);
+        bannerZhibo.start();
     }
 
 

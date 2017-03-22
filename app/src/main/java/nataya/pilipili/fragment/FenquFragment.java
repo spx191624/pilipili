@@ -12,10 +12,11 @@ import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -24,6 +25,7 @@ import nataya.pilipili.adapter.GridAdapter;
 import nataya.pilipili.bean.FenquBean;
 import nataya.pilipili.bean.GridBean;
 import nataya.pilipili.utils.AppNetConfig;
+import nataya.pilipili.utils.GlideImageLoder;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.NumUtils;
@@ -39,6 +41,20 @@ public class FenquFragment extends BaseFragment {
     ScrollView scrollviewFenqu;
     @InjectView(R.id.ll_fenqu)
     LinearLayout llFenqu;
+    @InjectView(R.id.banner_fenqu_five)
+    Banner bannerFenquFive;
+    @InjectView(R.id.iv_kejizhongxin_1)
+    ImageView ivKejizhongxin1;
+    @InjectView(R.id.tv_kejizhongxin1)
+    TextView tvKejizhongxin1;
+    @InjectView(R.id.iv_kejizhongxin_2)
+    ImageView ivKejizhongxin2;
+    @InjectView(R.id.tv_kejizhongxin2)
+    TextView tvKejizhongxin2;
+    @InjectView(R.id.iv_kejizhongxin_3)
+    ImageView ivKejizhongxin3;
+    @InjectView(R.id.tv_kejizhongxin3)
+    TextView tvKejizhongxin3;
     private GridAdapter gridAdapter;
 
 
@@ -51,7 +67,16 @@ public class FenquFragment extends BaseFragment {
         return view;
 
     }
-    private void setChildViewVyInclude(View parent,int childID,FenquBean fenquBean,int position){
+
+    private void setHuatiByInclude(View parent, int childID, FenquBean fenquBean, int position) {
+        View childview = parent.findViewById(childID);
+        ImageView image1 = (ImageView) childview.findViewById(R.id.iv_huati);
+        Glide.with(getActivity()).load(fenquBean.getData().get(position).getBody().get(0).getCover()).into(image1);
+
+
+    }
+
+    private void setChildViewVyInclude(View parent, int childID, FenquBean fenquBean, int position) {
         View childview = parent.findViewById(childID);
         List<ImageView> imageViews = new ArrayList<>();
         ImageView image1 = (ImageView) childview.findViewById(R.id.iv_1_zhibo);
@@ -95,7 +120,7 @@ public class FenquFragment extends BaseFragment {
         danmu.add(renshu3);
         danmu.add(renshu4);
 
-        for (int i=0;i<imageViews.size();i++){
+        for (int i = 0; i < imageViews.size(); i++) {
             Glide.with(getContext()).load(fenquBean.getData().get(position).getBody().get(i).getCover()).into(imageViews.get(i));
             names.get(i).setText(fenquBean.getData().get(position).getBody().get(i).getTitle());
 
@@ -112,6 +137,14 @@ public class FenquFragment extends BaseFragment {
         fenqu.setText(fenquBean.getData().get(position).getTitle());
         ImageView fenquhead = (ImageView) childview.findViewById(R.id.iv_item_recycle_zhibo);
         Glide.with(getContext()).load(R.drawable.ic_head_live).into(fenquhead);
+
+
+        TextView more = (TextView) childview.findViewById(R.id.tv_item_fenqu_more);
+        TextView shuaxin = (TextView) childview.findViewById(R.id.tv_item_fenqu_shuaxin);
+        String s = fenquBean.getData().get(position).getTitle();
+        String sub = "更多" + s.substring(0, s.length() - 1);
+        more.setText(sub);
+        shuaxin.setText(fenquBean.getData().get(position).getParam() + "条新动态，点击刷新！");
 
 
     }
@@ -140,8 +173,12 @@ public class FenquFragment extends BaseFragment {
         LoadFromNet.getFromNet(AppNetConfig.FENQU, new LoadNet() {
             @Override
             public void success(String context) {
-                FenquBean fenquBean = JSON.parseObject(context,FenquBean.class);
+                FenquBean fenquBean = JSON.parseObject(context, FenquBean.class);
+
+                initBanner(fenquBean);
                 processFenquData(fenquBean);
+                initHuati(fenquBean);
+                initHuodong(fenquBean);
             }
 
             @Override
@@ -149,21 +186,52 @@ public class FenquFragment extends BaseFragment {
 
             }
         });
+
+
+    }
+
+    private void initHuodong(FenquBean fenquBean) {
+        tvKejizhongxin1.setText(fenquBean.getData().get(10).getBody().get(0).getTitle());
+        tvKejizhongxin2.setText(fenquBean.getData().get(10).getBody().get(1).getTitle());
+        tvKejizhongxin3.setText(fenquBean.getData().get(10).getBody().get(2).getTitle());
+        Glide.with(getActivity()).load(fenquBean.getData().get(10).getBody().get(0).getCover()).into(ivKejizhongxin1);
+        Glide.with(getActivity()).load(fenquBean.getData().get(10).getBody().get(1).getCover()).into(ivKejizhongxin2);
+        Glide.with(getActivity()).load(fenquBean.getData().get(10).getBody().get(2).getCover()).into(ivKejizhongxin3);
+    }
+
+    private void initHuati(FenquBean fenquBean) {
+        setHuatiByInclude(llFenqu, R.id.huati1, fenquBean, 3);
+        setHuatiByInclude(llFenqu, R.id.huati2, fenquBean, 6);
+        setHuatiByInclude(llFenqu, R.id.huati3, fenquBean, 8);
+        setHuatiByInclude(llFenqu, R.id.huati4, fenquBean, 11);
+        setHuatiByInclude(llFenqu, R.id.huati5, fenquBean, 16);
+    }
+
+    private void initBanner(FenquBean fenquBean) {
+        List urls = new ArrayList();
+        for (int i = 0; i < 5; i++) {
+            urls.add(fenquBean.getData().get(0).getBanner().getBottom().get(i).getImage());
+        }
+        bannerFenquFive.setImageLoader(new GlideImageLoder());
+        bannerFenquFive.setImages(urls);
+        bannerFenquFive.setBannerStyle(BannerConfig.NOT_INDICATOR);
+        bannerFenquFive.isAutoPlay(false);
+        bannerFenquFive.start();
     }
 
     private void processFenquData(FenquBean fenquBean) {
-        setChildViewVyInclude(llFenqu,R.id.donghuaqu,fenquBean,0);
-        setChildViewVyInclude(llFenqu,R.id.yinyuequ,fenquBean,1);
-        setChildViewVyInclude(llFenqu,R.id.wudaoqu,fenquBean,2);
-        setChildViewVyInclude(llFenqu,R.id.youxiqu,fenquBean,4);
-        setChildViewVyInclude(llFenqu,R.id.guichuqu,fenquBean,5);
-        setChildViewVyInclude(llFenqu,R.id.shenghuoqu,fenquBean,7);
-        setChildViewVyInclude(llFenqu,R.id.kejiqu,fenquBean,9);
-        setChildViewVyInclude(llFenqu,R.id.shishangqu,fenquBean,12);
-        setChildViewVyInclude(llFenqu,R.id.guanggaoqu,fenquBean,13);
-        setChildViewVyInclude(llFenqu,R.id.yulequ,fenquBean,14);
-        setChildViewVyInclude(llFenqu,R.id.dianshijuqu,fenquBean,15);
-        setChildViewVyInclude(llFenqu,R.id.dianyingqu,fenquBean,17);
+        setChildViewVyInclude(llFenqu, R.id.donghuaqu, fenquBean, 0);
+        setChildViewVyInclude(llFenqu, R.id.yinyuequ, fenquBean, 1);
+        setChildViewVyInclude(llFenqu, R.id.wudaoqu, fenquBean, 2);
+        setChildViewVyInclude(llFenqu, R.id.youxiqu, fenquBean, 4);
+        setChildViewVyInclude(llFenqu, R.id.guichuqu, fenquBean, 5);
+        setChildViewVyInclude(llFenqu, R.id.shenghuoqu, fenquBean, 7);
+        setChildViewVyInclude(llFenqu, R.id.kejiqu, fenquBean, 9);
+        setChildViewVyInclude(llFenqu, R.id.shishangqu, fenquBean, 12);
+        setChildViewVyInclude(llFenqu, R.id.guanggaoqu, fenquBean, 13);
+        setChildViewVyInclude(llFenqu, R.id.yulequ, fenquBean, 14);
+        setChildViewVyInclude(llFenqu, R.id.dianshijuqu, fenquBean, 15);
+        setChildViewVyInclude(llFenqu, R.id.dianyingqu, fenquBean, 17);
 
     }
 
@@ -183,4 +251,11 @@ public class FenquFragment extends BaseFragment {
     }
 
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.inject(this, rootView);
+        return rootView;
+    }
 }

@@ -36,13 +36,13 @@
             android:background="@drawable/shape_jinqukankan"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:id="@+id/tv_renshu_recycle_zhibo"
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="当前100个直播"
-            android:drawableRight="@drawable/ic_light_gray_arrow_right"/>
+            />
 
 
     </LinearLayout>
@@ -185,6 +185,35 @@
 
 
 
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="30dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="12sp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/shape_item_more"
+            android:id="@+id/tv_item_fenqu_more"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:gravity="center"
+            android:textColor="#000000"
+            android:layout_marginRight="20dp"
+            android:drawableRight="@drawable/tag_center_refresh_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_item_fenqu_shuaxin"/>
 
     </LinearLayout>
 

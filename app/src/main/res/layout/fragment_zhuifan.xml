@@ -1,12 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#EAEAEA"
     android:layout_height="match_parent">
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/tv"
-        android:text="444444"
-        android:textColor="#ffffff"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+                <FrameLayout
+                    android:id="@+id/fanju"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bangumi_home_index_jp_bg"/>
+                    <ImageView
+                        android:layout_marginLeft="100dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/bangumi_home_index_jp_ic"/>
+
+
+                </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/guoman"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bangumi_home_index_cn_bg"/>
+                    <ImageView
+                        android:layout_marginLeft="100dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/bangumi_home_index_cn_ic"/>
+
+
+                </FrameLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#11000000"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <TextView
+                    android:id="@+id/shijianbiao"
+                    android:drawableLeft="@drawable/bangumi_follow_ic_timeline"
+                    android:gravity="center"
+                    android:layout_marginLeft="60dp"
+                    android:textColor="#44000000"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="时间表"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="#11000000"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:id="@+id/suoyin"
+                    android:layout_marginLeft="60dp"
+                    android:drawableLeft="@drawable/bangumi_follow_ic_index"
+                    android:gravity="center"
+                    android:textColor="#44000000"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="索引"/>
+
+
+
+
+
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_login_zhuifan"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/ic_promo_index_sign1"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

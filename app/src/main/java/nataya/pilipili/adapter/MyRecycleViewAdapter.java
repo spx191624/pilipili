@@ -2,6 +2,7 @@ package nataya.pilipili.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
 import nataya.pilipili.bean.ZhiboBean;
+import nataya.pilipili.utils.NumUtils;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -24,7 +26,6 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
     private final ZhiboBean.DataBean datas;
     private final LayoutInflater inflater;
     public int type = ITEM;
-
 
 
     public MyRecycleViewAdapter(Context context, ZhiboBean.DataBean data) {
@@ -103,6 +104,12 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
         TextView tvUper4Zhibo;
         @InjectView(R.id.tv_renshu_4_zhibo)
         TextView tvRenshu4Zhibo;
+        @InjectView(R.id.tv_item_more)
+        TextView tvItemMore;
+        @InjectView(R.id.tv_item_shuaxin)
+        TextView tvItemShuaxin;
+
+
 
 
         public MyViewHolder(Context context, View item) {
@@ -125,10 +132,10 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
                 Glide.with(context).load(partitionsBean.getLives().get(2).getCover().getSrc()).into(iv3Zhibo);
                 Glide.with(context).load(partitionsBean.getLives().get(3).getCover().getSrc()).into(iv4Zhibo);
 
-                tvRenshu1Zhibo.setText(partitionsBean.getLives().get(0).getOnline() + "");
-                tvRenshu2Zhibo.setText(partitionsBean.getLives().get(1).getOnline() + "");
-                tvRenshu3Zhibo.setText(partitionsBean.getLives().get(2).getOnline() + "");
-                tvRenshu4Zhibo.setText(partitionsBean.getLives().get(3).getOnline() + "");
+                tvRenshu1Zhibo.setText(NumUtils.getNum(partitionsBean.getLives().get(0).getOnline()));
+                tvRenshu2Zhibo.setText(NumUtils.getNum(partitionsBean.getLives().get(1).getOnline()));
+                tvRenshu3Zhibo.setText(NumUtils.getNum(partitionsBean.getLives().get(2).getOnline()));
+                tvRenshu4Zhibo.setText(NumUtils.getNum(partitionsBean.getLives().get(3).getOnline()));
 
                 tvUper1Zhibo.setText(partitionsBean.getLives().get(0).getOwner().getName());
                 tvUper2Zhibo.setText(partitionsBean.getLives().get(1).getOwner().getName());
@@ -136,8 +143,15 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
                 tvUper4Zhibo.setText(partitionsBean.getLives().get(3).getOwner().getName());
 
                 tvItemRecycleZhibo.setText(partitionsBean.getPartition().getName());
-                tvRenshuRecycleZhibo.setText("当前" + partitionsBean.getPartition().getCount() + "个直播");
+//                tvRenshuRecycleZhibo.setText("当前" + partitionsBean.getPartition().getCount() + "个直播");
 
+                tvItemMore.setText("查看更多");
+
+                String str="当前"+"<font color='#FB7299'>"+partitionsBean.getPartition().getCount()+"</font>"+"个直播";
+
+
+                tvItemShuaxin.setText(partitionsBean.getPartition().getCount()+"条新动态，点击刷新！");
+                tvRenshuRecycleZhibo.setText(Html.fromHtml(str));
 
                 Glide.with(context).load(partitionsBean.getPartition().getSub_icon().getSrc()).into(ivItemRecycleZhibo);
             }

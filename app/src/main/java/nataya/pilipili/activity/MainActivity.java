@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tablayout;
     @InjectView(R.id.view_pager)
     ViewPager viewPager;
- /*   @InjectView(R.id.fl_main)
-    FrameLayout flMain;*/
     @InjectView(R.id.navigation_view)
     NavigationView navigationView;
     @InjectView(R.id.id_drawer_layout)

@@ -35,21 +35,29 @@
            <com.youth.banner.Banner
                android:id="@+id/banner_fenqu_five"
                android:layout_width="match_parent"
-               android:layout_height="70dp"/>
+               android:layout_height="200dp"/>
 
            <include layout="@layout/item_fenqu"
                android:id="@+id/yinyuequ"/>
-
            <include layout="@layout/item_fenqu"
                android:id="@+id/wudaoqu"/>
+           <include layout="@layout/item_huati"
+               android:id="@+id/huati1"/>
            <include layout="@layout/item_fenqu"
                android:id="@+id/youxiqu"/>
            <include layout="@layout/item_fenqu"
                android:id="@+id/guichuqu"/>
+           <include layout="@layout/item_huati"
+               android:id="@+id/huati2"/>
            <include layout="@layout/item_fenqu"
                android:id="@+id/shenghuoqu"/>
+           <include layout="@layout/item_huati"
+               android:id="@+id/huati3"/>
            <include layout="@layout/item_fenqu"
                android:id="@+id/kejiqu"/>
+           <include layout="@layout/item_kejizhongxin"/>
+           <include layout="@layout/item_huati"
+               android:id="@+id/huati4"/>
            <include layout="@layout/item_fenqu"
                android:id="@+id/shishangqu"/>
            <include layout="@layout/item_fenqu"
@@ -58,6 +66,8 @@
                android:id="@+id/yulequ"/>
            <include layout="@layout/item_fenqu"
                android:id="@+id/dianshijuqu"/>
+           <include layout="@layout/item_huati"
+               android:id="@+id/huati5"/>
            <include layout="@layout/item_fenqu"
                android:id="@+id/dianyingqu"/>
 
