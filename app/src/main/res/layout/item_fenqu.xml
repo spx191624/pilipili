@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="#EAEAEA">
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_head_live"
+            android:id="@+id/iv_item_recycle_zhibo"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:layout_width="5dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:id="@+id/tv_item_recycle_zhibo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="    推荐主播"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+
+        <TextView
+            android:background="@drawable/shape_jinqukankan"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"
+            android:id="@+id/tv_renshu_recycle_zhibo"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="当前100个直播"
+            android:drawableRight="@drawable/ic_light_gray_arrow_right"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_item_bg"
+            android:padding="15dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/bili_drawerbg_logined"
+                style="@style/item_iv_style"
+                android:id="@+id/iv_1_zhibo"/>
+            <TextView
+                style="@style/item_name_style"
+                android:id="@+id/tv_name_1_zhibo"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+                <TextView
+                    android:id="@+id/tv_uper_1_zhibo"
+                    android:drawableLeft="@drawable/ic_tv_play"
+                    style="@style/item_uper_style"/>
+                <TextView
+                    style="@style/item_renshu_style"
+                    android:id="@+id/tv_renshu_1_zhibo"
+                    android:drawableLeft="@drawable/ic_clip_danmaku_num"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_item_bg"
+            android:padding="15dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                style="@style/item_iv_style"
+                android:src="@drawable/bili_drawerbg_logined"
+                android:id="@+id/iv_2_zhibo"/>
+            <TextView
+                style="@style/item_name_style"
+                android:id="@+id/tv_name_2_zhibo"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+                <TextView
+                    android:drawableLeft="@drawable/ic_tv_play"
+                    style="@style/item_uper_style"
+                    android:id="@+id/tv_uper_2_zhibo"
+                   />
+                <TextView
+
+                   style="@style/item_renshu_style"
+                    android:id="@+id/tv_renshu_2_zhibo"
+                    android:drawableLeft="@drawable/ic_clip_danmaku_num"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_item_bg"
+            android:padding="15dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/bili_drawerbg_logined"
+                style="@style/item_iv_style"
+                android:id="@+id/iv_3_zhibo"/>
+            <TextView
+                style="@style/item_name_style"
+                android:id="@+id/tv_name_3_zhibo"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+                <TextView
+                    android:drawableLeft="@drawable/ic_tv_play"
+                    style="@style/item_uper_style"
+                    android:id="@+id/tv_uper_3_zhibo"
+                    />
+                <TextView
+                    style="@style/item_renshu_style"
+                    android:id="@+id/tv_renshu_3_zhibo"
+                    android:drawableLeft="@drawable/ic_clip_danmaku_num"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_item_bg"
+            android:padding="15dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+               style="@style/item_iv_style"
+                android:src="@drawable/bili_drawerbg_logined"
+                android:id="@+id/iv_4_zhibo"/>
+            <TextView
+               style="@style/item_name_style"
+                android:id="@+id/tv_name_4_zhibo"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+                <TextView
+                    android:drawableLeft="@drawable/ic_tv_play"
+                    style="@style/item_uper_style"
+                    android:id="@+id/tv_uper_4_zhibo"
+                    />
+                <TextView
+                    style="@style/item_renshu_style"
+                    android:id="@+id/tv_renshu_4_zhibo"
+                    android:drawableLeft="@drawable/ic_clip_danmaku_num"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

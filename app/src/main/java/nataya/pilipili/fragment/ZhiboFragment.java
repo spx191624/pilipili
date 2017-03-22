@@ -78,7 +78,7 @@ public class ZhiboFragment extends BaseFragment {
         adapter = new MyRecycleViewAdapter(getContext(),zhiboBean.getData());
         recycleviewZhibo.setAdapter(adapter);
 //        recycleviewZhibo.setLayoutManager(new LinearLayoutManager(getContext()));
-        GridLayoutManager manager =new GridLayoutManager(getContext(),1);
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recycleviewZhibo.setLayoutManager(manager);
 
     }

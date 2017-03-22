@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#EAEAEA"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -43,15 +43,22 @@
             android:paddingLeft="10dp"
             android:text="大家都在搜"
             android:textColor="#44000000" />
-
-        <com.zhy.view.flowlayout.TagFlowLayout
-
-            android:id="@+id/flow_faxian"
+        <nataya.pilipili.view.MyScrollView
+            android:id="@+id/scrollview_faxian"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:padding="20dp"/>
+            android:layout_height="360dp">
+            <com.zhy.view.flowlayout.TagFlowLayout
+
+                android:id="@+id/flow_faxian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"/>
+        </nataya.pilipili.view.MyScrollView>
+
+
 
         <LinearLayout
+            android:layout_marginTop="20dp"
             android:id="@+id/line_more"
             android:layout_width="match_parent"
             android:layout_height="15dp"
@@ -183,4 +190,4 @@
 
 
     </LinearLayout>
-</ScrollView>
+</LinearLayout>

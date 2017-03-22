@@ -20,9 +20,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:launchMode="singleTask" android:name=".activity.MainActivity">
-
-        </activity>
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.SearchFaxianActivity" />
+        <activity android:name=".activity.SearchActivity" ></activity>
     </application>
 
 </manifest>

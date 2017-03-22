@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#EAEAEA"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/tv"
-        android:text="22222"
-        android:textSize="40sp"
-        android:textColor="#ffff00"/>
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/scrollview_fenqu">
+       <LinearLayout
+           android:id="@+id/ll_fenqu"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+           <GridView
+               android:layout_marginTop="20dp"
+               android:numColumns="4"
+               android:cacheColorHint="#22000000"
+               android:verticalSpacing="20dp"
+               android:id="@+id/gv_fenqu"
+               android:layout_width="match_parent"
+               android:layout_height="300dp">
+
+           </GridView>
+           <TextView
+               android:layout_marginTop="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="5dp"
+               android:background="#10000000"/>
+
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/donghuaqu"/>
+
+           <com.youth.banner.Banner
+               android:id="@+id/banner_fenqu_five"
+               android:layout_width="match_parent"
+               android:layout_height="70dp"/>
+
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/yinyuequ"/>
+
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/wudaoqu"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/youxiqu"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/guichuqu"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/shenghuoqu"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/kejiqu"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/shishangqu"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/guanggaoqu"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/yulequ"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/dianshijuqu"/>
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/dianyingqu"/>
+
+
+       </LinearLayout>
+
+   </ScrollView>
 
 </LinearLayout>

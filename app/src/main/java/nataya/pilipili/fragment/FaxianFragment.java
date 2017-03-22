@@ -1,7 +1,9 @@
 package nataya.pilipili.fragment;
 
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -22,6 +24,8 @@ import nataya.pilipili.bean.TagBean;
 import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
+import nataya.pilipili.utils.UIUtils;
+import nataya.pilipili.view.MyScrollView;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -50,6 +54,12 @@ public class FaxianFragment extends BaseFragment {
     TextView zhoubianFaxian;
     @InjectView(R.id.flow_faxian)
     TagFlowLayout flowFaxian;
+    @InjectView(R.id.scrollview_faxian)
+    MyScrollView scrollviewFaxian;
+
+    private Boolean isShowAll = false;
+    private int width;
+    private int height;
 
     @Override
     public View initView() {
@@ -61,6 +71,47 @@ public class FaxianFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        width = dm.widthPixels;
+        height = dm.heightPixels;
+        initNet();
+        initListener();
+        showTag(isShowAll);
+    }
+
+    private void initListener() {
+        lineMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isShowAll = !isShowAll;
+                showTag(isShowAll);
+
+            }
+        });
+        scrollviewFaxian.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (isShowAll){
+                    return false;
+                }
+                return true;
+            }
+        });
+
+
+    }
+
+    private void showTag(Boolean isShowAll) {
+        ViewGroup.LayoutParams params = scrollviewFaxian.getLayoutParams();
+        if (isShowAll) {
+            params.height = UIUtils.dip2px(getContext(), 365);
+        } else {
+            params.height = UIUtils.dip2px(getContext(), 180);
+        }
+        scrollviewFaxian.setLayoutParams(params);
+    }
+
+    private void initNet() {
         LoadFromNet.getFromNet(AppNetConfig.TAG_URL, new LoadNet() {
             @Override
             public void success(String context) {
@@ -77,15 +128,15 @@ public class FaxianFragment extends BaseFragment {
     private void processData(String context) {
         TagBean tagBean = JSON.parseObject(context, TagBean.class);
         List<String> tags = new ArrayList<>();
-        for (int i = 0; i <tagBean.getData().getList().size() ; i++) {
+        for (int i = 0; i < tagBean.getData().getList().size(); i++) {
             tags.add(tagBean.getData().getList().get(i).getKeyword());
         }
 //        Log.e("TAG", "processData: "+tagBean.getData().getList().get(0).getKeyword().toString());
         flowFaxian.setAdapter(new TagAdapter(tags) {
             @Override
             public View getView(FlowLayout parent, int position, Object o) {
-                TextView tv = (TextView) getLayoutInflater(null).inflate(R.layout.tv,flowFaxian,false);
-                tv.setText((String)o);
+                TextView tv = (TextView) getLayoutInflater(null).inflate(R.layout.tv, flowFaxian, false);
+                tv.setText((String) o);
                 return tv;
             }
         });
@@ -97,5 +148,6 @@ public class FaxianFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
+
 
 }

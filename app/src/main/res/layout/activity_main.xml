@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
-
+<!--
     <FrameLayout
         android:id="@+id/fl_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent">-->
 
 
         <android.support.design.widget.CoordinatorLayout
@@ -26,9 +26,11 @@
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:minHeight="?attr/actionBarSize"
                     android:background="#FB7299"
-                    app:layout_scrollFlags="scroll">
+                    app:layout_scrollFlags="scroll"
+                   >
                     <RelativeLayout
                         android:id="@+id/navigation_layout"
                         android:orientation="horizontal"
@@ -92,32 +94,35 @@
                     app:tabIndicatorColor="#FFFFFF"
                     android:id="@+id/tablayout"
                     style="@style/AppTheme"
+                    app:tabGravity="fill"
+                    app:tabMode="fixed"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="#FB7299" />
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/view_pager"
-                    android:layout_width="match_parent"
-                    android:layout_height="900dp" />
-
-
 
             </android.support.design.widget.AppBarLayout>
 
 
-            <android.support.v4.widget.NestedScrollView
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 
-            </android.support.v4.widget.NestedScrollView>
+            <!--<android.support.v4.widget.NestedScrollView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--&gt;-->
+
+
+            <!--</android.support.v4.widget.NestedScrollView>-->
 
 
         </android.support.design.widget.CoordinatorLayout>
 
 
-    </FrameLayout>
+ <!--   </FrameLayout>-->
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"

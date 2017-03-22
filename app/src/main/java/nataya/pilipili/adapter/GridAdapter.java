@@ -12,26 +12,24 @@ import com.bumptech.glide.Glide;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
-import nataya.pilipili.bean.ZhiboBean;
+import nataya.pilipili.bean.GridBean;
 
 /**
  * Created by 191624 on 2017/3/21.
  */
 public class GridAdapter extends BaseAdapter {
     private final Context context;
-    private final ZhiboBean.DataBean.PartitionsBean data;
+    private final GridBean data;
 
-
-
-
-    public GridAdapter(Context context, ZhiboBean.DataBean.PartitionsBean partitionsBean) {
+    public GridAdapter(Context context, GridBean gridbean) {
         this.context = context;
-        this.data = partitionsBean;
+        this.data = gridbean;
     }
+
 
     @Override
     public int getCount() {
-        return data.getLives().size();
+        return data.getData().size();
     }
 
     @Override
@@ -48,31 +46,24 @@ public class GridAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.item_gridview_zhibo, null);
+            convertView = View.inflate(context, R.layout.item_gridview_fenqu, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
-        }else{
+        } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        ZhiboBean.DataBean.PartitionsBean.LivesBean livesBean =data.getLives().get(position);
-        Glide.with(context).load(livesBean.getCover().getSrc()).into(viewHolder.ivGridZhibo);
-        viewHolder.tvRenshuGridZhibo.setText(livesBean.getOnline()+"");
-        viewHolder.tvNameGridZhibo.setText(livesBean.getTitle());
-        viewHolder.tvUperGridZhibo.setText(livesBean.getOwner().getName());
+        viewHolder.tvGrid.setText(data.getData().get(position).getName());
+        Glide.with(context).load(data.getData().get(position).getLogo()).into(viewHolder.ivGrid);
 
-        return null;
+        return convertView;
     }
 
-    static class ViewHolder {
-        @InjectView(R.id.iv_grid_zhibo)
-        ImageView ivGridZhibo;
-        @InjectView(R.id.tv_name_grid_zhibo)
-        TextView tvNameGridZhibo;
-        @InjectView(R.id.tv_uper_grid_zhibo)
-        TextView tvUperGridZhibo;
-        @InjectView(R.id.tv_renshu_grid_zhibo)
-        TextView tvRenshuGridZhibo;
+    class ViewHolder {
+        @InjectView(R.id.iv_grid)
+        ImageView ivGrid;
+        @InjectView(R.id.tv_grid)
+        TextView tvGrid;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);
