@@ -10,9 +10,10 @@ import java.util.List;
 
 public class FenquBean {
 
+
     /**
      * code : 0
-     * data : [{"param":"1","type":"region","style":"medium","title":"动画区","body":[{"title":"夜间渲染测试【你是我的命运】 wanna be ur everything【Love∞Destiny】","cover":"http://i0.hdslb.com/bfs/archive/53dd31f69db745f02c1bbefc073f36ed0fb29c3b.jpg","uri":"bilibili://video/9277633","param":"9277633","goto":"av","play":26802,"danmaku":259,"is_ad":false},{"title":"【呜喵说】观看《全职高手》动画版的五大注意事项","cover":"http://i0.hdslb.com/bfs/archive/51dae14d57252a5fd057a05ccd124d3f180265f1.jpg","uri":"bilibili://video/9318182","param":"9318182","goto":"av","play":13936,"danmaku":366,"is_ad":false},{"title":"【MMD】激情一波过后，长腿弱音表示要再来一曲Circus","cover":"http://i0.hdslb.com/bfs/archive/c71f9b606a8290fdc466f50603f580ffca5eda2c.jpg","uri":"bilibili://video/9294985","param":"9294985","goto":"av","play":15191,"danmaku":52,"is_ad":false},{"title":"【氰化物欢乐秀】泳池趴体@油兔不二字幕组","cover":"http://i0.hdslb.com/bfs/archive/9cba8655b921b5b38f580e2a1355b25666656190.jpg","uri":"bilibili://video/9269964","param":"9269964","goto":"av","play":21683,"danmaku":58,"is_ad":false}],"banner":{"bottom":[{"id":38806,"title":"舞蹈0322","image":"http://i0.hdslb.com/bfs/archive/a32837bd7ea0cc1619b60371bb74a07d559ae882.jpg","hash":"76f45f986f7b93454ddf3607fbe9fd4c","uri":"http://www.bilibili.com/blackboard/activity-Bkdqnt8ix.html","is_ad":false},{"id":0,"title":"ichu","image":"https://i0.hdslb.com/bfs/archive/7f49e0923f7f99a4717aab153f2ddd5635bb5aac.jpg","hash":"56b724a82a5d85687a566fe469cf6597","uri":"bilibili://game/34","request_id":"1490182882935q172a18a61a8q124","creative_id":9878,"src_id":703,"is_ad":true,"is_ad_loc":true,"ad_cb":"CJZNEJUcGOAfIAAoADAAOL8FQh0xNDkwMTgyODgyOTM1cTE3MmExOGE2MWE4cTEyNEj3jMmurytSCeWMl+S6rOW4gloJ5YyX5Lqs5biCYgbkuK3lm71oAXAAeACAAQCIAYEPkgENMTEzLjQ1LjgxLjEyNg==","client_ip":"113.45.81.126"},{"id":38968,"title":"鬼畜0322","image":"http://i0.hdslb.com/bfs/archive/0300bb164ee7af3503b4edf852c9a565d049bc6c.png","hash":"545e8a876654124248cfd6f20c6502e6","uri":"http://www.bilibili.com/blackboard/kichiku-h5-048.html","request_id":"1490182882935q172a18a61a8q124","src_id":704,"is_ad":false,"is_ad_loc":true,"client_ip":"113.45.81.126"},{"id":39039,"title":"国漫开区","image":"http://i0.hdslb.com/bfs/archive/c20312ca286dc73b25d7f3f27aa564efb706afc7.jpg","hash":"58c51083c4d855177c9ab4034331e259","uri":"http://www.bilibili.com/blackboard/activity-S1h5fkYjl.html","is_ad":false},{"id":38502,"title":"BML黏土2","image":"http://i0.hdslb.com/bfs/archive/e128d9bee817a3c4132211251df5d7d9d2d1486e.jpg","hash":"3678af87d577cdfd71a1c7637512950f","uri":"https://item.taobao.com/item.htm?id=546595297417&qq-pf-to=pcqq.c2c","is_ad":false}]}},{"param":"3","type":"region","style":"medium","title":"音乐区","body":[{"title":"许嵩演唱会洛天依助阵","cover":"http://i0.hdslb.com/bfs/archive/c7735875de7a6b32b19dfdd20688ff3d06b175c6.jpg","uri":"bilibili://video/9268845","param":"9268845","goto":"av","play":23768,"danmaku":144,"is_ad":false},{"title":"二珂Chloe《七里香》","cover":"http://i0.hdslb.com/bfs/archive/50265bc5b54b732a57e34993c18a236cfc4f3ec0.jpg","uri":"bilibili://video/9298146","param":"9298146","goto":"av","play":9220,"danmaku":41,"is_ad":false},{"title":"【YouTube】史上按赞数最多的前100首MV(截止于2017/3月)","cover":"http://i0.hdslb.com/bfs/archive/cc9561108dee484cae104776564b563cca20d381.jpg","uri":"bilibili://video/9273814","param":"9273814","goto":"av","play":28579,"danmaku":2487,"is_ad":false},{"title":"【ANK-原创】随性女王【MUTA/嫣汐】","cover":"http://i0.hdslb.com/bfs/archive/1b779ceeaf0cd2a9065ce0cd52d5d7e7a60f269c.jpg","uri":"bilibili://video/9286377","param":"9286377","goto":"av","play":11261,"danmaku":129,"is_ad":false}]},{"param":"129","type":"region","style":"medium","title":"舞蹈区","body":[{"title":"【女神有药】舞蹈：极乐净土开头的Seve BGM：Seve （这绝对是最养眼的一版Seve鬼步舞 女神级别的身材和颜值）","cover":"http://i0.hdslb.com/bfs/archive/dd64d6ccaad681f788095d39063d67eb4eb4ee63.jpg","uri":"bilibili://video/9274240","param":"9274240","goto":"av","play":166380,"danmaku":515,"is_ad":false},{"title":"【Rainbow小亚】羞耻网袜已上线 献出膝盖《给我乖》","cover":"http://i0.hdslb.com/bfs/archive/b63a5f9a52f65903389d362c7fe1832a3eb0df6a.jpg","uri":"bilibili://video/9291790","param":"9291790","goto":"av","play":46787,"danmaku":82,"is_ad":false},{"title":"【侧成峰】Girls","cover":"http://i0.hdslb.com/bfs/archive/486e575ae83254d5079711fb5443ffd9d3969098.jpg","uri":"bilibili://video/9285410","param":"9285410","goto":"av","play":3949,"danmaku":9,"is_ad":false},{"title":"【XPx拌面x羲聪（葱油拌面）】让其响彻","cover":"http://i0.hdslb.com/bfs/archive/7ba855fba5e056a6291000c66d5461d7a1498a38.jpg","uri":"bilibili://video/9269977","param":"9269977","goto":"av","play":5889,"danmaku":168,"is_ad":false}],"banner":{"bottom":[{"id":38368,"title":"游戏0318","image":"http://i0.hdslb.com/bfs/archive/55d89fb4da74fc0383b83d663be73d6b8ebdbe63.jpg","hash":"5bcb02a9b88e6aa44c09f73c1aaabd00","uri":"http://www.bilibili.com/blackboard/activity-HJ70jl4ix.html","is_ad":false}]}},{"param":"","type":"topic","style":"large","title":"","body":[{"title":"","cover":"http://i0.hdslb.com/bfs/archive/55d89fb4da74fc0383b83d663be73d6b8ebdbe63.jpg","uri":"http://www.bilibili.com/blackboard/activity-HJ70jl4ix.html","param":"http://www.bilibili.com/blackboard/activity-HJ70jl4ix.html","goto":"web","is_ad":false}]},{"param":"4","type":"region","style":"medium","title":"游戏区","body":[{"title":"Dota 2 WTF Moments 219 [Hibernation ends!]","cover":"http://i0.hdslb.com/bfs/archive/1f0b204cc98ca50128ca82bec994ae2ecb77432e.jpg","uri":"bilibili://video/9277587","param":"9277587","goto":"av","play":90669,"danmaku":1244,"is_ad":false},{"title":"【LOL】ADC英雄伤害排名统计【2017版】","cover":"http://i0.hdslb.com/bfs/archive/4875cfb7bb85010b2e878aff1780ac1d13a3dac9.jpg","uri":"bilibili://video/9273017","param":"9273017","goto":"av","play":68105,"danmaku":1281,"is_ad":false},{"title":"崩3 为美好的明天而战","cover":"http://i0.hdslb.com/bfs/archive/c52010bfd66800fd440ebbe475abe727ac42a0f9.jpg","uri":"bilibili://video/9274371","param":"9274371","goto":"av","play":46877,"danmaku":143,"is_ad":false},{"title":"【王者荣耀】体验服 兰陵王皮肤改动，小乔皮肤动作改动，新增物理引擎，部分英雄技能伤害改动","cover":"http://i0.hdslb.com/bfs/archive/eaa00f03ade8bdfe6724b6ae76f2969e879441ae.jpg","uri":"bilibili://video/9290764","param":"9290764","goto":"av","play":48921,"danmaku":565,"is_ad":false}]},{"param":"119","type":"region","style":"medium","title":"鬼畜区","body":[{"title":"【娇喘福利】哼都怪你","cover":"http://i0.hdslb.com/bfs/archive/1b5af64f516a72ba0b16e1bae00353302dae26bc.jpg","uri":"bilibili://video/9278512","param":"9278512","goto":"av","play":13174,"danmaku":30,"is_ad":false},{"title":"【全明星】麻麻，这个阴阳师好好玩","cover":"http://i0.hdslb.com/bfs/archive/4084310e3c24aa135b0d4d4cd5599cdb2708ef96.jpg","uri":"bilibili://video/9275592","param":"9275592","goto":"av","play":4517,"danmaku":38,"is_ad":false},{"title":"【重置版】你们要的英语老师","cover":"http://i0.hdslb.com/bfs/archive/f4d62c7dee73df1ebd873fa91f4b1fd6ef74473f.jpg","uri":"bilibili://video/9285339","param":"9285339","goto":"av","play":8012,"danmaku":58,"is_ad":false},{"title":"【守望音乐】震惊！在多拉多居然能听到这么带感的Mortar (Original Mix)","cover":"http://i0.hdslb.com/bfs/archive/aa1c22be89e9c08366d37dde5415594067269a29.jpg","uri":"bilibili://video/9270624","param":"9270624","goto":"av","play":5977,"danmaku":149,"is_ad":false}]},{"param":"","type":"topic","style":"large","title":"","body":[{"title":"","cover":"http://i0.hdslb.com/bfs/archive/a88abbc53806213c9ec6825bfdd5ac1ccd1053de.jpg","uri":"http://www.bilibili.com/blackboard/activity-rygRBm2cl.html","param":"http://www.bilibili.com/blackboard/activity-rygRBm2cl.html","goto":"web","is_ad":false}]},{"param":"160","type":"region","style":"medium","title":"生活区","body":[{"title":"【武田华恋】武田老师飞机✈送你幸福潮涌2017-03-19","cover":"http://i0.hdslb.com/bfs/archive/db47e4155189f18ac6d1cea7dca93133dfdc663c.png","uri":"bilibili://video/9277251","param":"9277251","goto":"av","play":67492,"danmaku":135,"is_ad":false},{"title":"UU解释为什么微博说\u201c只是玩卢本伟\u201d","cover":"http://i0.hdslb.com/bfs/archive/f650bf31f4aefcbad6a20e66f566cdea80ff8af8.jpg","uri":"bilibili://video/9283515","param":"9283515","goto":"av","play":156343,"danmaku":391,"is_ad":false},{"title":"猫.avi美女主人两腿之间有团黑色毛绒物体动来动去。嘿嘿嘿，羞耻力MAX","cover":"http://i0.hdslb.com/bfs/archive/a2bd895648fb84533e8d9f1c9e4a8a4dc5fe2a45.jpg","uri":"bilibili://video/9286670","param":"9286670","goto":"av","play":262490,"danmaku":285,"is_ad":false},{"title":"14歲小萝莉懷孕後透露真實感受!","cover":"http://i0.hdslb.com/bfs/archive/f5ec18ffe2db25ec3e0260b7287b55461b09872d.jpg","uri":"bilibili://video/9275261","param":"9275261","goto":"av","play":55526,"danmaku":628,"is_ad":false}]},{"param":"","type":"topic","style":"large","title":"","body":[{"title":"","cover":"http://i0.hdslb.com/bfs/archive/72bbdad4e27078d9ebe024dc6497727bd23c0eec.jpg","uri":"http://www.bilibili.com/blackboard/activity-Syjv3fncx.html","param":"http://www.bilibili.com/blackboard/activity-Syjv3fncx.html","goto":"web","is_ad":false}]},{"param":"36","type":"region","style":"medium","title":"科技区","body":[{"title":"【捡垃圾】闲鱼便宜淘的三星S6手机,老司机看看有没有翻车!","cover":"http://i0.hdslb.com/bfs/archive/5001014077f8231d5131ea48f12aa87e6f45e8a9.jpg","uri":"bilibili://video/9274760","param":"9274760","goto":"av","play":60136,"danmaku":359,"is_ad":false},{"title":"运行『GTA5』画质增强MOD之后被烧坏的 GTX 1080","cover":"http://i0.hdslb.com/bfs/archive/fd0bbd51033e30debda54295e482bddcfa672a05.jpg","uri":"bilibili://video/9279880","param":"9279880","goto":"av","play":61864,"danmaku":572,"is_ad":false},{"title":"外国牛人用火药画出猫头鹰，点燃之后漂亮极了","cover":"http://i0.hdslb.com/bfs/archive/6549a0174df13aae2cce6425108e2ee2b96e0cc9.jpg","uri":"bilibili://video/9309765","param":"9309765","goto":"av","play":25217,"danmaku":32,"is_ad":false},{"title":"【DIY】如何用针管制作一个强大的液压千斤顶（钢珠单向阀）","cover":"http://i0.hdslb.com/bfs/archive/7136fd6b40dc4f73f9d546ac9f484e8bef691696.jpg","uri":"bilibili://video/9275150","param":"9275150","goto":"av","play":18783,"danmaku":190,"is_ad":false}]},{"param":"subarea","type":"activity","style":"small","title":"活动中心","body":[{"title":"Vsinger创作征集大赛！","cover":"http://i0.hdslb.com/bfs/archive/c21dd3c2514892c5ca19e3dff7891d1f5f3051ce.jpg","uri":"http://www.bilibili.com/blackboard/activity-vsinger2017-m.html","param":"http://www.bilibili.com/blackboard/activity-vsinger2017-m.html","goto":"web","is_ad":false},{"title":"一起来画出你的愿望吧！","cover":"http://i0.hdslb.com/bfs/archive/19813222000e51e55d801c857ac0df58093e4a1b.jpg","uri":"http://www.bilibili.com/blackboard/activity_17bnj_pray_m.html","param":"http://www.bilibili.com/blackboard/activity_17bnj_pray_m.html","goto":"web","is_ad":false},{"title":"拜年祭之元宵会，一起来闹元宵吧！","cover":"http://i0.hdslb.com/bfs/archive/0149792c18638219c654c2d911a5feca82f73ebd.jpg","uri":"http://www.bilibili.com/blackboard/activity-2017lantern-m.html","param":"http://www.bilibili.com/blackboard/activity-2017lantern-m.html","goto":"web","is_ad":false}]},{"param":"","type":"topic","style":"large","title":"","body":[{"title":"","cover":"http://i0.hdslb.com/bfs/archive/de0f2a9fb752f63a0d64c71229ed21d28c6bc0eb.png","uri":"http://www.bilibili.com/blackboard/activity-SJH6zYvsx.html","param":"http://www.bilibili.com/blackboard/activity-SJH6zYvsx.html","goto":"web","is_ad":false}]},{"param":"155","type":"region","style":"medium","title":"时尚区","body":[{"title":"【我的双眼皮手术过程】术前+术后一天感受 VLOG形式记录","cover":"http://i0.hdslb.com/bfs/archive/779bba4d835adcf62473e3bcafde7b81536d013c.jpg","uri":"bilibili://video/9269754","param":"9269754","goto":"av","play":6949,"danmaku":60,"is_ad":false},{"title":"笨鸟AOTAN时尚｜100元-200元平价春夏季穿搭 | spring lookbook","cover":"http://i0.hdslb.com/bfs/archive/7852d2e5f8748313ec9285bac1822dd53fccdbf0.png","uri":"bilibili://video/9287240","param":"9287240","goto":"av","play":9401,"danmaku":13,"is_ad":false},{"title":"KathleenLights | 14个被低估的彩妆产品@5kg字幕组","cover":"http://i0.hdslb.com/bfs/archive/79dfdd9884e5c19d85633188d432c10592910981.jpg","uri":"bilibili://video/9309756","param":"9309756","goto":"av","play":26628,"danmaku":437,"is_ad":false},{"title":"【Jeffree Star】给男友的弟弟化妆","cover":"http://i0.hdslb.com/bfs/archive/f9a2ca8911269efdf10fdcfc9fee6de6a4667651.jpg","uri":"bilibili://video/9277553","param":"9277553","goto":"av","play":65495,"danmaku":1370,"is_ad":false}],"banner":{"bottom":[{"id":38476,"title":"时尚0320","image":"http://i0.hdslb.com/bfs/archive/de0f2a9fb752f63a0d64c71229ed21d28c6bc0eb.png","hash":"b43e16701900bac70b113e769ca833c7","uri":"http://www.bilibili.com/blackboard/activity-SJH6zYvsx.html","is_ad":false}]}},{"param":"165","type":"region","style":"medium","title":"广告区","body":[{"title":"辣眼睛的不仅只有泰国广告，还有新加坡信美肌的这去黑头广告，什么都憋说了，我买。","cover":"http://i0.hdslb.com/bfs/archive/b40f7ea0701bcc8689a774837ad32e425ebefbae.jpg","uri":"bilibili://video/9279254","param":"9279254","goto":"av","play":1726,"danmaku":1,"is_ad":false},{"title":"Magnum -Pleasure Is Diverse","cover":"http://i0.hdslb.com/bfs/archive/e24f731bb60cfa68e7ae33f5bbfc4b047cbdd85f.jpg","uri":"bilibili://video/9288759","param":"9288759","goto":"av","play":930,"danmaku":1,"is_ad":false},{"title":"【绫濑遥】广告合集 130篇连发 你敢看完嘛(⊙_⊙)？新垣结衣X彩蛋","cover":"http://i0.hdslb.com/bfs/archive/f51e56da1ae15edb4191302a1d9313a463403a15.jpg","uri":"bilibili://video/9282115","param":"9282115","goto":"av","play":2312,"danmaku":78,"is_ad":false},{"title":"日本美女2017广告 第一季度","cover":"http://i0.hdslb.com/bfs/archive/815557f1aee5415425ca614dfeec926286999b8e.jpg","uri":"bilibili://video/9317504","param":"9317504","goto":"av","play":528,"danmaku":8,"is_ad":false}]},{"param":"5","type":"region","style":"medium","title":"娱乐区","body":[{"title":"【No.A Name字幕组】NINO桑20170319 美女的ONARA（上）","cover":"http://i0.hdslb.com/bfs/archive/5b29d0bbc819b01bd4f9ad60ae71c5b7971e2655.jpg","uri":"bilibili://video/9276202","param":"9276202","goto":"av","play":3259,"danmaku":127,"is_ad":false},{"title":"【艾伦秀】艾玛·沃森谈《美女与野兽》及回忆《哈利波特》首映礼趣事@油兔不二字幕组","cover":"http://i0.hdslb.com/bfs/archive/61d1df8667090c277510db7b870ecc2e74cd6d7d.jpg","uri":"bilibili://video/9284259","param":"9284259","goto":"av","play":3038,"danmaku":7,"is_ad":false},{"title":"【大神现场】第一期 三个男人互撩互爆！首次揭秘身价过亿的创作背后的秘诀！","cover":"http://i0.hdslb.com/bfs/archive/c1f1e56aa9edabce4dc335f3856f383ee01c71c4.jpg","uri":"bilibili://video/9273352","param":"9273352","goto":"av","play":10480,"danmaku":11,"is_ad":false},{"title":"【理娱】当明星遇到尴尬吐槽，《吐槽大会》到底有多打碎娱乐圈套路？","cover":"http://i0.hdslb.com/bfs/archive/8f8f426c25a42586ba3f6d46de90c073f1fdb7b1.jpg","uri":"bilibili://video/9290646","param":"9290646","goto":"av","play":9361,"danmaku":146,"is_ad":false}]},{"param":"11","type":"region","style":"medium","title":"电视剧区","body":[{"title":"【low君】《刺客列传》士为知己者死 君为知己者浪","cover":"http://i0.hdslb.com/bfs/archive/7807fb97bd53f46e826b5991e25a2b6369e0fac1.jpg","uri":"bilibili://video/9290346","param":"9290346","goto":"av","play":33184,"danmaku":1105,"is_ad":false},{"title":"【杨洋郑爽】《无悔》富家千金vs身怀宝藏的穷小子（念曦╱牺牲夫妇）","cover":"http://i0.hdslb.com/bfs/archive/19d60c5ddfaa8ca561d3adb45b0d529072395eae.jpg","uri":"bilibili://video/9278596","param":"9278596","goto":"av","play":2999,"danmaku":81,"is_ad":false},{"title":"【郑爽】|8年作品燃向剪辑|你是我心中最美的风景|","cover":"http://i0.hdslb.com/bfs/archive/b46316cc7a87f23a32b51c0247f7dbece17d3613.jpg","uri":"bilibili://video/9267161","param":"9267161","goto":"av","play":817,"danmaku":90,"is_ad":false},{"title":"【混剪】〖预告〗黄景瑜/许魏洲/张彬彬/迪丽热巴《少年天命传奇》","cover":"http://i0.hdslb.com/bfs/archive/e1a61e0446eefebffb9b5c960f8c3612bd4d2fc2.jpg","uri":"bilibili://video/9285768","param":"9285768","goto":"av","play":3321,"danmaku":52,"is_ad":false}]},{"param":"","type":"topic","style":"large","title":"","body":[{"title":"","cover":"http://i0.hdslb.com/bfs/archive/1af18a52198a0c5543dfddd36449a54067a3c45f.jpg","uri":"http://www.bilibili.com/blackboard/activity-Bk0hunwsl.html","param":"http://www.bilibili.com/blackboard/activity-Bk0hunwsl.html","goto":"web","is_ad":false}]},{"param":"23","type":"region","style":"medium","title":"电影区","body":[{"title":"生化危机终章删减片段之爱丽丝解剖室打小怪","cover":"http://i0.hdslb.com/bfs/archive/697e0b224399bdc818a7d4a972f1bd06a39940c1.jpg","uri":"bilibili://video/9267852","param":"9267852","goto":"av","play":225720,"danmaku":806,"is_ad":false},{"title":"分分钟带你看完电影《华尔街之狼》小李子的放纵之路","cover":"http://i0.hdslb.com/bfs/archive/180f7ba8c653a38115b31d5d1de1bcb47e1ffab2.jpg","uri":"bilibili://video/9291649","param":"9291649","goto":"av","play":16629,"danmaku":59,"is_ad":false},{"title":"【沃特脱口秀】鲨鱼能飞到太空？女子鲨鱼肚中产子？超越手撕鬼子","cover":"http://i0.hdslb.com/bfs/archive/98ead2c677ae45e9a3e000fc2e9e224b5454deaa.jpg","uri":"bilibili://video/9278968","param":"9278968","goto":"av","play":11570,"danmaku":85,"is_ad":false},{"title":"【WatchMojo】10个当超级英雄们取下面具的瞬间 - Top10","cover":"http://i0.hdslb.com/bfs/archive/cfd6f95a985ac75e7723f0375ae1a3e3f237795e.png","uri":"bilibili://video/9280482","param":"9280482","goto":"av","play":10234,"danmaku":132,"is_ad":false}]}]
+     * data : [{"banner":{"bottom":[{"hash":"dfbe8a2864a160f90082da9d3c0868a6","id":38939,"image":"http://i0.hdslb.com/bfs/archive/73d57a6c4e54d1558e2b3b8ed251af9b5187fe81.jpg","is_ad":false,"title":"鬼畜0323","uri":"http://www.bilibili.com/blackboard/activity-ByUb5gasl.html"},{"ad_cb":"CK5NEKkcGPQfIAAoADAAOL8FQh8xNDkwMjMyNTk2OTY1cTE3MmExOGE2MWExNjFxMTUxSOWzo8avK1IJ5YyX5Lqs5biCWgnljJfkuqzluIJiBuS4reWbvWgBcAF4AIABAIgB6wySAQwxMTMuNDUuODMuOTE=","client_ip":"113.45.83.91","creative_id":9902,"hash":"c7ef6643cab1d4de56f0573d00af06fc","id":0,"image":"https://i0.hdslb.com/bfs/archive/0390ee89c6db0405d05301ad791ac6cf6330e8d7.jpg","is_ad":true,"is_ad_loc":true,"request_id":"1490232596965q172a18a61a161q151","src_id":703,"title":"崩3","uri":"bilibili://game/67"},{"client_ip":"113.45.83.91","hash":"9eb1e42948f59dc67db1675f9431b70f","id":39135,"image":"http://i0.hdslb.com/bfs/archive/d8daadf446779a914fa7174a22fbc7dd9e22ced3.png","is_ad":false,"is_ad_loc":true,"request_id":"1490232596965q172a18a61a161q151","src_id":704,"title":"游戏49期","uri":"http://www.bilibili.com/blackboard/activity-By1BQKy2l.html"},{"hash":"3678af87d577cdfd71a1c7637512950f","id":38502,"image":"http://i0.hdslb.com/bfs/archive/e128d9bee817a3c4132211251df5d7d9d2d1486e.jpg","is_ad":false,"title":"BML黏土2","uri":"https://item.taobao.com/item.htm?id=546595297417&qq-pf-to=pcqq.c2c"},{"hash":"76f45f986f7b93454ddf3607fbe9fd4c","id":38814,"image":"http://i0.hdslb.com/bfs/archive/a32837bd7ea0cc1619b60371bb74a07d559ae882.jpg","is_ad":false,"title":"舞蹈0322","uri":"http://www.bilibili.com/blackboard/activity-Bkdqnt8ix.html"}]},"body":[{"cover":"http://i0.hdslb.com/bfs/archive/a4271cb1064a42ca2cfe267408b54f0a85a69b58.jpg","danmaku":85,"goto":"av","is_ad":false,"param":"9281425","play":21484,"title":"【MMD】【福利向】言和姐姐的独舞，子欲衣果，而风不许","uri":"bilibili://video/9281425"},{"cover":"http://i0.hdslb.com/bfs/archive/32ffd215a1fdc259aa3765d95408bfb10d7f5e85.jpg","danmaku":76,"goto":"av","is_ad":false,"param":"9284551","play":7892,"title":"抖腿！鬼畜！蜜汁带感神曲！炸了 它炸了！唐家三少《龙王传说》史莱克炸炸歌","uri":"bilibili://video/9284551"},{"cover":"http://i0.hdslb.com/bfs/archive/4ae99291a16c54322ddd6748734b30866c8579e1.jpg","danmaku":65,"goto":"av","is_ad":false,"param":"9283416","play":14065,"title":"来看日本人围观中国人观看兽娘动物园op时的反应","uri":"bilibili://video/9283416"},{"cover":"http://i0.hdslb.com/bfs/archive/e582811453649bcad31dfcd0a5e843603bfc602d.jpg","danmaku":537,"goto":"av","is_ad":false,"param":"9307362","play":61364,"title":"【神他妈违和感 VOL3】神他妈你还没看过超兽1、2部，第三部开拍了！","uri":"bilibili://video/9307362"}],"param":"1","style":"medium","title":"动画区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/6bbb6ad80fa316393d66ade3f081b0b23fa72bef.jpg","danmaku":4,"goto":"av","is_ad":false,"param":"9313787","play":338,"title":"【秦时明月/天行九歌/无剧情舔屏向】庄美人的本色","uri":"bilibili://video/9313787"},{"cover":"http://i0.hdslb.com/bfs/archive/a958499c0d5058ad4e933a7c6d12ee3b9b59fd51.jpg","danmaku":45,"goto":"av","is_ad":false,"param":"9317526","play":1008,"title":"三国果果 01","uri":"bilibili://video/9317526"},{"cover":"http://i0.hdslb.com/bfs/archive/c1365da7a18a84d4c5d9b71a47c62435ad7dd583.jpg","danmaku":2513,"goto":"av","is_ad":false,"param":"9310822","play":105632,"title":"画江湖之杯莫停 016 悲鸣","uri":"bilibili://video/9310822"},{"cover":"http://i0.hdslb.com/bfs/archive/59c7c9706b5642dd971b6b66a2c6d637b43f71e8.jpg","danmaku":5,"goto":"av","is_ad":false,"param":"9324162","play":221,"title":"【连载】新人快递员付向阳 第一集","uri":"bilibili://video/9324162"}],"param":"167","style":"medium","title":"国创区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/75fd84db51d566bccaeef12fcb5f7e4e273951e3.jpg","danmaku":1174,"goto":"av","is_ad":false,"param":"9324867","play":9027,"title":"【美国公告牌】Youzimu Music单曲周榜TOP50 201713期 @柚子木字幕组","uri":"bilibili://video/9324867"},{"cover":"http://i0.hdslb.com/bfs/archive/2acd4d9c04b74ad948871510e0d85b1f31ab9145.jpg","danmaku":631,"goto":"av","is_ad":false,"param":"9290957","play":9042,"title":"【顾离】《天下第一》 --武林外史沈王向同人耽美cos短剧混剪","uri":"bilibili://video/9290957"},{"cover":"http://i0.hdslb.com/bfs/archive/b711888a3912fe28eda483622ff7d97b0c611db8.jpg","danmaku":1765,"goto":"av","is_ad":false,"param":"9294619","play":9272,"title":"周刊VOCALOID中文排行榜♪241","uri":"bilibili://video/9294619"},{"cover":"http://i0.hdslb.com/bfs/archive/de43242f323dea4a9f7a78a6e808eeb9e1046c98.jpg","danmaku":273,"goto":"av","is_ad":false,"param":"9288058","play":10135,"title":"【SNH48】H队原创公演《Beautiful World》（美丽世界）宣传片","uri":"bilibili://video/9288058"}],"param":"3","style":"medium","title":"音乐区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/e714def344c32e2b11a54e634d22f8186ff73b3b.jpg","danmaku":25,"goto":"av","is_ad":false,"param":"9327539","play":3863,"title":"【小曜】喜欢！雪！真实的魔法！【欢迎来到雪的王国！】","uri":"bilibili://video/9327539"},{"cover":"http://i0.hdslb.com/bfs/archive/cdc75554f7f7e0c46a9817dcef435a5bb123df6e.jpg","danmaku":244,"goto":"av","is_ad":false,"param":"9310105","play":35908,"title":"【1M】 MayJLee编舞 SuperBass","uri":"bilibili://video/9310105"},{"cover":"http://i0.hdslb.com/bfs/archive/53e521c5a4b690d3e81888231c1a954f1631b312.jpg","danmaku":50,"goto":"av","is_ad":false,"param":"9301631","play":4817,"title":"【蜗牛♥噗哧】Love Potion❤初投稿","uri":"bilibili://video/9301631"},{"cover":"http://i0.hdslb.com/bfs/archive/76dded380231f5bd8e723b81f93fb761f19865fa.jpg","danmaku":20,"goto":"av","is_ad":false,"param":"9291625","play":4449,"title":"【大牙】maybe是借口(●'◡'●)冬天屯的肉没有借口","uri":"bilibili://video/9291625"}],"param":"129","style":"medium","title":"舞蹈区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/55d89fb4da74fc0383b83d663be73d6b8ebdbe63.jpg","goto":"web","is_ad":false,"param":"http://www.bilibili.com/blackboard/activity-HJ70jl4ix.html","title":"","uri":"http://www.bilibili.com/blackboard/activity-HJ70jl4ix.html"}],"param":"","style":"large","title":"","type":"topic"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/446def59a24e825f46253eb6b51a8504d3ad5933.jpg","danmaku":554,"goto":"av","is_ad":false,"param":"9293518","play":169620,"title":"【夏一可】想发胆信给你\u2026\u2026带上暴雪声优不务正业系列","uri":"bilibili://video/9293518"},{"cover":"http://i0.hdslb.com/bfs/archive/b7edaae2a2c61a8fcada9ddf7475b0a6747414cc.jpg","danmaku":424,"goto":"av","is_ad":false,"param":"9304483","play":50130,"title":"【DNF】震惊！腾讯封深渊爆SS这个BUG是真的吗？！","uri":"bilibili://video/9304483"},{"cover":"http://i0.hdslb.com/bfs/archive/d5192d32bf357c6d4037ab770a6b05c6991db17b.jpg","danmaku":2585,"goto":"av","is_ad":false,"param":"9312779","play":114286,"title":"【抗韩中年人】112期.蜘蛛蛮王最强越塔组合 131偷塔偷龙逆风翻盘","uri":"bilibili://video/9312779"},{"cover":"http://i0.hdslb.com/bfs/archive/1bbbfb284004ed61edb079cb394426c7bda52e04.jpg","danmaku":754,"goto":"av","is_ad":false,"param":"9307548","play":119690,"title":"LOL坑爹碉堡集锦：救死扶伤的铁锤妹妹","uri":"bilibili://video/9307548"}],"param":"4","style":"medium","title":"游戏区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/a354b3f9d1bf076281f8c9e8c233004bf24e8ef8.jpg","danmaku":30,"goto":"av","is_ad":false,"param":"9300956","play":5018,"title":"长者教你如何做人","uri":"bilibili://video/9300956"},{"cover":"http://i0.hdslb.com/bfs/archive/cf29cc71b432a9a662c1c54b2974c63b5915ba9a.jpg","danmaku":542,"goto":"av","is_ad":false,"param":"9286190","play":99954,"title":"【亮剑】李云龙抗日神剧","uri":"bilibili://video/9286190"},{"cover":"http://i0.hdslb.com/bfs/archive/88d2e9bda9b3e938ee74db206a9f637e7f20406f.jpg","danmaku":214,"goto":"av","is_ad":false,"param":"9291503","play":10098,"title":"【新日暮里摇滚天团】Numb♂【带原曲不使用版】【高能抖腿】","uri":"bilibili://video/9291503"},{"cover":"http://i0.hdslb.com/bfs/archive/d8cd5c2de0edb0a25f68a8440b12aa22df8bb86e.jpg","danmaku":346,"goto":"av","is_ad":false,"param":"9300889","play":3261,"title":"哔哩哔哩鬼畜周刊排行榜#032","uri":"bilibili://video/9300889"}],"param":"119","style":"medium","title":"鬼畜区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/a88abbc53806213c9ec6825bfdd5ac1ccd1053de.jpg","goto":"web","is_ad":false,"param":"http://www.bilibili.com/blackboard/activity-rygRBm2cl.html","title":"","uri":"http://www.bilibili.com/blackboard/activity-rygRBm2cl.html"}],"param":"","style":"large","title":"","type":"topic"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/529cb820e4045efbd237391734eb350d212f8a84.jpg","danmaku":239,"goto":"av","is_ad":false,"param":"9291410","play":37609,"title":"能憋住5秒不笑，算你牛！","uri":"bilibili://video/9291410"},{"cover":"http://i0.hdslb.com/bfs/archive/9b7be92746ce57adfc41a737dd33e77da26470dc.jpg","danmaku":2136,"goto":"av","is_ad":false,"param":"9314641","play":59892,"title":"出国前该知道的事情","uri":"bilibili://video/9314641"},{"cover":"http://i0.hdslb.com/bfs/archive/9f1959f58b68aa8e945b0bb278f11fa80b0f9c2a.jpg","danmaku":419,"goto":"av","is_ad":false,"param":"9281841","play":39863,"title":"【同性】非常养眼的一对！！！drew太好看了！","uri":"bilibili://video/9281841"},{"cover":"http://i0.hdslb.com/bfs/archive/f650bf31f4aefcbad6a20e66f566cdea80ff8af8.jpg","danmaku":457,"goto":"av","is_ad":false,"param":"9283515","play":193454,"title":"UU解释为什么微博说\u201c只是玩卢本伟\u201d","uri":"bilibili://video/9283515"}],"param":"160","style":"medium","title":"生活区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/72bbdad4e27078d9ebe024dc6497727bd23c0eec.jpg","goto":"web","is_ad":false,"param":"http://www.bilibili.com/blackboard/activity-Syjv3fncx.html","title":"","uri":"http://www.bilibili.com/blackboard/activity-Syjv3fncx.html"}],"param":"","style":"large","title":"","type":"topic"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/5fb6bd386dbd802d9bc4afb830994970e32b297d.jpg","danmaku":253,"goto":"av","is_ad":false,"param":"9286355","play":42050,"title":"微信透明头像算什么，教你设置局部透明头像，超有逼格","uri":"bilibili://video/9286355"},{"cover":"http://i0.hdslb.com/bfs/archive/dca7ee94c5649dd6d121ca57c298d336a735b600.jpg","danmaku":600,"goto":"av","is_ad":false,"param":"9282185","play":62844,"title":"【军榜90】真正的生不如死！看看这些武器你们还期待战争吗？","uri":"bilibili://video/9282185"},{"cover":"http://i0.hdslb.com/bfs/archive/812c18c3a748444bf76c9e6fe081f513d6a3d7de.jpg","danmaku":1086,"goto":"av","is_ad":false,"param":"9288110","play":93212,"title":"中国断后的五大姓氏 你若是真见过 那估计是穿越来的人","uri":"bilibili://video/9288110"},{"cover":"http://i0.hdslb.com/bfs/archive/bcd95c890fef7ba6a3f92a2ee147dab6e3c72181.jpg","danmaku":118,"goto":"av","is_ad":false,"param":"9291154","play":71745,"title":"中国人发明了韩国人，给力郭德纲！","uri":"bilibili://video/9291154"}],"param":"36","style":"medium","title":"科技区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/c21dd3c2514892c5ca19e3dff7891d1f5f3051ce.jpg","goto":"web","is_ad":false,"param":"http://www.bilibili.com/blackboard/activity-vsinger2017-m.html","title":"Vsinger创作征集大赛！","uri":"http://www.bilibili.com/blackboard/activity-vsinger2017-m.html"},{"cover":"http://i0.hdslb.com/bfs/archive/19813222000e51e55d801c857ac0df58093e4a1b.jpg","goto":"web","is_ad":false,"param":"http://www.bilibili.com/blackboard/activity_17bnj_pray_m.html","title":"一起来画出你的愿望吧！","uri":"http://www.bilibili.com/blackboard/activity_17bnj_pray_m.html"},{"cover":"http://i0.hdslb.com/bfs/archive/0149792c18638219c654c2d911a5feca82f73ebd.jpg","goto":"web","is_ad":false,"param":"http://www.bilibili.com/blackboard/activity-2017lantern-m.html","title":"拜年祭之元宵会，一起来闹元宵吧！","uri":"http://www.bilibili.com/blackboard/activity-2017lantern-m.html"}],"param":"subarea","style":"small","title":"活动中心","type":"activity"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/de0f2a9fb752f63a0d64c71229ed21d28c6bc0eb.png","goto":"web","is_ad":false,"param":"http://www.bilibili.com/blackboard/activity-SJH6zYvsx.html","title":"","uri":"http://www.bilibili.com/blackboard/activity-SJH6zYvsx.html"}],"param":"","style":"large","title":"","type":"topic"},{"banner":{"bottom":[{"hash":"b43e16701900bac70b113e769ca833c7","id":38476,"image":"http://i0.hdslb.com/bfs/archive/de0f2a9fb752f63a0d64c71229ed21d28c6bc0eb.png","is_ad":false,"title":"时尚0320","uri":"http://www.bilibili.com/blackboard/activity-SJH6zYvsx.html"}]},"body":[{"cover":"http://i0.hdslb.com/bfs/archive/1c4e6d44512d3f6bf7c1e5633684d74f59dabe48.jpg","danmaku":74,"goto":"av","is_ad":false,"param":"9285747","play":8755,"title":"ASPL | 我来教你如何用100块玩转春季流行","uri":"bilibili://video/9285747"},{"cover":"http://i0.hdslb.com/bfs/archive/3221f322c7aae97e669eb0438eb885c20e6c9c12.jpg","danmaku":502,"goto":"av","is_ad":false,"param":"9305971","play":26753,"title":"【仓大王】我的朋友们帮我配音！好急好急好急","uri":"bilibili://video/9305971"},{"cover":"http://i0.hdslb.com/bfs/archive/205ab68aff9ca197dfa7930ffe5c805ba20b05f2.jpg","danmaku":122,"goto":"av","is_ad":false,"param":"9281481","play":7020,"title":"[Rice] 油皮粉底实测 | 娇兰金钻&SUQQU粉霜 | 12H超长实测 | VLOG","uri":"bilibili://video/9281481"},{"cover":"http://i0.hdslb.com/bfs/archive/b44b1d48388ffd509901c18745086d0ab39bcee9.jpg","danmaku":115,"goto":"av","is_ad":false,"param":"9288162","play":12162,"title":"Yori✧国货UBUB土色口红 6元一只 砖红/粉米/红棕/裸色/南瓜色✧","uri":"bilibili://video/9288162"}],"param":"155","style":"medium","title":"时尚区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/ec50f41f1e258fe3aad1a94cb8733f6950c8172f.jpg","danmaku":7,"goto":"av","is_ad":false,"param":"9294764","play":1519,"title":"桥本环奈广告合集","uri":"bilibili://video/9294764"},{"cover":"http://i0.hdslb.com/bfs/archive/82bf337c0268938c0928c823b8ddd8abe0f0945b.jpg","danmaku":10,"goto":"av","is_ad":false,"param":"9280884","play":1661,"title":"泰国天雷滚滚广告，猜不到的结尾","uri":"bilibili://video/9280884"},{"cover":"http://i0.hdslb.com/bfs/archive/63593e3e5d695aa84dbfdab6803644cf4b2ab3c0.jpg","danmaku":5,"goto":"av","is_ad":false,"param":"9280192","play":1284,"title":"流浪狗公益广告《特别的人》","uri":"bilibili://video/9280192"},{"cover":"http://i0.hdslb.com/bfs/archive/59063b1c9967430e2e7a4d0da3d229f1155f914b.jpg","danmaku":10,"goto":"av","is_ad":false,"param":"9295155","play":2390,"title":"不坑你怎么能叫好兄弟呢？ [开眼Eyepetizer-170319期]","uri":"bilibili://video/9295155"}],"param":"165","style":"medium","title":"广告区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/9a98ff04c6a4b737a5ccc4ea6fc12da2eb7b28c6.jpg","danmaku":554,"goto":"av","is_ad":false,"param":"9302463","play":5283,"title":"【SNH48】【生诞回顾】十八个婆媳+抠门瞬间 李宇琪2016年生诞祭+冷餐会 TeamSII《十八个闪耀瞬间》第2场（20160227）","uri":"bilibili://video/9302463"},{"cover":"http://i0.hdslb.com/bfs/archive/3b8fe5e2e7dcd679597363b24c7494055bb768c1.png","danmaku":655,"goto":"av","is_ad":false,"param":"9296724","play":8186,"title":"台湾节目《双城记》：大陆互联网飞速发展，台湾落后了！20170318","uri":"bilibili://video/9296724"},{"cover":"http://i0.hdslb.com/bfs/archive/ccca44d594272ee85b9fa423974293a583c05424.jpg","danmaku":12,"goto":"av","is_ad":false,"param":"9291792","play":3627,"title":"【中文字幕】4月19日播出 AKB48背后的故事特别篇 小嶋阳菜纪录片预告【老当益壮字幕组】","uri":"bilibili://video/9291792"},{"cover":"http://i0.hdslb.com/bfs/archive/b37fa1c0b50dbfb39dbd01f3d19129e62a0750b6.jpg","danmaku":241,"goto":"av","is_ad":false,"param":"9329647","play":3976,"title":"【No.A Name字幕组】FNS 20170322 ARASHI CUT","uri":"bilibili://video/9329647"}],"param":"5","style":"medium","title":"娱乐区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/efa7fedf94683868cd1efcd6ea94a982bc92fa73.jpg","danmaku":17,"goto":"av","is_ad":false,"param":"9306064","play":368,"title":"【红白玫瑰组】【唐斐x叶葱】斯德哥尔摩情人","uri":"bilibili://video/9306064"},{"cover":"http://i0.hdslb.com/bfs/archive/7c85859e859fcd96abae2072cfde74c95bb95a47.jpg","danmaku":110,"goto":"av","is_ad":false,"param":"9316156","play":803,"title":"【万神纪】【焦恩俊·写意五千年】","uri":"bilibili://video/9316156"},{"cover":"http://i0.hdslb.com/bfs/archive/52187151e210e468f71eb2b04b83c56af3904532.jpg","danmaku":66,"goto":"av","is_ad":false,"param":"9312644","play":3150,"title":"【泰剧一年生衍生】大明星暖XBM/钢炮 斯德哥尔摩情人","uri":"bilibili://video/9312644"},{"cover":"http://i0.hdslb.com/bfs/archive/59bb8e2f1fe1c8df45ac603314b9b25c83bc3094.jpg","danmaku":30,"goto":"av","is_ad":false,"param":"9317244","play":3053,"title":"【热包】【小龙女×白凤九】落花漫天","uri":"bilibili://video/9317244"}],"param":"11","style":"medium","title":"电视剧区","type":"region"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/1af18a52198a0c5543dfddd36449a54067a3c45f.jpg","goto":"web","is_ad":false,"param":"http://www.bilibili.com/blackboard/activity-Bk0hunwsl.html","title":"","uri":"http://www.bilibili.com/blackboard/activity-Bk0hunwsl.html"}],"param":"","style":"large","title":"","type":"topic"},{"body":[{"cover":"http://i0.hdslb.com/bfs/archive/c972b7b2686b380f5a5aeaef78293e6c7a652296.jpg","danmaku":132,"goto":"av","is_ad":false,"param":"9299116","play":60260,"title":"【天天影报】 斯嘉丽.约翰逊大尺度出演 攻壳机动队 这还是我们的寡姐吗","uri":"bilibili://video/9299116"},{"cover":"http://i0.hdslb.com/bfs/archive/26a3cbbaf49f3c30a990789bab2ed0955fb60dc5.jpg","danmaku":231,"goto":"av","is_ad":false,"param":"9326310","play":64094,"title":"【喵嗷污】追不到女神便迷晕她关在地下室当宠物养《爱宠》变态的爱情我不懂的惊悚恐怖片","uri":"bilibili://video/9326310"},{"cover":"http://i0.hdslb.com/bfs/archive/dc5df4448b48b693d98a5da7269d05438bb2c2eb.jpg","danmaku":440,"goto":"av","is_ad":false,"param":"9284108","play":122000,"title":"俗哥说电影，美国恐怖片《诡魔童》","uri":"bilibili://video/9284108"},{"cover":"http://i0.hdslb.com/bfs/archive/2c866612d4406990715f333456ee7bfe14b20b54.jpg","danmaku":27,"goto":"av","is_ad":false,"param":"9283768","play":15267,"title":"《欢乐喜剧人》郭德纲遭遇憨豆 中西喜剧大师对话","uri":"bilibili://video/9283768"}],"param":"23","style":"medium","title":"电影区","type":"region"}]
      * message :
      */
 
@@ -46,20 +47,28 @@ public class FenquBean {
 
     public static class DataBean {
         /**
+         * banner : {"bottom":[{"hash":"dfbe8a2864a160f90082da9d3c0868a6","id":38939,"image":"http://i0.hdslb.com/bfs/archive/73d57a6c4e54d1558e2b3b8ed251af9b5187fe81.jpg","is_ad":false,"title":"鬼畜0323","uri":"http://www.bilibili.com/blackboard/activity-ByUb5gasl.html","ad_cb":"CK5NEKkcGPQfIAAoADAAOL8FQh8xNDkwMjMyNTk2OTY1cTE3MmExOGE2MWExNjFxMTUxSOWzo8avK1IJ5YyX5Lqs5biCWgnljJfkuqzluIJiBuS4reWbvWgBcAF4AIABAIgB6wySAQwxMTMuNDUuODMuOTE=","client_ip":"113.45.83.91","creative_id":9902,"is_ad_loc":true,"request_id":"1490232596965q172a18a61a161q151","src_id":703},{"ad_cb":"CK5NEKkcGPQfIAAoADAAOL8FQh8xNDkwMjMyNTk2OTY1cTE3MmExOGE2MWExNjFxMTUxSOWzo8avK1IJ5YyX5Lqs5biCWgnljJfkuqzluIJiBuS4reWbvWgBcAF4AIABAIgB6wySAQwxMTMuNDUuODMuOTE=","client_ip":"113.45.83.91","creative_id":9902,"hash":"c7ef6643cab1d4de56f0573d00af06fc","id":0,"image":"https://i0.hdslb.com/bfs/archive/0390ee89c6db0405d05301ad791ac6cf6330e8d7.jpg","is_ad":true,"is_ad_loc":true,"request_id":"1490232596965q172a18a61a161q151","src_id":703,"title":"崩3","uri":"bilibili://game/67"},{"client_ip":"113.45.83.91","hash":"9eb1e42948f59dc67db1675f9431b70f","id":39135,"image":"http://i0.hdslb.com/bfs/archive/d8daadf446779a914fa7174a22fbc7dd9e22ced3.png","is_ad":false,"is_ad_loc":true,"request_id":"1490232596965q172a18a61a161q151","src_id":704,"title":"游戏49期","uri":"http://www.bilibili.com/blackboard/activity-By1BQKy2l.html"},{"hash":"3678af87d577cdfd71a1c7637512950f","id":38502,"image":"http://i0.hdslb.com/bfs/archive/e128d9bee817a3c4132211251df5d7d9d2d1486e.jpg","is_ad":false,"title":"BML黏土2","uri":"https://item.taobao.com/item.htm?id=546595297417&qq-pf-to=pcqq.c2c"},{"hash":"76f45f986f7b93454ddf3607fbe9fd4c","id":38814,"image":"http://i0.hdslb.com/bfs/archive/a32837bd7ea0cc1619b60371bb74a07d559ae882.jpg","is_ad":false,"title":"舞蹈0322","uri":"http://www.bilibili.com/blackboard/activity-Bkdqnt8ix.html"}]}
+         * body : [{"cover":"http://i0.hdslb.com/bfs/archive/a4271cb1064a42ca2cfe267408b54f0a85a69b58.jpg","danmaku":85,"goto":"av","is_ad":false,"param":"9281425","play":21484,"title":"【MMD】【福利向】言和姐姐的独舞，子欲衣果，而风不许","uri":"bilibili://video/9281425"},{"cover":"http://i0.hdslb.com/bfs/archive/32ffd215a1fdc259aa3765d95408bfb10d7f5e85.jpg","danmaku":76,"goto":"av","is_ad":false,"param":"9284551","play":7892,"title":"抖腿！鬼畜！蜜汁带感神曲！炸了 它炸了！唐家三少《龙王传说》史莱克炸炸歌","uri":"bilibili://video/9284551"},{"cover":"http://i0.hdslb.com/bfs/archive/4ae99291a16c54322ddd6748734b30866c8579e1.jpg","danmaku":65,"goto":"av","is_ad":false,"param":"9283416","play":14065,"title":"来看日本人围观中国人观看兽娘动物园op时的反应","uri":"bilibili://video/9283416"},{"cover":"http://i0.hdslb.com/bfs/archive/e582811453649bcad31dfcd0a5e843603bfc602d.jpg","danmaku":537,"goto":"av","is_ad":false,"param":"9307362","play":61364,"title":"【神他妈违和感 VOL3】神他妈你还没看过超兽1、2部，第三部开拍了！","uri":"bilibili://video/9307362"}]
          * param : 1
-         * type : region
          * style : medium
          * title : 动画区
-         * body : [{"title":"夜间渲染测试【你是我的命运】 wanna be ur everything【Love∞Destiny】","cover":"http://i0.hdslb.com/bfs/archive/53dd31f69db745f02c1bbefc073f36ed0fb29c3b.jpg","uri":"bilibili://video/9277633","param":"9277633","goto":"av","play":26802,"danmaku":259,"is_ad":false},{"title":"【呜喵说】观看《全职高手》动画版的五大注意事项","cover":"http://i0.hdslb.com/bfs/archive/51dae14d57252a5fd057a05ccd124d3f180265f1.jpg","uri":"bilibili://video/9318182","param":"9318182","goto":"av","play":13936,"danmaku":366,"is_ad":false},{"title":"【MMD】激情一波过后，长腿弱音表示要再来一曲Circus","cover":"http://i0.hdslb.com/bfs/archive/c71f9b606a8290fdc466f50603f580ffca5eda2c.jpg","uri":"bilibili://video/9294985","param":"9294985","goto":"av","play":15191,"danmaku":52,"is_ad":false},{"title":"【氰化物欢乐秀】泳池趴体@油兔不二字幕组","cover":"http://i0.hdslb.com/bfs/archive/9cba8655b921b5b38f580e2a1355b25666656190.jpg","uri":"bilibili://video/9269964","param":"9269964","goto":"av","play":21683,"danmaku":58,"is_ad":false}]
-         * banner : {"bottom":[{"id":38806,"title":"舞蹈0322","image":"http://i0.hdslb.com/bfs/archive/a32837bd7ea0cc1619b60371bb74a07d559ae882.jpg","hash":"76f45f986f7b93454ddf3607fbe9fd4c","uri":"http://www.bilibili.com/blackboard/activity-Bkdqnt8ix.html","is_ad":false},{"id":0,"title":"ichu","image":"https://i0.hdslb.com/bfs/archive/7f49e0923f7f99a4717aab153f2ddd5635bb5aac.jpg","hash":"56b724a82a5d85687a566fe469cf6597","uri":"bilibili://game/34","request_id":"1490182882935q172a18a61a8q124","creative_id":9878,"src_id":703,"is_ad":true,"is_ad_loc":true,"ad_cb":"CJZNEJUcGOAfIAAoADAAOL8FQh0xNDkwMTgyODgyOTM1cTE3MmExOGE2MWE4cTEyNEj3jMmurytSCeWMl+S6rOW4gloJ5YyX5Lqs5biCYgbkuK3lm71oAXAAeACAAQCIAYEPkgENMTEzLjQ1LjgxLjEyNg==","client_ip":"113.45.81.126"},{"id":38968,"title":"鬼畜0322","image":"http://i0.hdslb.com/bfs/archive/0300bb164ee7af3503b4edf852c9a565d049bc6c.png","hash":"545e8a876654124248cfd6f20c6502e6","uri":"http://www.bilibili.com/blackboard/kichiku-h5-048.html","request_id":"1490182882935q172a18a61a8q124","src_id":704,"is_ad":false,"is_ad_loc":true,"client_ip":"113.45.81.126"},{"id":39039,"title":"国漫开区","image":"http://i0.hdslb.com/bfs/archive/c20312ca286dc73b25d7f3f27aa564efb706afc7.jpg","hash":"58c51083c4d855177c9ab4034331e259","uri":"http://www.bilibili.com/blackboard/activity-S1h5fkYjl.html","is_ad":false},{"id":38502,"title":"BML黏土2","image":"http://i0.hdslb.com/bfs/archive/e128d9bee817a3c4132211251df5d7d9d2d1486e.jpg","hash":"3678af87d577cdfd71a1c7637512950f","uri":"https://item.taobao.com/item.htm?id=546595297417&qq-pf-to=pcqq.c2c","is_ad":false}]}
+         * type : region
          */
 
+        private BannerBean banner;
         private String param;
-        private String type;
         private String style;
         private String title;
-        private BannerBean banner;
+        private String type;
         private List<BodyBean> body;
+
+        public BannerBean getBanner() {
+            return banner;
+        }
+
+        public void setBanner(BannerBean banner) {
+            this.banner = banner;
+        }
 
         public String getParam() {
             return param;
@@ -67,14 +76,6 @@ public class FenquBean {
 
         public void setParam(String param) {
             this.param = param;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
         }
 
         public String getStyle() {
@@ -93,12 +94,12 @@ public class FenquBean {
             this.title = title;
         }
 
-        public BannerBean getBanner() {
-            return banner;
+        public String getType() {
+            return type;
         }
 
-        public void setBanner(BannerBean banner) {
-            this.banner = banner;
+        public void setType(String type) {
+            this.type = type;
         }
 
         public List<BodyBean> getBody() {
@@ -122,32 +123,40 @@ public class FenquBean {
 
             public static class BottomBean {
                 /**
-                 * id : 38806
-                 * title : 舞蹈0322
-                 * image : http://i0.hdslb.com/bfs/archive/a32837bd7ea0cc1619b60371bb74a07d559ae882.jpg
-                 * hash : 76f45f986f7b93454ddf3607fbe9fd4c
-                 * uri : http://www.bilibili.com/blackboard/activity-Bkdqnt8ix.html
+                 * hash : dfbe8a2864a160f90082da9d3c0868a6
+                 * id : 38939
+                 * image : http://i0.hdslb.com/bfs/archive/73d57a6c4e54d1558e2b3b8ed251af9b5187fe81.jpg
                  * is_ad : false
-                 * request_id : 1490182882935q172a18a61a8q124
-                 * creative_id : 9878
-                 * src_id : 703
+                 * title : 鬼畜0323
+                 * uri : http://www.bilibili.com/blackboard/activity-ByUb5gasl.html
+                 * ad_cb : CK5NEKkcGPQfIAAoADAAOL8FQh8xNDkwMjMyNTk2OTY1cTE3MmExOGE2MWExNjFxMTUxSOWzo8avK1IJ5YyX5Lqs5biCWgnljJfkuqzluIJiBuS4reWbvWgBcAF4AIABAIgB6wySAQwxMTMuNDUuODMuOTE=
+                 * client_ip : 113.45.83.91
+                 * creative_id : 9902
                  * is_ad_loc : true
-                 * ad_cb : CJZNEJUcGOAfIAAoADAAOL8FQh0xNDkwMTgyODgyOTM1cTE3MmExOGE2MWE4cTEyNEj3jMmurytSCeWMl+S6rOW4gloJ5YyX5Lqs5biCYgbkuK3lm71oAXAAeACAAQCIAYEPkgENMTEzLjQ1LjgxLjEyNg==
-                 * client_ip : 113.45.81.126
+                 * request_id : 1490232596965q172a18a61a161q151
+                 * src_id : 703
                  */
 
-                private int id;
-                private String title;
-                private String image;
                 private String hash;
-                private String uri;
+                private int id;
+                private String image;
                 private boolean is_ad;
-                private String request_id;
-                private int creative_id;
-                private int src_id;
-                private boolean is_ad_loc;
+                private String title;
+                private String uri;
                 private String ad_cb;
                 private String client_ip;
+                private int creative_id;
+                private boolean is_ad_loc;
+                private String request_id;
+                private int src_id;
+
+                public String getHash() {
+                    return hash;
+                }
+
+                public void setHash(String hash) {
+                    this.hash = hash;
+                }
 
                 public int getId() {
                     return id;
@@ -155,14 +164,6 @@ public class FenquBean {
 
                 public void setId(int id) {
                     this.id = id;
-                }
-
-                public String getTitle() {
-                    return title;
-                }
-
-                public void setTitle(String title) {
-                    this.title = title;
                 }
 
                 public String getImage() {
@@ -173,22 +174,6 @@ public class FenquBean {
                     this.image = image;
                 }
 
-                public String getHash() {
-                    return hash;
-                }
-
-                public void setHash(String hash) {
-                    this.hash = hash;
-                }
-
-                public String getUri() {
-                    return uri;
-                }
-
-                public void setUri(String uri) {
-                    this.uri = uri;
-                }
-
                 public boolean isIs_ad() {
                     return is_ad;
                 }
@@ -197,36 +182,20 @@ public class FenquBean {
                     this.is_ad = is_ad;
                 }
 
-                public String getRequest_id() {
-                    return request_id;
+                public String getTitle() {
+                    return title;
                 }
 
-                public void setRequest_id(String request_id) {
-                    this.request_id = request_id;
+                public void setTitle(String title) {
+                    this.title = title;
                 }
 
-                public int getCreative_id() {
-                    return creative_id;
+                public String getUri() {
+                    return uri;
                 }
 
-                public void setCreative_id(int creative_id) {
-                    this.creative_id = creative_id;
-                }
-
-                public int getSrc_id() {
-                    return src_id;
-                }
-
-                public void setSrc_id(int src_id) {
-                    this.src_id = src_id;
-                }
-
-                public boolean isIs_ad_loc() {
-                    return is_ad_loc;
-                }
-
-                public void setIs_ad_loc(boolean is_ad_loc) {
-                    this.is_ad_loc = is_ad_loc;
+                public void setUri(String uri) {
+                    this.uri = uri;
                 }
 
                 public String getAd_cb() {
@@ -244,38 +213,62 @@ public class FenquBean {
                 public void setClient_ip(String client_ip) {
                     this.client_ip = client_ip;
                 }
+
+                public int getCreative_id() {
+                    return creative_id;
+                }
+
+                public void setCreative_id(int creative_id) {
+                    this.creative_id = creative_id;
+                }
+
+                public boolean isIs_ad_loc() {
+                    return is_ad_loc;
+                }
+
+                public void setIs_ad_loc(boolean is_ad_loc) {
+                    this.is_ad_loc = is_ad_loc;
+                }
+
+                public String getRequest_id() {
+                    return request_id;
+                }
+
+                public void setRequest_id(String request_id) {
+                    this.request_id = request_id;
+                }
+
+                public int getSrc_id() {
+                    return src_id;
+                }
+
+                public void setSrc_id(int src_id) {
+                    this.src_id = src_id;
+                }
             }
         }
 
         public static class BodyBean {
             /**
-             * title : 夜间渲染测试【你是我的命运】 wanna be ur everything【Love∞Destiny】
-             * cover : http://i0.hdslb.com/bfs/archive/53dd31f69db745f02c1bbefc073f36ed0fb29c3b.jpg
-             * uri : bilibili://video/9277633
-             * param : 9277633
+             * cover : http://i0.hdslb.com/bfs/archive/a4271cb1064a42ca2cfe267408b54f0a85a69b58.jpg
+             * danmaku : 85
              * goto : av
-             * play : 26802
-             * danmaku : 259
              * is_ad : false
+             * param : 9281425
+             * play : 21484
+             * title : 【MMD】【福利向】言和姐姐的独舞，子欲衣果，而风不许
+             * uri : bilibili://video/9281425
              */
 
-            private String title;
             private String cover;
-            private String uri;
-            private String param;
+            private int danmaku;
             @SerializedName("goto")
             private String gotoX;
-            private int play;
-            private int danmaku;
             private boolean is_ad;
-
-            public String getTitle() {
-                return title;
-            }
-
-            public void setTitle(String title) {
-                this.title = title;
-            }
+            private String param;
+            private int play;
+            private String title;
+            private String uri;
 
             public String getCover() {
                 return cover;
@@ -283,38 +276,6 @@ public class FenquBean {
 
             public void setCover(String cover) {
                 this.cover = cover;
-            }
-
-            public String getUri() {
-                return uri;
-            }
-
-            public void setUri(String uri) {
-                this.uri = uri;
-            }
-
-            public String getParam() {
-                return param;
-            }
-
-            public void setParam(String param) {
-                this.param = param;
-            }
-
-            public String getGotoX() {
-                return gotoX;
-            }
-
-            public void setGotoX(String gotoX) {
-                this.gotoX = gotoX;
-            }
-
-            public int getPlay() {
-                return play;
-            }
-
-            public void setPlay(int play) {
-                this.play = play;
             }
 
             public int getDanmaku() {
@@ -325,12 +286,52 @@ public class FenquBean {
                 this.danmaku = danmaku;
             }
 
+            public String getGotoX() {
+                return gotoX;
+            }
+
+            public void setGotoX(String gotoX) {
+                this.gotoX = gotoX;
+            }
+
             public boolean isIs_ad() {
                 return is_ad;
             }
 
             public void setIs_ad(boolean is_ad) {
                 this.is_ad = is_ad;
+            }
+
+            public String getParam() {
+                return param;
+            }
+
+            public void setParam(String param) {
+                this.param = param;
+            }
+
+            public int getPlay() {
+                return play;
+            }
+
+            public void setPlay(int play) {
+                this.play = play;
+            }
+
+            public String getTitle() {
+                return title;
+            }
+
+            public void setTitle(String title) {
+                this.title = title;
+            }
+
+            public String getUri() {
+                return uri;
+            }
+
+            public void setUri(String uri) {
+                this.uri = uri;
             }
         }
     }

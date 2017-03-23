@@ -36,7 +36,8 @@
                android:id="@+id/banner_fenqu_five"
                android:layout_width="match_parent"
                android:layout_height="200dp"/>
-
+           <include layout="@layout/item_fenqu"
+               android:id="@+id/guochuangqu"/>
            <include layout="@layout/item_fenqu"
                android:id="@+id/yinyuequ"/>
            <include layout="@layout/item_fenqu"

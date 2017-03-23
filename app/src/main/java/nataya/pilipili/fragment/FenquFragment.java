@@ -79,46 +79,28 @@ public class FenquFragment extends BaseFragment {
     private void setChildViewVyInclude(View parent, int childID, FenquBean fenquBean, int position) {
         View childview = parent.findViewById(childID);
         List<ImageView> imageViews = new ArrayList<>();
-        ImageView image1 = (ImageView) childview.findViewById(R.id.iv_1_zhibo);
-        ImageView image2 = (ImageView) childview.findViewById(R.id.iv_2_zhibo);
-        ImageView image3 = (ImageView) childview.findViewById(R.id.iv_3_zhibo);
-        ImageView image4 = (ImageView) childview.findViewById(R.id.iv_4_zhibo);
-        imageViews.add(image1);
-        imageViews.add(image2);
-        imageViews.add(image3);
-        imageViews.add(image4);
-
+        imageViews.add((ImageView) childview.findViewById(R.id.iv_1_zhibo));
+        imageViews.add((ImageView) childview.findViewById(R.id.iv_2_zhibo));
+        imageViews.add((ImageView) childview.findViewById(R.id.iv_3_zhibo));
+        imageViews.add((ImageView) childview.findViewById(R.id.iv_4_zhibo));
 
         List<TextView> names = new ArrayList<>();
-        TextView name1 = (TextView) childview.findViewById(R.id.tv_name_1_zhibo);
-        TextView name2 = (TextView) childview.findViewById(R.id.tv_name_2_zhibo);
-        TextView name3 = (TextView) childview.findViewById(R.id.tv_name_3_zhibo);
-        TextView name4 = (TextView) childview.findViewById(R.id.tv_name_4_zhibo);
-        names.add(name1);
-        names.add(name2);
-        names.add(name3);
-        names.add(name4);
+        names.add((TextView) childview.findViewById(R.id.tv_name_1_zhibo));
+        names.add((TextView) childview.findViewById(R.id.tv_name_2_zhibo));
+        names.add((TextView) childview.findViewById(R.id.tv_name_3_zhibo));
+        names.add((TextView) childview.findViewById(R.id.tv_name_4_zhibo));
 
         List<TextView> play = new ArrayList<>();
-        TextView uper1 = (TextView) childview.findViewById(R.id.tv_uper_1_zhibo);
-        TextView uper2 = (TextView) childview.findViewById(R.id.tv_uper_2_zhibo);
-        TextView uper3 = (TextView) childview.findViewById(R.id.tv_uper_3_zhibo);
-        TextView uper4 = (TextView) childview.findViewById(R.id.tv_uper_4_zhibo);
-        play.add(uper1);
-        play.add(uper2);
-        play.add(uper3);
-        play.add(uper4);
-
+        play.add((TextView) childview.findViewById(R.id.tv_uper_1_zhibo));
+        play.add((TextView) childview.findViewById(R.id.tv_uper_2_zhibo));
+        play.add((TextView) childview.findViewById(R.id.tv_uper_3_zhibo));
+        play.add((TextView) childview.findViewById(R.id.tv_uper_4_zhibo));
 
         List<TextView> danmu = new ArrayList<>();
-        TextView renshu1 = (TextView) childview.findViewById(R.id.tv_renshu_1_zhibo);
-        TextView renshu2 = (TextView) childview.findViewById(R.id.tv_renshu_2_zhibo);
-        TextView renshu3 = (TextView) childview.findViewById(R.id.tv_renshu_3_zhibo);
-        TextView renshu4 = (TextView) childview.findViewById(R.id.tv_renshu_4_zhibo);
-        danmu.add(renshu1);
-        danmu.add(renshu2);
-        danmu.add(renshu3);
-        danmu.add(renshu4);
+        danmu.add((TextView) childview.findViewById(R.id.tv_renshu_1_zhibo));
+        danmu.add((TextView) childview.findViewById(R.id.tv_renshu_2_zhibo));
+        danmu.add((TextView) childview.findViewById(R.id.tv_renshu_3_zhibo));
+        danmu.add((TextView) childview.findViewById(R.id.tv_renshu_4_zhibo));
 
         for (int i = 0; i < imageViews.size(); i++) {
             Glide.with(getContext()).load(fenquBean.getData().get(position).getBody().get(i).getCover()).into(imageViews.get(i));
@@ -178,7 +160,7 @@ public class FenquFragment extends BaseFragment {
                 initBanner(fenquBean);
                 processFenquData(fenquBean);
                 initHuati(fenquBean);
-                initHuodong(fenquBean);
+                initHuodong(fenquBean,11);
             }
 
             @Override
@@ -190,21 +172,21 @@ public class FenquFragment extends BaseFragment {
 
     }
 
-    private void initHuodong(FenquBean fenquBean) {
-        tvKejizhongxin1.setText(fenquBean.getData().get(10).getBody().get(0).getTitle());
-        tvKejizhongxin2.setText(fenquBean.getData().get(10).getBody().get(1).getTitle());
-        tvKejizhongxin3.setText(fenquBean.getData().get(10).getBody().get(2).getTitle());
-        Glide.with(getActivity()).load(fenquBean.getData().get(10).getBody().get(0).getCover()).into(ivKejizhongxin1);
-        Glide.with(getActivity()).load(fenquBean.getData().get(10).getBody().get(1).getCover()).into(ivKejizhongxin2);
-        Glide.with(getActivity()).load(fenquBean.getData().get(10).getBody().get(2).getCover()).into(ivKejizhongxin3);
+    private void initHuodong(FenquBean fenquBean,int position) {
+        tvKejizhongxin1.setText(fenquBean.getData().get(position).getBody().get(0).getTitle());
+        tvKejizhongxin2.setText(fenquBean.getData().get(position).getBody().get(1).getTitle());
+        tvKejizhongxin3.setText(fenquBean.getData().get(position).getBody().get(2).getTitle());
+        Glide.with(getActivity()).load(fenquBean.getData().get(position).getBody().get(0).getCover()).into(ivKejizhongxin1);
+        Glide.with(getActivity()).load(fenquBean.getData().get(position).getBody().get(1).getCover()).into(ivKejizhongxin2);
+        Glide.with(getActivity()).load(fenquBean.getData().get(position).getBody().get(2).getCover()).into(ivKejizhongxin3);
     }
 
     private void initHuati(FenquBean fenquBean) {
-        setHuatiByInclude(llFenqu, R.id.huati1, fenquBean, 3);
-        setHuatiByInclude(llFenqu, R.id.huati2, fenquBean, 6);
-        setHuatiByInclude(llFenqu, R.id.huati3, fenquBean, 8);
-        setHuatiByInclude(llFenqu, R.id.huati4, fenquBean, 11);
-        setHuatiByInclude(llFenqu, R.id.huati5, fenquBean, 16);
+        setHuatiByInclude(llFenqu, R.id.huati1, fenquBean, 4);
+        setHuatiByInclude(llFenqu, R.id.huati2, fenquBean, 7);
+        setHuatiByInclude(llFenqu, R.id.huati3, fenquBean, 9);
+        setHuatiByInclude(llFenqu, R.id.huati4, fenquBean, 12);
+        setHuatiByInclude(llFenqu, R.id.huati5, fenquBean, 17);
     }
 
     private void initBanner(FenquBean fenquBean) {
@@ -221,17 +203,18 @@ public class FenquFragment extends BaseFragment {
 
     private void processFenquData(FenquBean fenquBean) {
         setChildViewVyInclude(llFenqu, R.id.donghuaqu, fenquBean, 0);
-        setChildViewVyInclude(llFenqu, R.id.yinyuequ, fenquBean, 1);
-        setChildViewVyInclude(llFenqu, R.id.wudaoqu, fenquBean, 2);
-        setChildViewVyInclude(llFenqu, R.id.youxiqu, fenquBean, 4);
-        setChildViewVyInclude(llFenqu, R.id.guichuqu, fenquBean, 5);
-        setChildViewVyInclude(llFenqu, R.id.shenghuoqu, fenquBean, 7);
-        setChildViewVyInclude(llFenqu, R.id.kejiqu, fenquBean, 9);
-        setChildViewVyInclude(llFenqu, R.id.shishangqu, fenquBean, 12);
-        setChildViewVyInclude(llFenqu, R.id.guanggaoqu, fenquBean, 13);
-        setChildViewVyInclude(llFenqu, R.id.yulequ, fenquBean, 14);
-        setChildViewVyInclude(llFenqu, R.id.dianshijuqu, fenquBean, 15);
-        setChildViewVyInclude(llFenqu, R.id.dianyingqu, fenquBean, 17);
+        setChildViewVyInclude(llFenqu, R.id.guochuangqu, fenquBean, 1);
+        setChildViewVyInclude(llFenqu, R.id.yinyuequ, fenquBean, 2);
+        setChildViewVyInclude(llFenqu, R.id.wudaoqu, fenquBean, 3);
+        setChildViewVyInclude(llFenqu, R.id.youxiqu, fenquBean, 5);
+        setChildViewVyInclude(llFenqu, R.id.guichuqu, fenquBean, 6);
+        setChildViewVyInclude(llFenqu, R.id.shenghuoqu, fenquBean, 8);
+        setChildViewVyInclude(llFenqu, R.id.kejiqu, fenquBean, 10);
+        setChildViewVyInclude(llFenqu, R.id.shishangqu, fenquBean, 13);
+        setChildViewVyInclude(llFenqu, R.id.guanggaoqu, fenquBean, 14);
+        setChildViewVyInclude(llFenqu, R.id.yulequ, fenquBean, 15);
+        setChildViewVyInclude(llFenqu, R.id.dianshijuqu, fenquBean, 16);
+        setChildViewVyInclude(llFenqu, R.id.dianyingqu, fenquBean, 18);
 
     }
 
@@ -251,11 +234,5 @@ public class FenquFragment extends BaseFragment {
     }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.inject(this, rootView);
-        return rootView;
-    }
+
 }
