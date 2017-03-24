@@ -1,5 +1,6 @@
 package nataya.pilipili.fragment;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -34,8 +36,6 @@ import nataya.pilipili.view.MyScrollView;
 public class FaxianFragment extends BaseFragment {
 
 
-    @InjectView(R.id.line_more)
-    LinearLayout lineMore;
     @InjectView(R.id.xingququan_faxian)
     TextView xingququanFaxian;
     @InjectView(R.id.huati_faxian)
@@ -56,10 +56,11 @@ public class FaxianFragment extends BaseFragment {
     TagFlowLayout flowFaxian;
     @InjectView(R.id.scrollview_faxian)
     MyScrollView scrollviewFaxian;
+    @InjectView(R.id.line_more)
+    LinearLayout lineMore;
 
     private Boolean isShowAll = false;
-    private int width;
-    private int height;
+    private TagBean tagBean;
 
     @Override
     public View initView() {
@@ -71,9 +72,6 @@ public class FaxianFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        DisplayMetrics dm = getResources().getDisplayMetrics();
-        width = dm.widthPixels;
-        height = dm.heightPixels;
         initNet();
         initListener();
         showTag(isShowAll);
@@ -86,14 +84,23 @@ public class FaxianFragment extends BaseFragment {
                 isShowAll = !isShowAll;
                 showTag(isShowAll);
 
+
             }
         });
         scrollviewFaxian.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (isShowAll){
+                if (isShowAll) {
                     return false;
                 }
+                return true;
+            }
+        });
+
+        flowFaxian.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
+            @Override
+            public boolean onTagClick(View view, int position, FlowLayout parent) {
+                Toast.makeText(getContext(),tagBean.getData().getList().get(position).getKeyword(), Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -102,13 +109,25 @@ public class FaxianFragment extends BaseFragment {
     }
 
     private void showTag(Boolean isShowAll) {
+
+
         ViewGroup.LayoutParams params = scrollviewFaxian.getLayoutParams();
+        TextView tv = (TextView) lineMore.findViewById(R.id.tv_line_more);
         if (isShowAll) {
-            params.height = UIUtils.dip2px(getContext(), 365);
+            tv.setText("收起");
+
+            params.height = UIUtils.dip2px(getContext(), 360);
         } else {
+            tv.setText("查看更多");
             params.height = UIUtils.dip2px(getContext(), 180);
         }
         scrollviewFaxian.setLayoutParams(params);
+        //动态改变textview drawable图片
+     /*   Drawable nav_up=getResources().getDrawable(R.drawable.ic_arrow_down_gray_round);
+        nav_up.setBounds(0, 0, nav_up.getMinimumWidth(), nav_up.getMinimumHeight());
+        tv.setCompoundDrawables(null, null, nav_up, null);*/
+
+
     }
 
     private void initNet() {
@@ -126,12 +145,13 @@ public class FaxianFragment extends BaseFragment {
     }
 
     private void processData(String context) {
-        TagBean tagBean = JSON.parseObject(context, TagBean.class);
+        tagBean = JSON.parseObject(context, TagBean.class);
         List<String> tags = new ArrayList<>();
         for (int i = 0; i < tagBean.getData().getList().size(); i++) {
             tags.add(tagBean.getData().getList().get(i).getKeyword());
         }
-//        Log.e("TAG", "processData: "+tagBean.getData().getList().get(0).getKeyword().toString());
+
+
         flowFaxian.setAdapter(new TagAdapter(tags) {
             @Override
             public View getView(FlowLayout parent, int position, Object o) {
@@ -148,6 +168,7 @@ public class FaxianFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
+
 
 
 }

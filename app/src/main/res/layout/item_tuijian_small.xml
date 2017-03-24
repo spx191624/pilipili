@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/iv_item_tuijian_small"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+        <TextView
+            android:layout_marginLeft="25dp"
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="bottom"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_renshu_item_tuijian_small"/>
+
+
+        </FrameLayout>
+        <TextView
+
+            android:layout_marginLeft="23dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="12sp"
+            android:textColor="#99000000"
+            android:id="@+id/tv_title_item_tuijian_small"/>
+        <TextView
+
+            android:layout_marginLeft="23dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#44000000"
+            android:textSize="12sp"
+            android:id="@+id/tv_des_item_tuijian_small"/>
+
+    </LinearLayout>

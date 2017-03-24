@@ -37,8 +37,6 @@ import nataya.pilipili.utils.NumUtils;
 public class FenquFragment extends BaseFragment {
     @InjectView(R.id.gv_fenqu)
     GridView gvFenqu;
-    @InjectView(R.id.scrollview_fenqu)
-    ScrollView scrollviewFenqu;
     @InjectView(R.id.ll_fenqu)
     LinearLayout llFenqu;
     @InjectView(R.id.banner_fenqu_five)
@@ -191,7 +189,7 @@ public class FenquFragment extends BaseFragment {
 
     private void initBanner(FenquBean fenquBean) {
         List urls = new ArrayList();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < fenquBean.getData().get(0).getBanner().getBottom().size(); i++) {
             urls.add(fenquBean.getData().get(0).getBanner().getBottom().get(i).getImage());
         }
         bannerFenquFive.setImageLoader(new GlideImageLoder());

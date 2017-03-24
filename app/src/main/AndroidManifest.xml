@@ -23,7 +23,7 @@
             android:name=".activity.MainActivity"
             android:launchMode="singleTask" />
         <activity android:name=".activity.SearchFaxianActivity" />
-        <activity android:name=".activity.SearchActivity" ></activity>
+        <activity android:name=".activity.SearchActivity" android:theme="@style/Theme.Transparent"></activity>
     </application>
 
 </manifest>

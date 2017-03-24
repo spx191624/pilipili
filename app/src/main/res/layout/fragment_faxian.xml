@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#EAEAEA"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -76,6 +76,7 @@
 
             <TextView
                 android:textSize="10sp"
+                android:id="@+id/tv_line_more"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -98,7 +99,7 @@
             android:layout_marginTop="10dp"
             android:id="@+id/xingququan_faxian"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_group"
             android:gravity="center_vertical"
@@ -109,7 +110,7 @@
         <TextView
             android:id="@+id/huati_faxian"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:layout_marginTop="2dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_header_topic_center"
@@ -121,7 +122,7 @@
         <TextView
             android:id="@+id/huodong_faxian"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:layout_marginTop="2dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_header_activity_center"
@@ -133,7 +134,7 @@
         <TextView
             android:id="@+id/xiaoheiwu_faxian"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:layout_marginTop="2dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_header_black_list_center"
@@ -145,7 +146,7 @@
         <TextView
             android:id="@+id/yuanchuang_faxian"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_btn_rank_original"
@@ -157,7 +158,7 @@
         <TextView
             android:id="@+id/quanqu_faxian"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:layout_marginTop="2dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_btn_rank_all"
@@ -168,7 +169,7 @@
         <TextView
             android:id="@+id/youxizhongxin_faxian"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_btn_game"
@@ -179,7 +180,7 @@
         <TextView
             android:id="@+id/zhoubian_faxian"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:layout_marginTop="2dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_btn_shop"
@@ -190,4 +191,4 @@
 
 
     </LinearLayout>
-</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

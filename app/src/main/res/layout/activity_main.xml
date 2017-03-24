@@ -5,126 +5,109 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
-<!--
-    <FrameLayout
-        android:id="@+id/fl_main"
+
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">-->
+        android:layout_height="match_parent">
 
-
-        <android.support.design.widget.CoordinatorLayout
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="#ffffff">
 
-
-            <android.support.design.widget.AppBarLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#ffffff">
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="-16dp"
+                android:background="#FB7299"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways">
 
+                <RelativeLayout
 
-                <android.support.v7.widget.Toolbar
-                    android:layout_marginLeft="-16dp"
-                    android:id="@+id/toolbar"
+                    android:id="@+id/navigation_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:minHeight="?attr/actionBarSize"
-                    android:background="#FB7299"
-                    app:layout_scrollFlags="scroll"
-                   >
-                    <RelativeLayout
-                        android:id="@+id/navigation_layout"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:layout_marginRight="15dp"
-                            android:id="@+id/iv_tool"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                            android:layout_centerVertical="true"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_drawer_home"/>
-                        <ImageView
-                            android:id="@+id/iv_tool2"
-                            android:paddingLeft="5dp"
-                            android:layout_toRightOf="@+id/iv_tool"
-                            android:layout_width="30dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/bili_default_avatar"/>
-                        <TextView
-                            android:textSize="15sp"
-                            android:paddingLeft="5dp"
-                            android:layout_toRightOf="@+id/iv_tool2"
-                            android:layout_centerVertical="true"
-                            android:text="未登录"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                        <ImageView
-                            android:layout_centerVertical="true"
-                            android:paddingRight="8dp"
-                            android:layout_alignParentRight="true"
-                            android:src="@drawable/ic_download_search"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/iv_tool_sousuo"/>
-                        <ImageView
-                            android:paddingRight="10dp"
-                            android:layout_centerVertical="true"
-                            android:layout_toLeftOf="@+id/iv_tool_sousuo"
-                            android:src="@drawable/ic_download_white"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/iv_tool_xiazai"/>
-                        <ImageView
-                            android:layout_toLeftOf="@+id/iv_tool_xiazai"
-                            android:src="@drawable/ic_menu_top_game_center"
-                            android:paddingRight="10dp"
-                            android:layout_centerVertical="true"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/iv_tool_youxi"/>
+                    <ImageView
+                        android:id="@+id/iv_tool"
+                        android:layout_width="wrap_content"
 
-                    </RelativeLayout>
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/ic_drawer_home" />
 
+                    <ImageView
+                        android:id="@+id/iv_tool2"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_tool"
+                        android:paddingLeft="5dp"
+                        android:src="@drawable/bili_default_avatar" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/iv_tool2"
+                        android:paddingLeft="5dp"
+                        android:text="未登录"
+                        android:textSize="15sp" />
 
-                </android.support.v7.widget.Toolbar>
+                    <ImageView
+                        android:id="@+id/iv_tool_sousuo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="8dp"
+                        android:src="@drawable/ic_download_search" />
 
-                <android.support.design.widget.TabLayout
-                    app:tabIndicatorColor="#FFFFFF"
-                    android:id="@+id/tablayout"
-                    style="@style/AppTheme"
-                    app:tabGravity="fill"
-                    app:tabMode="fixed"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="#FB7299" />
+                    <ImageView
+                        android:id="@+id/iv_tool_xiazai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/iv_tool_sousuo"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/ic_download_white" />
 
-            </android.support.design.widget.AppBarLayout>
+                    <ImageView
+                        android:id="@+id/iv_tool_youxi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/iv_tool_xiazai"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/ic_menu_top_game_center" />
 
+                </RelativeLayout>
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/view_pager"
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tablayout"
+                style="@style/AppTheme"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                android:layout_height="40dp"
+                android:background="#FB7299"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="#FFFFFF"
+                app:tabMode="fixed" />
 
+        </android.support.design.widget.AppBarLayout>
 
-            <!--<android.support.v4.widget.NestedScrollView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--&gt;-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-
-            <!--</android.support.v4.widget.NestedScrollView>-->
-
-
-        </android.support.design.widget.CoordinatorLayout>
-
-
- <!--   </FrameLayout>-->
+    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
@@ -137,7 +120,6 @@
 
 
     </android.support.design.widget.NavigationView>
-
 
 </android.support.v4.widget.DrawerLayout>
  
