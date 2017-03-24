@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <LinearLayout
-
+            android:id="@+id/ll_faxian_search"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_margin="10dp"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:text="大家都在搜"
-            android:textColor="#44000000" />
+            android:textColor="#66000000" />
         <nataya.pilipili.view.MyScrollView
             android:id="@+id/scrollview_faxian"
             android:layout_width="match_parent"

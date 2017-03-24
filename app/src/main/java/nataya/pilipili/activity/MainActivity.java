@@ -9,14 +9,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import nataya.pilipili.R;
 import nataya.pilipili.adapter.MyViewPagerAdapter;
 import nataya.pilipili.fragment.BaseFragment;
@@ -56,18 +57,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
-
         initData();
-        initListener();
-    }
 
-    private void initListener() {
-        ivToolSousuo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,SearchActivity.class));
-            }
-        });
     }
 
     private void initData() {
@@ -82,11 +73,21 @@ public class MainActivity extends AppCompatActivity {
         tablayout.setupWithViewPager(viewPager);
 
 
-
-
-
-
     }
 
 
+    @OnClick({R.id.iv_tool_sousuo, R.id.iv_tool_xiazai, R.id.iv_tool_youxi})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_tool_sousuo:
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
+                break;
+            case R.id.iv_tool_xiazai:
+                Toast.makeText(this, "下载管理", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.iv_tool_youxi:
+                Toast.makeText(this, "游戏管理", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
 }

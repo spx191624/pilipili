@@ -180,7 +180,7 @@ public class FenquFragment extends BaseFragment {
     }
 
     private void initHuati(FenquBean fenquBean) {
-        setHuatiByInclude(llFenqu, R.id.huati1, fenquBean, 4);
+        setHuatiByInclude(llFenqu, R.id.huati1, fenquBean, 3);
         setHuatiByInclude(llFenqu, R.id.huati2, fenquBean, 7);
         setHuatiByInclude(llFenqu, R.id.huati3, fenquBean, 9);
         setHuatiByInclude(llFenqu, R.id.huati4, fenquBean, 12);
@@ -203,7 +203,7 @@ public class FenquFragment extends BaseFragment {
         setChildViewVyInclude(llFenqu, R.id.donghuaqu, fenquBean, 0);
         setChildViewVyInclude(llFenqu, R.id.guochuangqu, fenquBean, 1);
         setChildViewVyInclude(llFenqu, R.id.yinyuequ, fenquBean, 2);
-        setChildViewVyInclude(llFenqu, R.id.wudaoqu, fenquBean, 3);
+        setChildViewVyInclude(llFenqu, R.id.wudaoqu, fenquBean, 4);
         setChildViewVyInclude(llFenqu, R.id.youxiqu, fenquBean, 5);
         setChildViewVyInclude(llFenqu, R.id.guichuqu, fenquBean, 6);
         setChildViewVyInclude(llFenqu, R.id.shenghuoqu, fenquBean, 8);

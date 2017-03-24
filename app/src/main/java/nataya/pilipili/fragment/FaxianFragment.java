@@ -1,8 +1,7 @@
 package nataya.pilipili.fragment;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +21,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
+import nataya.pilipili.activity.SearchActivity;
 import nataya.pilipili.bean.TagBean;
 import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
@@ -58,6 +58,8 @@ public class FaxianFragment extends BaseFragment {
     MyScrollView scrollviewFaxian;
     @InjectView(R.id.line_more)
     LinearLayout lineMore;
+    @InjectView(R.id.ll_faxian_search)
+    LinearLayout llFaxianSearch;
 
     private Boolean isShowAll = false;
     private TagBean tagBean;
@@ -100,8 +102,14 @@ public class FaxianFragment extends BaseFragment {
         flowFaxian.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
             @Override
             public boolean onTagClick(View view, int position, FlowLayout parent) {
-                Toast.makeText(getContext(),tagBean.getData().getList().get(position).getKeyword(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), tagBean.getData().getList().get(position).getKeyword(), Toast.LENGTH_SHORT).show();
                 return true;
+            }
+        });
+        llFaxianSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SearchActivity.class));
             }
         });
 
@@ -170,5 +178,11 @@ public class FaxianFragment extends BaseFragment {
     }
 
 
-
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.inject(this, rootView);
+        return rootView;
+    }
 }

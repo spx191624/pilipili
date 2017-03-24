@@ -98,7 +98,7 @@ public class ZhiboFragment extends BaseFragment {
             public void OnBannerClick(int position) {
                 int i=position;
                 if (position!=0){
-                    i=zhiboBean.getData().getBanner().size()%position;
+                    i=position%zhiboBean.getData().getBanner().size();
                 }
                 Toast.makeText(getContext(), zhiboBean.getData().getBanner().get(i).getTitle(), Toast.LENGTH_SHORT).show();
             }
