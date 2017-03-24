@@ -20,8 +20,12 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import nataya.pilipili.R;
+import nataya.pilipili.activity.HuatiActivity;
+import nataya.pilipili.activity.HuodongActivity;
 import nataya.pilipili.activity.SearchActivity;
+import nataya.pilipili.activity.YuanchuangActivity;
 import nataya.pilipili.bean.TagBean;
 import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
@@ -79,42 +83,7 @@ public class FaxianFragment extends BaseFragment {
         showTag(isShowAll);
     }
 
-    private void initListener() {
-        lineMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isShowAll = !isShowAll;
-                showTag(isShowAll);
 
-
-            }
-        });
-        scrollviewFaxian.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (isShowAll) {
-                    return false;
-                }
-                return true;
-            }
-        });
-
-        flowFaxian.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
-            @Override
-            public boolean onTagClick(View view, int position, FlowLayout parent) {
-                Toast.makeText(getContext(), tagBean.getData().getList().get(position).getKeyword(), Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
-        llFaxianSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), SearchActivity.class));
-            }
-        });
-
-
-    }
 
     private void showTag(Boolean isShowAll) {
 
@@ -177,12 +146,64 @@ public class FaxianFragment extends BaseFragment {
         ButterKnife.reset(this);
     }
 
+    private void initListener() {
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.inject(this, rootView);
-        return rootView;
+        scrollviewFaxian.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (isShowAll) {
+                    return false;
+                }
+                return true;
+            }
+        });
+
+        flowFaxian.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
+            @Override
+            public boolean onTagClick(View view, int position, FlowLayout parent) {
+                Toast.makeText(getContext(), tagBean.getData().getList().get(position).getKeyword(), Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+
+
+
+    }
+
+
+    @OnClick({R.id.ll_faxian_search, R.id.scrollview_faxian, R.id.line_more, R.id.xingququan_faxian, R.id.huati_faxian, R.id.huodong_faxian, R.id.xiaoheiwu_faxian, R.id.yuanchuang_faxian, R.id.quanqu_faxian, R.id.youxizhongxin_faxian, R.id.zhoubian_faxian})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ll_faxian_search:
+                startActivity(new Intent(getActivity(), SearchActivity.class));
+                break;
+            case R.id.scrollview_faxian:
+                break;
+            case R.id.line_more:
+                isShowAll = !isShowAll;
+                showTag(isShowAll);
+                break;
+            case R.id.xingququan_faxian:
+                Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.huati_faxian:
+                startActivity(new Intent(getActivity(),HuatiActivity.class));
+                break;
+            case R.id.huodong_faxian:
+                startActivity(new Intent(getActivity(),HuodongActivity.class));
+                break;
+            case R.id.xiaoheiwu_faxian:
+                Toast.makeText(getContext(), "小黑屋", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.yuanchuang_faxian:
+                startActivity(new Intent(getActivity(),YuanchuangActivity.class));
+                break;
+            case R.id.quanqu_faxian:
+                break;
+            case R.id.youxizhongxin_faxian:
+                break;
+            case R.id.zhoubian_faxian:
+                break;
+        }
     }
 }

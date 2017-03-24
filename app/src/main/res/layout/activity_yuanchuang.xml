@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_yuanchuang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nataya.pilipili.activity.YuanchuangActivity">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#FB7299"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <LinearLayout
+
+                    android:id="@+id/navigation_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_back_yuanchuang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/iv_tool2"
+                        android:paddingLeft="5dp"
+                        android:textColor="#FFFFFF"
+                        android:text="排行榜"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent" />
+                    <ImageView
+                        android:id="@+id/iv_download_yuanchuang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/ic_toolbar_menu_download" />
+                    <ImageView
+                        android:id="@+id/iv_search_yuanchuang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/ic_toolbar_menu_search" />
+
+
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FB7299"
+                android:orientation="horizontal">
+                <android.support.design.widget.TabLayout
+                    app:tabTextColor="#99FFFFFF"
+                    app:tabSelectedTextColor="#FFFFFF"
+                    android:id="@+id/tablayout"
+                    style="@style/AppTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="#FB7299"
+                    app:tabIndicatorColor="#FFFFFF"
+                    app:tabMode="fixed" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+
+        </android.support.design.widget.AppBarLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager_yuanchuang"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

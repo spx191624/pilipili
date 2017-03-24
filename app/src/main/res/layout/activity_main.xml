@@ -56,6 +56,7 @@
                         android:layout_toRightOf="@+id/iv_tool2"
                         android:paddingLeft="5dp"
                         android:text="未登录"
+                        android:textColor="#FFFFFF"
                         android:textSize="15sp" />
 
                     <ImageView
@@ -64,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:paddingRight="8dp"
+                        android:paddingRight="20dp"
                         android:src="@drawable/ic_download_search" />
 
                     <ImageView
@@ -73,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toLeftOf="@+id/iv_tool_sousuo"
-                        android:paddingRight="10dp"
+                        android:paddingRight="20dp"
                         android:src="@drawable/ic_download_white" />
 
                     <ImageView
@@ -82,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toLeftOf="@+id/iv_tool_xiazai"
-                        android:paddingRight="10dp"
+                        android:paddingRight="20dp"
                         android:src="@drawable/ic_menu_top_game_center" />
 
                 </RelativeLayout>
@@ -90,6 +91,8 @@
             </android.support.v7.widget.Toolbar>
 
             <android.support.design.widget.TabLayout
+                app:tabTextColor="#99FFFFFF"
+                app:tabSelectedTextColor="#FFFFFF"
                 android:id="@+id/tablayout"
                 style="@style/AppTheme"
                 android:layout_width="match_parent"

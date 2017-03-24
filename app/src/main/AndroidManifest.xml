@@ -23,8 +23,12 @@
         <activity
             android:name=".activity.MainActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".activity.SearchFaxianActivity" />
-        <activity android:name=".activity.SearchActivity" android:theme="@style/Theme.Transparent"></activity>
+        <activity
+            android:name=".activity.SearchActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name=".activity.HuatiActivity" />
+        <activity android:name=".activity.HuodongActivity" />
+        <activity android:name=".activity.YuanchuangActivity"></activity>
     </application>
 
 </manifest>
