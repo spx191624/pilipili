@@ -1,116 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
-    app:cardCornerRadius="0dp"
-    app:cardElevation="1dp"
-    android:clickable="true"
-    app:contentPadding="1dp"
-    app:cardBackgroundColor="#10000000"
-    android:foreground="?attr/selectableItemBackground"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="5dp"
+    android:layout_weight="1"
+    android:background="@drawable/shape_item_bg"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_item_bg"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#EAEAEA">
 
 
-    >
+            <ImageView
+                android:scaleType="fitXY"
+                android:id="@+id/iv_item_tuijian1"
+                android:layout_width="match_parent"
+                android:layout_height="180dp" />
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_item_tuijian1_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/ic_info_views_large"
+                android:gravity="center_vertical"
+                android:text="7万"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
 
-   <LinearLayout
+            <TextView
+                android:id="@+id/tv_item_tuijian1_danmu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_item_tuijian1_play"
+                android:drawableLeft="@drawable/ic_info_danmakus_large"
+                android:text="1万"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/tv_item_tuijian1_shijian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text="1:00"
+                android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </RelativeLayout>
 
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_item_tuijian1_title"
+            style="@style/item_name_style" />
 
-       <RelativeLayout
-           android:background="#EAEAEA"
-           android:layout_width="match_parent"
-           android:layout_height="180dp"
-           >
-           <ImageView
-               android:id="@+id/iv_item_tuijian"
-               android:layout_width="match_parent"
-               android:layout_height="180dp" />
-           <TextView
-               android:layout_marginLeft="20dp"
-               android:gravity="center_vertical"
-               android:textColor="#FFFFFF"
-               android:drawableLeft="@drawable/ic_info_views_large"
-               android:layout_alignParentBottom="true"
-               android:textSize="15sp"
-               android:text="7万"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:id="@+id/tv_item_tuijian_play"/>
-           <TextView
-               android:text="1万"
-               android:layout_marginLeft="20dp"
-               android:textSize="15sp"
-               android:drawableLeft="@drawable/ic_info_danmakus_large"
-               android:textColor="#FFFFFF"
-               android:layout_alignParentBottom="true"
-               android:layout_toRightOf="@+id/tv_item_tuijian_play"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:id="@+id/tv_item_tuijian_danmu"/>
-           <TextView
-               android:layout_marginRight="20dp"
-               android:layout_alignParentRight="true"
-               android:text="1:00"
-               android:textColor="#FFFFFF"
-               android:layout_alignParentBottom="true"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:id="@+id/tv_item_tuijian_shijian"/>
-       </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical">
 
+            <TextView
+                android:id="@+id/tv_item_tuijian1_miaoshu"
 
+                style="@style/item_uper_style" />
 
-       <LinearLayout
-           android:orientation="vertical"
-           android:background="#EAEAEA"
-           android:layout_width="match_parent"
-           android:layout_height="70dp"
-          >
-           <TextView
-               android:maxLines="2"
-               android:id="@+id/tv_item_tuijian_title"
-               android:background="#FFFFFF"
-               android:padding="5dp"
-               android:textColor="#000000"
-               android:textSize="15sp"
-               android:layout_width="match_parent"
-               android:layout_height="0dp"
-               android:layout_weight="3"/>
-           <LinearLayout
-               android:background="#FFFFFF"
-               android:layout_width="match_parent"
-               android:layout_height="0dp"
-               android:layout_weight="2">
-
-               <TextView
-
-                   android:padding="5dp"
-                   android:singleLine="true"
-                   android:gravity="center_vertical"
-                   android:textColor="#88000000"
-                   android:id="@+id/tv_item_tuijian_miaoshu"
-                   android:layout_width="250dp"
-                   android:layout_height="match_parent" />
-
-               <TextView
-                   android:layout_width="0dp"
-                   android:layout_weight="1"
-                   android:layout_height="match_parent" />
-               <ImageView
-                   android:layout_marginRight="5dp"
-                   android:src="@drawable/ic_more_grey_small"
-                   android:layout_width="wrap_content"
-                   android:layout_height="match_parent"
-                   />
-           </LinearLayout>
-
-       </LinearLayout>
-
-
-   </LinearLayout>
-
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_more_grey_small" />
+        </RelativeLayout>
+    </LinearLayout>
 </android.support.v7.widget.CardView>

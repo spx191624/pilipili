@@ -65,7 +65,8 @@ public class FenquFragment extends BaseFragment {
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_fenqu, null);
         ButterKnife.inject(this, view);
-
+        gridAdapter = new GridAdapter(getContext());
+        gvFenqu.setAdapter(gridAdapter);
 
         return view;
 
@@ -214,7 +215,7 @@ public class FenquFragment extends BaseFragment {
     private void processFenquData(FenquBean fenquBean) {
         for (int i=0;i<fenquBean.getData().size();i++){
             if (fenquBean.getData().get(i).getType().toString().equals("region")){
-                if (num>ids.length){
+                if (num>=ids.length){
                     return;
                 }
                 setChildViewVyInclude(llFenqu, ids[num], fenquBean, i);
@@ -227,8 +228,8 @@ public class FenquFragment extends BaseFragment {
         if (gridbean != null) {
             num=0;
             hnum=0;
-            gridAdapter = new GridAdapter(getContext(), gridbean);
-            gvFenqu.setAdapter(gridAdapter);
+            gridAdapter.setData(gridbean);
+            gridAdapter.notifyDataSetChanged();
         }
 
     }

@@ -19,16 +19,18 @@ import nataya.pilipili.bean.GridBean;
  */
 public class GridAdapter extends BaseAdapter {
     private final Context context;
-    private final GridBean data;
+    private GridBean data;
 
-    public GridAdapter(Context context, GridBean gridbean) {
+    public GridAdapter(Context context) {
         this.context = context;
-        this.data = gridbean;
     }
 
 
     @Override
     public int getCount() {
+        if (data==null){
+            return 0;
+        }
         return data.getData().size();
     }
 
@@ -52,11 +54,18 @@ public class GridAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+        if (data==null){
+            return convertView;
+        }
 
         viewHolder.tvGrid.setText(data.getData().get(position).getName());
         Glide.with(context).load(data.getData().get(position).getLogo()).into(viewHolder.ivGrid);
 
         return convertView;
+    }
+
+    public void setData(GridBean gridbean) {
+        this.data = gridbean;
     }
 
     class ViewHolder {

@@ -35,6 +35,8 @@ public class YuanchuangFragment extends BaseFragment {
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_yuanchuang, null);
         ButterKnife.inject(this, view);
+        adapter = new YuanchuangAdapter(getActivity());
+        lvYuanchuang.setAdapter(adapter);
         initListener();
         return view;
     }
@@ -57,6 +59,9 @@ public class YuanchuangFragment extends BaseFragment {
             public void success(String context) {
                 if (context != null) {
                     yuanchuangBean = JSON.parseObject(context, YuanchuangBean.class);
+                    if (yuanchuangBean==null){
+                        return;
+                    }
                     processData(yuanchuangBean);
                 }
             }
@@ -73,8 +78,9 @@ public class YuanchuangFragment extends BaseFragment {
         if (getActivity()==null ){
             return;
         }
-        adapter = new YuanchuangAdapter(getActivity(), yuanchuangBean);
-        lvYuanchuang.setAdapter(adapter);
+        adapter.setData(yuanchuangBean);
+        adapter.notifyDataSetChanged();
+
     }
 
 

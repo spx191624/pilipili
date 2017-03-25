@@ -18,16 +18,19 @@ import nataya.pilipili.bean.HuatiBean;
  * Created by 191624 on 2017/3/24.
  */
 public class HuatiAdapter extends BaseAdapter {
-    private final HuatiBean data;
+    private HuatiBean data;
     private final Context context;
 
-    public HuatiAdapter(Context context, HuatiBean huatiBean) {
+    public HuatiAdapter(Context context) {
         this.context = context;
-        this.data = huatiBean;
+
     }
 
     @Override
     public int getCount() {
+        if (data==null){
+            return 0;
+        }
         return data.getList().size();
     }
 
@@ -51,9 +54,16 @@ public class HuatiAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+        if (data==null){
+            return convertView;
+        }
         Glide.with(context).load(data.getList().get(position).getCover()).into(viewHolder.ivItemHuatizhongxin);
         viewHolder.tvItemHuatizhongxin.setText(data.getList().get(position).getTitle());
         return convertView;
+    }
+
+    public void setData(HuatiBean huatiBean) {
+        this.data = huatiBean;
     }
 
     static class ViewHolder {

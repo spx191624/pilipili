@@ -18,7 +18,6 @@ import nataya.pilipili.adapter.MyViewPagerAdapter;
 import nataya.pilipili.fragment.BaseFragment;
 import nataya.pilipili.fragment.DownloadFragment;
 import nataya.pilipili.fragment.HuancunFragment;
-import nataya.pilipili.fragment.Q6Fragment;
 
 public class DownloadActivity extends AppCompatActivity {
 

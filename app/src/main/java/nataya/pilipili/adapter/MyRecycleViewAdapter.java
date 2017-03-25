@@ -23,16 +23,14 @@ import nataya.pilipili.utils.NumUtils;
 public class MyRecycleViewAdapter extends RecyclerView.Adapter {
     private static final int ITEM = 1;
     private final Context context;
-    private final ZhiboBean.DataBean datas;
+    private ZhiboBean.DataBean datas;
     private final LayoutInflater inflater;
 
     public int type = ITEM;
 
 
-    public MyRecycleViewAdapter(Context context, ZhiboBean.DataBean data) {
+    public MyRecycleViewAdapter(Context context) {
         this.context = context;
-        this.datas = data;
-
         inflater = LayoutInflater.from(context);
     }
 
@@ -65,7 +63,18 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return datas.getPartitions().size();
+        if (datas == null) {
+            return 0;
+        } else {
+            return datas.getPartitions().size();
+        }
+    }
+
+    public void setData(ZhiboBean zhiboBean) {
+        if (zhiboBean==null){
+            return;
+        }
+        this.datas = zhiboBean.getData();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
@@ -113,8 +122,6 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
         TextView tvItemShuaxin;
 
 
-
-
         public MyViewHolder(Context context, View item) {
             super(item);
             ButterKnife.inject(this, item);
@@ -122,6 +129,9 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
 
 
         public void setData(ZhiboBean.DataBean.PartitionsBean partitionsBean) {
+            if (datas==null){
+                return;
+            }
             if (partitionsBean != null) {
 
                 tvName1Zhibo.setText(partitionsBean.getLives().get(0).getTitle());
@@ -150,13 +160,11 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
 
                 tvItemMore.setText("查看更多");
 
-                String str="当前"+"<font color='#FB7299'>"+partitionsBean.getPartition().getCount()+"</font>"+"个直播";
+                String str = "当前" + "<font color='#FB7299'>" + partitionsBean.getPartition().getCount() + "</font>" + "个直播";
 
 
-                tvItemShuaxin.setText(partitionsBean.getPartition().getCount()+"条新动态，点击刷新！");
+                tvItemShuaxin.setText(partitionsBean.getPartition().getCount() + "条新动态，点击刷新！");
                 tvRenshuRecycleZhibo.setText(Html.fromHtml(str));
-
-
 
 
                 Glide.with(context).load(partitionsBean.getPartition().getSub_icon().getSrc()).into(ivItemRecycleZhibo);

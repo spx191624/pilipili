@@ -34,6 +34,8 @@ public class HuatiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_huati);
         ButterKnife.inject(this);
+        adapter = new HuatiAdapter(this);
+        lvHuati.setAdapter(adapter);
         initData();
         initListener();
 
@@ -44,7 +46,7 @@ public class HuatiActivity extends AppCompatActivity {
         lvHuati.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(HuatiActivity.this,huatiBean.getList().get(position).getTitle() , Toast.LENGTH_SHORT).show();
+                Toast.makeText(HuatiActivity.this, huatiBean.getList().get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -55,7 +57,10 @@ public class HuatiActivity extends AppCompatActivity {
             public void success(String context) {
                 if (context != null) {
                     huatiBean = JSON.parseObject(context, HuatiBean.class);
-                    processData(huatiBean);
+                    if (huatiBean != null) {
+                        processData(huatiBean);
+                    }
+
                 }
             }
 
@@ -67,8 +72,8 @@ public class HuatiActivity extends AppCompatActivity {
     }
 
     private void processData(HuatiBean huatiBean) {
-        adapter = new HuatiAdapter(this, huatiBean);
-        lvHuati.setAdapter(adapter);
+        adapter.setData(huatiBean);
+        adapter.notifyDataSetChanged();
 
     }
 

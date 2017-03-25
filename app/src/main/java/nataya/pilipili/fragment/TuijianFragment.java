@@ -2,11 +2,8 @@ package nataya.pilipili.fragment;
 
 
 import android.content.Intent;
-
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.util.Log;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -34,15 +31,17 @@ public class TuijianFragment extends BaseFragment {
     GridView gvTuijian;
     @InjectView(R.id.tablayout_tuijian)
     TabLayout tablayoutTuijian;
-    private TuijianAdapter adapter;
+    private TuijianAdapter adapter ;
     private TuijianBean tuijianBean;
 
     @Override
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_tuijian, null);
         ButterKnife.inject(this, view);
-        initListener();
 
+        adapter = new TuijianAdapter(getContext());
+        gvTuijian.setAdapter(adapter);
+        initListener();
         return view;
     }
 
@@ -55,9 +54,13 @@ public class TuijianFragment extends BaseFragment {
                 String cover = tuijianBean.getData().get(position).getCover();
                 String url = "www.bilibili.com/video/av"+tuijianBean.getData().get(position).getParam()+"/";
                 String title = tuijianBean.getData().get(position).getTitle();
-                String[] data = new String[]{cover,url,title};
+                String des = tuijianBean.getData().get(position).getDesc();
+                String[] data = new String[]{cover,url,title,des};
                 Intent intent = new Intent(getActivity(), PlayActivity.class);
                 intent.putExtra("data",data);
+
+
+
 
                 startActivity(intent);
 
@@ -75,8 +78,6 @@ public class TuijianFragment extends BaseFragment {
             public void success(String context) {
                 tuijianBean= JSON.parseObject(context, TuijianBean.class);
                 processData(tuijianBean);
-
-
             }
 
             @Override
@@ -84,19 +85,15 @@ public class TuijianFragment extends BaseFragment {
                 Log.e("TAG", error);
             }
         });
-
-
-
     }
 
     private void processData(TuijianBean tuijianBean) {
         if (getActivity()==null ){
             return;
         }
-        adapter = new TuijianAdapter(getContext(), tuijianBean);
-        gvTuijian.setAdapter(adapter);
+        adapter.setData(tuijianBean);
+        adapter.notifyDataSetChanged();
         setListViewHeightBasedOnChildren(gvTuijian);
-
     }
 
 

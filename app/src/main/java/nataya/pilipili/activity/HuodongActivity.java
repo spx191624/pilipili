@@ -37,7 +37,8 @@ public class HuodongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_huodong);
         ButterKnife.inject(this);
-
+        adapter = new HuatiAdapter(this);
+        lvHuodong.setAdapter(adapter);
         initData();
         initListener();
     }
@@ -58,6 +59,9 @@ public class HuodongActivity extends AppCompatActivity {
             public void success(String context) {
                 if (context != null) {
                     huatiBean = JSON.parseObject(context, HuatiBean.class);
+                    if (huatiBean==null){
+                        return;
+                    }
                     processData(huatiBean);
                 }
             }
@@ -70,8 +74,8 @@ public class HuodongActivity extends AppCompatActivity {
     }
 
     private void processData(HuatiBean huatiBean) {
-        adapter = new HuatiAdapter(this, huatiBean);
-        lvHuodong.setAdapter(adapter);
+        adapter.setData(huatiBean);
+        adapter.notifyDataSetChanged();
     }
 
     @OnClick(R.id.iv_back_huodong)

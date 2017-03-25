@@ -21,15 +21,18 @@ import nataya.pilipili.bean.YuanchuangBean;
  */
 public class YuanchuangAdapter extends BaseAdapter {
     private final Context context;
-    private final YuanchuangBean data;
+    private YuanchuangBean data;
 
-    public YuanchuangAdapter(Context context, YuanchuangBean histories) {
+    public YuanchuangAdapter(Context context) {
         this.context = context;
-        this.data = histories;
+
     }
 
     @Override
     public int getCount() {
+        if (data==null){
+            return 0;
+        }
         return data.getData().size();
     }
 
@@ -61,12 +64,20 @@ public class YuanchuangAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+
+        if (data==null){
+            return convertView;
+        }
         viewHolder.tvNumItemYuanchuang.setText(1+position+"");
         viewHolder.tvPingfenItemYuanchuang.setText("综合评分："+data.getData().get(position).getPts()+"");
         viewHolder.tvTitleItemYuanchuang.setText(data.getData().get(position).getTitle());
         viewHolder.tvUperItemYuanchuang.setText(data.getData().get(position).getName());
         Glide.with(context).load(data.getData().get(position).getCover()).into(viewHolder.ivItemYuanchuang);
         return convertView;
+    }
+
+    public void setData(YuanchuangBean yuanchuangBean) {
+        this.data = yuanchuangBean;
     }
 
 

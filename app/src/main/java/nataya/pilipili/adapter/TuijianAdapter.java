@@ -20,16 +20,19 @@ import nataya.pilipili.utils.NumUtils;
  */
 public class TuijianAdapter extends BaseAdapter {
     private final Context context;
-    private final TuijianBean data;
+    private TuijianBean data;
 
-    public TuijianAdapter(Context context, TuijianBean tuijianBean) {
+    public TuijianAdapter(Context context) {
         this.context = context;
-        this.data = tuijianBean;
     }
 
     @Override
     public int getCount() {
-        return data.getData().size();
+        if (data==null){
+            return 0;
+        }else{
+            return data.getData().size();
+        }
     }
 
     @Override
@@ -46,21 +49,30 @@ public class TuijianAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.item_tuijian1, null);
+            convertView = View.inflate(context, R.layout.item_tuijian, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
+        if (data==null){
+            return convertView;
+        }
         Glide.with(context).load(data.getData().get(position).getCover()).into(viewHolder.ivItemTuijian1);
         viewHolder.tvItemTuijian1Danmu.setText(NumUtils.getNum(data.getData().get(position).getDanmaku()));
-        viewHolder.tvItemTuijian1Miaoshu.setText(data.getData().get(position).getDesc() + "");
+        viewHolder.tvItemTuijian1Miaoshu.setText(data.getData().get(position).getTname() + "");
         viewHolder.tvItemTuijian1Play.setText(NumUtils.getNum(data.getData().get(position).getPlay()));
         viewHolder.tvItemTuijian1Shijian.setText(NumUtils.getTime(data.getData().get(position).getDuration()));
-        viewHolder.tvItemTuijian1Title.setText(data.getData().get(position).getTname() + "");
+        viewHolder.tvItemTuijian1Title.setText(data.getData().get(position).getTitle() + "");
 
         return convertView;
+    }
+
+    public void setData(TuijianBean tuijianBean) {
+        if (tuijianBean==null){
+            return;
+        }
+        this.data = tuijianBean;
     }
 
 

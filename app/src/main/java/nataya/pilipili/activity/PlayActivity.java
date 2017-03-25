@@ -2,7 +2,6 @@ package nataya.pilipili.activity;
 
 import android.app.ActivityManager;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -12,7 +11,6 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +19,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
@@ -31,11 +28,9 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -46,9 +41,6 @@ import nataya.pilipili.bean.TuijianBean;
 import nataya.pilipili.fragment.BaseFragment;
 import nataya.pilipili.fragment.JianjieFragment;
 import nataya.pilipili.fragment.Q6Fragment;
-
-import static fm.jiecao.jcvideoplayer_lib.JCVideoPlayer.CURRENT_STATE_PLAYING;
-import static fm.jiecao.jcvideoplayer_lib.JCVideoPlayer.CURRENT_STATE_PREPAREING;
 
 
 public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener {
@@ -79,6 +71,7 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
     private List<BaseFragment> fragments = new ArrayList<>();
     private MyViewPagerAdapter adapter;
     private JCVideoPlayer videoController;
+    private JianjieFragment jianjie;
 
 
     public int position = 0;
@@ -91,6 +84,7 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         setContentView(R.layout.activity_play);
         ButterKnife.inject(this);
         initUniversalImageLoader();
+
         initData();
     }
     private void initUniversalImageLoader() {
@@ -140,8 +134,8 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         position = getIntent().getIntExtra("position",0);
         Log.e("TAG","position =="+position);
         tuijianBean= (TuijianBean) getIntent().getSerializableExtra("bean");
-
-        fragments.add(new JianjieFragment());
+        jianjie = new JianjieFragment();
+        fragments.add(jianjie);
         fragments.add(new Q6Fragment());
 
     }
@@ -152,6 +146,7 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         String url = data[1];
         String trueUrl = "http://vfx.mtime.cn/Video/2017/03/15/mp4/170315222409670447.mp4";
         String title = data[2];
+        String des = data[3];
         videoController = (JCVideoPlayer) findViewById(R.id.videocontroller1);
         videoController.setUp(trueUrl,cover,title);
     }
@@ -161,6 +156,8 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         vpPlay.setAdapter(adapter);
         tablayout.setupWithViewPager(vpPlay);
     }
+
+
 
 
 
@@ -206,16 +203,5 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         appBarLayout.removeOnOffsetChangedListener(this);
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
 
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.e("TAG","onDestroy");
-
-    }
 }

@@ -11,7 +11,9 @@ import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+
 import nataya.pilipili.R;
+import nataya.pilipili.bean.TuijianBean;
 
 /**
  * Created by 191624 on 2017/3/25.
@@ -59,6 +61,7 @@ public class JianjieFragment extends BaseFragment {
     }
 
     private void setData() {
+
         tvTitleJianjie.setText("不知道是什么标题");
         tvDanmunumJianjie.setText("" + (int) (Math.random() * 10000));
         tvPlaynumJianjie.setText("" + (int) (Math.random() * 10000));
@@ -71,11 +74,14 @@ public class JianjieFragment extends BaseFragment {
     }
 
 
+
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
+
 
 
 
@@ -96,4 +102,6 @@ public class JianjieFragment extends BaseFragment {
                 break;
         }
     }
+
+
 }
