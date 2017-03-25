@@ -1,10 +1,14 @@
 package nataya.pilipili.utils;
 
 import android.app.Application;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.anye.greendao.gen.DaoMaster;
 import com.anye.greendao.gen.DaoSession;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 /**
  * Created by 191624 on 2017/3/24.
@@ -45,5 +49,17 @@ public class MyApplication extends Application {
     public SQLiteDatabase getDb() {
         return db;
     }
+
+//    public static void initImageLoader(Context context) {
+//
+//        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+//                context).threadPriority(Thread.NORM_PRIORITY - 2)
+//                .denyCacheImageMultipleSizesInMemory()
+//                .tasksProcessingOrder(QueueProcessingType.LIFO)
+//                .writeDebugLogs()
+//                .build();
+//
+//        ImageLoader.getInstance().init(config);
+//    }
 
 }

@@ -25,12 +25,14 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
     private final Context context;
     private final ZhiboBean.DataBean datas;
     private final LayoutInflater inflater;
+
     public int type = ITEM;
 
 
     public MyRecycleViewAdapter(Context context, ZhiboBean.DataBean data) {
         this.context = context;
         this.datas = data;
+
         inflater = LayoutInflater.from(context);
     }
 
@@ -56,6 +58,7 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
             MyViewHolder viewHolder = (MyViewHolder) holder;
             viewHolder.setData(datas.getPartitions().get(position));
         }
+
 
     }
 
@@ -153,10 +156,15 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
                 tvItemShuaxin.setText(partitionsBean.getPartition().getCount()+"条新动态，点击刷新！");
                 tvRenshuRecycleZhibo.setText(Html.fromHtml(str));
 
+
+
+
                 Glide.with(context).load(partitionsBean.getPartition().getSub_icon().getSrc()).into(ivItemRecycleZhibo);
             }
 
         }
+
+
     }
 
 

@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".utils.MyApplication"
@@ -28,7 +29,12 @@
             android:theme="@style/Theme.Transparent" />
         <activity android:name=".activity.HuatiActivity" />
         <activity android:name=".activity.HuodongActivity" />
-        <activity android:name=".activity.YuanchuangActivity"></activity>
+        <activity android:name=".activity.YuanchuangActivity" />
+        <activity android:name=".activity.QuanquActivity" />
+        <activity
+            android:name=".activity.PlayActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".activity.DownloadActivity"></activity>
     </application>
 
 </manifest>

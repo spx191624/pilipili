@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SearchActivity.class));
                 break;
             case R.id.iv_tool_xiazai:
-                Toast.makeText(this, "下载管理", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, DownloadActivity.class));
                 break;
             case R.id.iv_tool_youxi:
                 Toast.makeText(this, "游戏管理", Toast.LENGTH_SHORT).show();

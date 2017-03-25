@@ -24,6 +24,7 @@ import butterknife.OnClick;
 import nataya.pilipili.R;
 import nataya.pilipili.activity.HuatiActivity;
 import nataya.pilipili.activity.HuodongActivity;
+import nataya.pilipili.activity.QuanquActivity;
 import nataya.pilipili.activity.SearchActivity;
 import nataya.pilipili.activity.YuanchuangActivity;
 import nataya.pilipili.bean.TagBean;
@@ -122,6 +123,9 @@ public class FaxianFragment extends BaseFragment {
     }
 
     private void processData(String context) {
+        if (getActivity()==null ){
+            return;
+        }
         tagBean = JSON.parseObject(context, TagBean.class);
         List<String> tags = new ArrayList<>();
         for (int i = 0; i < tagBean.getData().getList().size(); i++) {
@@ -199,6 +203,7 @@ public class FaxianFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(),YuanchuangActivity.class));
                 break;
             case R.id.quanqu_faxian:
+                startActivity(new Intent(getActivity(),QuanquActivity.class));
                 break;
             case R.id.youxizhongxin_faxian:
                 break;

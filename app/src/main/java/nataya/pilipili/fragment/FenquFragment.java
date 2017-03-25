@@ -54,7 +54,12 @@ public class FenquFragment extends BaseFragment {
     @InjectView(R.id.tv_kejizhongxin3)
     TextView tvKejizhongxin3;
     private GridAdapter gridAdapter;
-
+    private int[] ids = new int[]{R.id.donghuaqu,R.id.guochuangqu,R.id.yinyuequ,R.id.wudaoqu,
+            R.id.youxiqu,R.id.guichuqu,R.id.shenghuoqu,R.id.kejiqu,R.id.shishangqu,
+            R.id.guanggaoqu,R.id.yulequ,R.id.dianshijuqu,R.id.dianyingqu};
+    private int[] htids = new int[]{R.id.huati1,R.id.huati2,R.id.huati3,R.id.huati4,R.id.huati5};
+    private int hnum=0;
+    private int num= 0;
 
     @Override
     public View initView() {
@@ -140,6 +145,9 @@ public class FenquFragment extends BaseFragment {
         LoadFromNet.getFromNet(AppNetConfig.GV_FENQU, new LoadNet() {
             @Override
             public void success(String context) {
+                if (context==null){
+                    return;
+                }
                 GridBean gridbean = JSON.parseObject(context, GridBean.class);
                 processData(gridbean);
             }
@@ -158,7 +166,7 @@ public class FenquFragment extends BaseFragment {
                 initBanner(fenquBean);
                 processFenquData(fenquBean);
                 initHuati(fenquBean);
-                initHuodong(fenquBean,11);
+                initHuodong(fenquBean,12);
             }
 
             @Override
@@ -180,11 +188,15 @@ public class FenquFragment extends BaseFragment {
     }
 
     private void initHuati(FenquBean fenquBean) {
-        setHuatiByInclude(llFenqu, R.id.huati1, fenquBean, 3);
-        setHuatiByInclude(llFenqu, R.id.huati2, fenquBean, 7);
-        setHuatiByInclude(llFenqu, R.id.huati3, fenquBean, 9);
-        setHuatiByInclude(llFenqu, R.id.huati4, fenquBean, 12);
-        setHuatiByInclude(llFenqu, R.id.huati5, fenquBean, 17);
+        for (int i=0;i<fenquBean.getData().size();i++){
+            if (fenquBean.getData().get(i).getType().toString().equals("topic")){
+                if (hnum==htids.length){
+                    return;
+                }
+                setHuatiByInclude(llFenqu, htids[hnum], fenquBean, i);
+                hnum+=1;
+            }
+        }
     }
 
     private void initBanner(FenquBean fenquBean) {
@@ -200,24 +212,21 @@ public class FenquFragment extends BaseFragment {
     }
 
     private void processFenquData(FenquBean fenquBean) {
-        setChildViewVyInclude(llFenqu, R.id.donghuaqu, fenquBean, 0);
-        setChildViewVyInclude(llFenqu, R.id.guochuangqu, fenquBean, 1);
-        setChildViewVyInclude(llFenqu, R.id.yinyuequ, fenquBean, 2);
-        setChildViewVyInclude(llFenqu, R.id.wudaoqu, fenquBean, 4);
-        setChildViewVyInclude(llFenqu, R.id.youxiqu, fenquBean, 5);
-        setChildViewVyInclude(llFenqu, R.id.guichuqu, fenquBean, 6);
-        setChildViewVyInclude(llFenqu, R.id.shenghuoqu, fenquBean, 8);
-        setChildViewVyInclude(llFenqu, R.id.kejiqu, fenquBean, 10);
-        setChildViewVyInclude(llFenqu, R.id.shishangqu, fenquBean, 13);
-        setChildViewVyInclude(llFenqu, R.id.guanggaoqu, fenquBean, 14);
-        setChildViewVyInclude(llFenqu, R.id.yulequ, fenquBean, 15);
-        setChildViewVyInclude(llFenqu, R.id.dianshijuqu, fenquBean, 16);
-        setChildViewVyInclude(llFenqu, R.id.dianyingqu, fenquBean, 18);
-
+        for (int i=0;i<fenquBean.getData().size();i++){
+            if (fenquBean.getData().get(i).getType().toString().equals("region")){
+                if (num>ids.length){
+                    return;
+                }
+                setChildViewVyInclude(llFenqu, ids[num], fenquBean, i);
+                num+=1;
+            }
+        }
     }
 
     private void processData(GridBean gridbean) {
         if (gridbean != null) {
+            num=0;
+            hnum=0;
             gridAdapter = new GridAdapter(getContext(), gridbean);
             gvFenqu.setAdapter(gridAdapter);
         }

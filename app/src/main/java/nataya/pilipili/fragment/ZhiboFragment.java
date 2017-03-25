@@ -1,9 +1,7 @@
 package nataya.pilipili.fragment;
 
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -50,8 +48,11 @@ public class ZhiboFragment extends BaseFragment {
         recycleviewZhibo.setLayoutManager(layoutManager);
         recycleviewZhibo.setHasFixedSize(true);
         recycleviewZhibo.setNestedScrollingEnabled(false);
+
         return view;
     }
+
+
 
     @Override
     public void initData() {
@@ -73,6 +74,9 @@ public class ZhiboFragment extends BaseFragment {
     }
 
     private void processData(String context) {
+        if (getActivity()==null ){
+            return;
+        }
         zhiboBean = JSON.parseObject(context, ZhiboBean.class);
         initBanner(zhiboBean);
         adapter = new MyRecycleViewAdapter(getContext(),zhiboBean.getData());

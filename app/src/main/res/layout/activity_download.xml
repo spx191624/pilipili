@@ -2,10 +2,12 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_yuanchuang"
+    android:id="@+id/activity_download"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nataya.pilipili.activity.YuanchuangActivity">
+    tools:context="nataya.pilipili.activity.DownloadActivity">
+
+
 
 
         <android.support.design.widget.AppBarLayout
@@ -14,6 +16,7 @@
             android:background="#ffffff">
 
             <android.support.v7.widget.Toolbar
+
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="#FB7299"
@@ -29,7 +32,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/iv_back_yuanchuang"
+                        android:id="@+id/iv_back_download"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -43,19 +46,28 @@
                         android:layout_toRightOf="@+id/iv_tool2"
                         android:paddingLeft="5dp"
                         android:textColor="#FFFFFF"
-                        android:text="排行榜"
+                        android:text="缓存管理"
                         android:textSize="15sp" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent" />
                     <ImageView
-                        android:id="@+id/iv_download_yuanchuang"
+                        android:id="@+id/ic_download_edit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="15dp"
-                        android:src="@drawable/ic_toolbar_menu_download" />
+                        android:src="@drawable/ic_download_edit" />
+                    <ImageView
+                        android:id="@+id/ic_download_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/ic_download_setting" />
+
+
                     <ImageView
                         android:id="@+id/iv_search_yuanchuang"
                         android:layout_width="wrap_content"
@@ -67,38 +79,30 @@
 
                 </LinearLayout>
             </android.support.v7.widget.Toolbar>
-            <LinearLayout
+            <android.support.design.widget.TabLayout
 
+                app:tabTextColor="#99FFFFFF"
+                app:tabSelectedTextColor="#FFFFFF"
+                android:id="@+id/tablayout_download"
+                style="@style/AppTheme"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
                 android:background="#FB7299"
-                android:orientation="horizontal">
-                <android.support.design.widget.TabLayout
-
-                    app:tabTextColor="#99FFFFFF"
-                    app:tabSelectedTextColor="#FFFFFF"
-                    android:id="@+id/tablayout"
-                    style="@style/AppTheme"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:background="#FB7299"
-                    app:tabIndicatorColor="#FFFFFF"
-                    app:tabMode="fixed" />
-                <TextView
-                    android:id="@+id/tv"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-            </LinearLayout>
+                app:tabIndicatorColor="#FFFFFF"
+                app:tabGravity="fill"
+                app:tabMode="fixed"/>
 
 
 
         </android.support.design.widget.AppBarLayout>
         <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager_yuanchuang"
+            android:id="@+id/view_pager_download"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+
 
 
 

@@ -70,6 +70,9 @@ public class YuanchuangFragment extends BaseFragment {
     }
 
     private void processData(YuanchuangBean yuanchuangBean) {
+        if (getActivity()==null ){
+            return;
+        }
         adapter = new YuanchuangAdapter(getActivity(), yuanchuangBean);
         lvYuanchuang.setAdapter(adapter);
     }

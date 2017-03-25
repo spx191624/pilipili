@@ -47,7 +47,15 @@ public class YuanchuangAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.item_yuanchuang, null);
+            if (position==0){
+                convertView = View.inflate(context, R.layout.item_yuanchuang1, null);
+            }else if (position==1){
+                convertView = View.inflate(context, R.layout.item_yuanchuang2, null);
+            }else if (position==2){
+                convertView = View.inflate(context, R.layout.item_yuanchuang3, null);
+            }else{
+                convertView = View.inflate(context, R.layout.item_yuanchuang, null);
+            }
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {

@@ -1,9 +1,6 @@
 package nataya.pilipili.fragment;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
@@ -23,12 +20,13 @@ import nataya.pilipili.view.MyListView;
  * Created by 191624 on 2017/3/24.
  */
 
-public class FanjuFragment extends BaseFragment {
+public class Q2Fragment extends BaseFragment {
+
+
     @InjectView(R.id.lv_yuanchuang)
     MyListView lvYuanchuang;
     private YuanchuangBean yuanchuangBean;
     private YuanchuangAdapter adapter;
-
 
     @Override
     public View initView() {
@@ -37,6 +35,7 @@ public class FanjuFragment extends BaseFragment {
         initListener();
         return view;
     }
+
     private void initListener() {
         lvYuanchuang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -50,7 +49,7 @@ public class FanjuFragment extends BaseFragment {
     public void initData() {
         super.initData();
 
-        LoadFromNet.getFromNet(AppNetConfig.FANJU, new LoadNet() {
+        LoadFromNet.getFromNet(AppNetConfig.Q_DONGHUA, new LoadNet() {
             @Override
             public void success(String context) {
                 if (context != null) {
@@ -76,10 +75,12 @@ public class FanjuFragment extends BaseFragment {
     }
 
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
+
+
+
 }

@@ -1,19 +1,21 @@
 package nataya.pilipili.fragment;
 
-import android.os.Bundle;
+
+import android.content.Intent;
+
 import android.support.design.widget.TabLayout;
 import android.util.Log;
-import android.view.LayoutInflater;
+
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListAdapter;
-
 import com.alibaba.fastjson.JSON;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
+import nataya.pilipili.activity.PlayActivity;
 import nataya.pilipili.adapter.TuijianAdapter;
 import nataya.pilipili.bean.TuijianBean;
 import nataya.pilipili.utils.AppNetConfig;
@@ -32,12 +34,33 @@ public class TuijianFragment extends BaseFragment {
     @InjectView(R.id.tablayout_tuijian)
     TabLayout tablayoutTuijian;
     private TuijianAdapter adapter;
+    private TuijianBean tuijianBean;
 
     @Override
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_tuijian, null);
         ButterKnife.inject(this, view);
+        initListener();
+
         return view;
+    }
+
+
+
+    private void initListener() {
+        gvTuijian.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String cover = tuijianBean.getData().get(position).getCover();
+                String url = "www.bilibili.com/video/av"+tuijianBean.getData().get(position).getParam()+"/";
+                String title = tuijianBean.getData().get(position).getTitle();
+                String[] data = new String[]{cover,url,title};
+                Intent intent = new Intent(getActivity(), PlayActivity.class);
+                intent.putExtra("data",data);
+                startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -48,7 +71,7 @@ public class TuijianFragment extends BaseFragment {
         LoadFromNet.getFromNet(AppNetConfig.BASE_TUIJIAN, new LoadNet() {
             @Override
             public void success(String context) {
-                TuijianBean tuijianBean = JSON.parseObject(context, TuijianBean.class);
+                tuijianBean= JSON.parseObject(context, TuijianBean.class);
                 processData(tuijianBean);
 
 
@@ -60,9 +83,14 @@ public class TuijianFragment extends BaseFragment {
             }
         });
 
+
+
     }
 
     private void processData(TuijianBean tuijianBean) {
+        if (getActivity()==null ){
+            return;
+        }
         adapter = new TuijianAdapter(getContext(), tuijianBean);
         gvTuijian.setAdapter(adapter);
         setListViewHeightBasedOnChildren(gvTuijian);
@@ -107,11 +135,5 @@ public class TuijianFragment extends BaseFragment {
     }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.inject(this, rootView);
-        return rootView;
-    }
+
 }

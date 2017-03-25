@@ -104,7 +104,9 @@ public class ZhuifanFragment extends BaseFragment {
     }
 
     private void processData(FanjuBean fanjuBean) {
-
+        if (getActivity()==null ){
+            return;
+        }
 
         setChildViewVyInclude(llZhuifan, R.id.fanju1, fanjuBean, 0,FANJU);
         setChildViewVyInclude(llZhuifan, R.id.fanju2, fanjuBean, 1,FANJU);
