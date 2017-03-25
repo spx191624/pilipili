@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EAEAEA"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title_jianjie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#99000000"
+                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp">
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_vertical"
+                    android:textColor="#44000000"
+                    android:drawableLeft="@drawable/ic_clip_view_num"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tv_playnum_jianjie"/>
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_vertical"
+                    android:textColor="#44000000"
+                    android:drawableLeft="@drawable/ic_clip_danmaku_num"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tv_danmunum_jianjie"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#44000000"
+                android:textSize="13sp"
+                android:id="@+id/tv_des_jianjie"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="120dp">
+                <LinearLayout
+                    android:id="@+id/fenxiang"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_item_num"
+                        android:textColor="#36C27E"
+                        android:id="@+id/num_fenxiang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <FrameLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/daily_video_action_bg"/>
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_share_green"/>
+
+                    </FrameLayout>
+                    <TextView
+                        android:textColor="#99000000"
+                        android:textSize="13sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="分享"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/yingbi"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_item_num"
+                        android:textColor="#36C27E"
+                        android:id="@+id/num_yingbi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <FrameLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/daily_video_action_bg"/>
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_coin"/>
+
+                    </FrameLayout>
+                    <TextView
+                        android:textColor="#99000000"
+                        android:textSize="13sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="硬币"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/shoucang"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_item_num"
+                        android:textColor="#36C27E"
+                        android:id="@+id/num_shoucang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <FrameLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/daily_video_action_bg"/>
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_collect"/>
+
+                    </FrameLayout>
+                    <TextView
+                        android:textColor="#99000000"
+                        android:textSize="13sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="收藏"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/xiazai"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <FrameLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/daily_video_action_bg"/>
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_download"/>
+
+                    </FrameLayout>
+                    <TextView
+                        android:textColor="#99000000"
+                        android:textSize="13sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="分享"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:background="#44000000"
+                android:layout_height="1dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#ff0000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#ffFF00"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#ff00FF"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#00ff00"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#00ffff"/>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

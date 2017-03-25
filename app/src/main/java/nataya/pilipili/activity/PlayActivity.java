@@ -2,6 +2,7 @@ package nataya.pilipili.activity;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,6 +12,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -40,7 +42,9 @@ import butterknife.OnClick;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import nataya.pilipili.R;
 import nataya.pilipili.adapter.MyViewPagerAdapter;
+import nataya.pilipili.bean.TuijianBean;
 import nataya.pilipili.fragment.BaseFragment;
+import nataya.pilipili.fragment.JianjieFragment;
 import nataya.pilipili.fragment.Q6Fragment;
 
 import static fm.jiecao.jcvideoplayer_lib.JCVideoPlayer.CURRENT_STATE_PLAYING;
@@ -72,9 +76,14 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
     @InjectView(R.id.floatingActionButton)
     FloatingActionButton floatingActionButton;
     private String[] titles = new String[]{"直播", "推荐"};
-    private List<BaseFragment> fragments;
+    private List<BaseFragment> fragments = new ArrayList<>();
     private MyViewPagerAdapter adapter;
     private JCVideoPlayer videoController;
+
+
+    public int position = 0;
+    public TuijianBean tuijianBean=null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,26 +130,39 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         ImageLoader.getInstance().init(config);
     }
     private void initData() {
-        fragments = new ArrayList<>();
-        fragments.add(new Q6Fragment());
+        passData();
+        initViewPager();
+        initVideo();
+    }
+
+    private void passData() {
+
+        position = getIntent().getIntExtra("position",0);
+        Log.e("TAG","position =="+position);
+        tuijianBean= (TuijianBean) getIntent().getSerializableExtra("bean");
+
+        fragments.add(new JianjieFragment());
         fragments.add(new Q6Fragment());
 
-        adapter = new MyViewPagerAdapter(this.getSupportFragmentManager(), fragments, titles);
-        vpPlay.setAdapter(adapter);
-        tablayout.setupWithViewPager(vpPlay);
+    }
+
+    private void initVideo() {
         String[] data = getIntent().getStringArrayExtra("data");
         String cover = data[0];
         String url = data[1];
         String trueUrl = "http://vfx.mtime.cn/Video/2017/03/15/mp4/170315222409670447.mp4";
         String title = data[2];
-        Log.e("TAG", url);
-
-
-
         videoController = (JCVideoPlayer) findViewById(R.id.videocontroller1);
         videoController.setUp(trueUrl,cover,title);
-
     }
+
+    private void initViewPager() {
+        adapter = new MyViewPagerAdapter(this.getSupportFragmentManager(), fragments, titles);
+        vpPlay.setAdapter(adapter);
+        tablayout.setupWithViewPager(vpPlay);
+    }
+
+
 
     @OnClick({ R.id.tv_play, R.id.iv_back_play, R.id.iv_more})
     public void onClick(View view) {
@@ -182,5 +204,18 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
     protected void onPause() {
         super.onPause();
         appBarLayout.removeOnOffsetChangedListener(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("TAG","onDestroy");
+
     }
 }

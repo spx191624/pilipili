@@ -3,6 +3,7 @@ package nataya.pilipili.fragment;
 
 import android.content.Intent;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.util.Log;
 
@@ -57,6 +58,7 @@ public class TuijianFragment extends BaseFragment {
                 String[] data = new String[]{cover,url,title};
                 Intent intent = new Intent(getActivity(), PlayActivity.class);
                 intent.putExtra("data",data);
+
                 startActivity(intent);
 
             }
