@@ -76,6 +76,10 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
 
     public int position = 0;
     public TuijianBean tuijianBean=null;
+    public String[] data;
+    public String[] getData(){
+        return data;
+    }
 
 
     @Override
@@ -141,9 +145,9 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
     }
 
     private void initVideo() {
-        String[] data = getIntent().getStringArrayExtra("data");
+        data = getIntent().getStringArrayExtra("data");
         String cover = data[0];
-        String url = data[1];
+//        String url = data[1];
         String trueUrl = "http://vfx.mtime.cn/Video/2017/03/15/mp4/170315222409670447.mp4";
         String title = data[2];
         String des = data[3];
@@ -202,6 +206,7 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         super.onPause();
         appBarLayout.removeOnOffsetChangedListener(this);
     }
+
 
 
 }

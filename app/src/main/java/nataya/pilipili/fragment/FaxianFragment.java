@@ -1,8 +1,6 @@
 package nataya.pilipili.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +24,7 @@ import nataya.pilipili.activity.HuatiActivity;
 import nataya.pilipili.activity.HuodongActivity;
 import nataya.pilipili.activity.QuanquActivity;
 import nataya.pilipili.activity.SearchActivity;
+import nataya.pilipili.activity.WebActivity;
 import nataya.pilipili.activity.YuanchuangActivity;
 import nataya.pilipili.bean.TagBean;
 import nataya.pilipili.utils.AppNetConfig;
@@ -208,6 +207,10 @@ public class FaxianFragment extends BaseFragment {
             case R.id.youxizhongxin_faxian:
                 break;
             case R.id.zhoubian_faxian:
+                Intent intent = new Intent(getActivity(),WebActivity.class);
+                intent.putExtra("title","bilibili _ 周边商城");
+                intent.putExtra("url","http://bmall.bilibili.com");
+                startActivity(intent);
                 break;
         }
     }

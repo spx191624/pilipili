@@ -10,6 +10,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import cn.sharesdk.framework.ShareSDK;
+
 /**
  * Created by 191624 on 2017/3/24.
  */
@@ -24,6 +26,7 @@ public class MyApplication extends Application {
         super.onCreate();
         instances = this;
         setDatabase();
+        ShareSDK.initSDK(this);
     }
     public static MyApplication getInstances(){
         return instances;

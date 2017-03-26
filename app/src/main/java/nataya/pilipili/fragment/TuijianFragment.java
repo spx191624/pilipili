@@ -19,6 +19,7 @@ import nataya.pilipili.bean.TuijianBean;
 import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
+import nataya.pilipili.utils.NumUtils;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -33,6 +34,7 @@ public class TuijianFragment extends BaseFragment {
     TabLayout tablayoutTuijian;
     private TuijianAdapter adapter ;
     private TuijianBean tuijianBean;
+
 
     @Override
     public View initView() {
@@ -55,7 +57,10 @@ public class TuijianFragment extends BaseFragment {
                 String url = "www.bilibili.com/video/av"+tuijianBean.getData().get(position).getParam()+"/";
                 String title = tuijianBean.getData().get(position).getTitle();
                 String des = tuijianBean.getData().get(position).getDesc();
-                String[] data = new String[]{cover,url,title,des};
+                String play = NumUtils.getNum(tuijianBean.getData().get(position).getPlay());
+                String danmu =NumUtils.getNum(tuijianBean.getData().get(position).getDanmaku());
+
+                String[] data = new String[]{cover,url,title,des,play,danmu};
                 Intent intent = new Intent(getActivity(), PlayActivity.class);
                 intent.putExtra("data",data);
 

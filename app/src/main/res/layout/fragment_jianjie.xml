@@ -31,7 +31,7 @@
                 android:layout_height="20dp">
 
                 <TextView
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
                     android:textColor="#44000000"
                     android:drawableLeft="@drawable/ic_clip_view_num"
