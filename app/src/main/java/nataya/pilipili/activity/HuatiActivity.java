@@ -1,5 +1,6 @@
 package nataya.pilipili.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -46,7 +47,11 @@ public class HuatiActivity extends AppCompatActivity {
         lvHuati.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(HuatiActivity.this, huatiBean.getList().get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HuatiActivity.this,WebActivity.class);
+                intent.putExtra("url",huatiBean.getList().get(position).getLink());
+                intent.putExtra("title",huatiBean.getList().get(position).getTitle());
+                startActivity(intent);
+//                Toast.makeText(HuatiActivity.this, huatiBean.getList().get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }

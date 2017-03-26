@@ -1,5 +1,6 @@
 package nataya.pilipili.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -48,7 +49,11 @@ public class HuodongActivity extends AppCompatActivity {
         lvHuodong.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(HuodongActivity.this,huatiBean.getList().get(position).getTitle() , Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HuodongActivity.this,WebActivity.class);
+                intent.putExtra("url",huatiBean.getList().get(position).getLink());
+                intent.putExtra("title",huatiBean.getList().get(position).getTitle());
+                startActivity(intent);
+//                Toast.makeText(HuodongActivity.this,huatiBean.getList().get(position).getTitle() , Toast.LENGTH_SHORT).show();
             }
         });
     }

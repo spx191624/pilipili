@@ -1,21 +1,29 @@
 package nataya.pilipili.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
+import nataya.pilipili.activity.PlayActivity;
 import nataya.pilipili.bean.ZhiboBean;
 import nataya.pilipili.utils.NumUtils;
+import nataya.pilipili.view.MyGridView;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -23,7 +31,7 @@ import nataya.pilipili.utils.NumUtils;
 public class MyRecycleViewAdapter extends RecyclerView.Adapter {
     private static final int ITEM = 1;
     private final Context context;
-    private ZhiboBean.DataBean datas;
+    private ZhiboBean.DataBean datas =null;
     private final LayoutInflater inflater;
 
     public int type = ITEM;
@@ -36,7 +44,7 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        if (position > 0) {
+        if (position == ITEM) {
             type = ITEM;
         }
         return type;
@@ -54,7 +62,8 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (getItemViewType(position) == ITEM) {
             MyViewHolder viewHolder = (MyViewHolder) holder;
-            viewHolder.setData(datas.getPartitions().get(position));
+            viewHolder.setData(datas.getPartitions().get(position).getLives(),position);
+
         }
 
 
@@ -71,109 +80,67 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
     }
 
     public void setData(ZhiboBean zhiboBean) {
-        if (zhiboBean==null){
+        if (zhiboBean == null) {
             return;
         }
         this.datas = zhiboBean.getData();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+
+    class MyViewHolder extends RecyclerView.ViewHolder{
         @InjectView(R.id.iv_item_recycle_zhibo)
         ImageView ivItemRecycleZhibo;
         @InjectView(R.id.tv_item_recycle_zhibo)
         TextView tvItemRecycleZhibo;
         @InjectView(R.id.tv_renshu_recycle_zhibo)
         TextView tvRenshuRecycleZhibo;
-        @InjectView(R.id.iv_1_zhibo)
-        ImageView iv1Zhibo;
-        @InjectView(R.id.tv_name_1_zhibo)
-        TextView tvName1Zhibo;
-        @InjectView(R.id.tv_uper_1_zhibo)
-        TextView tvUper1Zhibo;
-        @InjectView(R.id.tv_renshu_1_zhibo)
-        TextView tvRenshu1Zhibo;
-        @InjectView(R.id.iv_2_zhibo)
-        ImageView iv2Zhibo;
-        @InjectView(R.id.tv_name_2_zhibo)
-        TextView tvName2Zhibo;
-        @InjectView(R.id.tv_uper_2_zhibo)
-        TextView tvUper2Zhibo;
-        @InjectView(R.id.tv_renshu_2_zhibo)
-        TextView tvRenshu2Zhibo;
-        @InjectView(R.id.iv_3_zhibo)
-        ImageView iv3Zhibo;
-        @InjectView(R.id.tv_name_3_zhibo)
-        TextView tvName3Zhibo;
-        @InjectView(R.id.tv_uper_3_zhibo)
-        TextView tvUper3Zhibo;
-        @InjectView(R.id.tv_renshu_3_zhibo)
-        TextView tvRenshu3Zhibo;
-        @InjectView(R.id.iv_4_zhibo)
-        ImageView iv4Zhibo;
-        @InjectView(R.id.tv_name_4_zhibo)
-        TextView tvName4Zhibo;
-        @InjectView(R.id.tv_uper_4_zhibo)
-        TextView tvUper4Zhibo;
-        @InjectView(R.id.tv_renshu_4_zhibo)
-        TextView tvRenshu4Zhibo;
+        @InjectView(R.id.gv_zhibo)
+        MyGridView gvZhibo;
         @InjectView(R.id.tv_item_more)
         TextView tvItemMore;
         @InjectView(R.id.tv_item_shuaxin)
         TextView tvItemShuaxin;
+        ZhiboGridAdapter adapter;
 
-
-        public MyViewHolder(Context context, View item) {
-            super(item);
-            ButterKnife.inject(this, item);
+        public MyViewHolder(Context context, View view) {
+            super(view);
+            ButterKnife.inject(this, view);
         }
 
 
-        public void setData(ZhiboBean.DataBean.PartitionsBean partitionsBean) {
-            if (datas==null){
-                return;
-            }
-            if (partitionsBean != null) {
+        public void setData(final List<ZhiboBean.DataBean.PartitionsBean.LivesBean> lives,int position) {
+            adapter = new ZhiboGridAdapter(context);
+            adapter.setData(lives);
+            gvZhibo.setAdapter(adapter);
+            gvZhibo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String cover = lives.get(position).getCover().getSrc();
+                    String url = "";
+                    String title = lives.get(position).getTitle();
+                    String des = "假的！\n这里的一切都是假的！";
+                    String play =NumUtils.getNum(lives.get(position).getOnline());
+                    String danmu =NumUtils.getNum(0);
 
-                tvName1Zhibo.setText(partitionsBean.getLives().get(0).getTitle());
-                tvName2Zhibo.setText(partitionsBean.getLives().get(1).getTitle());
-                tvName3Zhibo.setText(partitionsBean.getLives().get(2).getTitle());
-                tvName4Zhibo.setText(partitionsBean.getLives().get(3).getTitle());
-
-
-                Glide.with(context).load(partitionsBean.getLives().get(0).getCover().getSrc()).into(iv1Zhibo);
-                Glide.with(context).load(partitionsBean.getLives().get(1).getCover().getSrc()).into(iv2Zhibo);
-                Glide.with(context).load(partitionsBean.getLives().get(2).getCover().getSrc()).into(iv3Zhibo);
-                Glide.with(context).load(partitionsBean.getLives().get(3).getCover().getSrc()).into(iv4Zhibo);
-
-                tvRenshu1Zhibo.setText(NumUtils.getNum(partitionsBean.getLives().get(0).getOnline()));
-                tvRenshu2Zhibo.setText(NumUtils.getNum(partitionsBean.getLives().get(1).getOnline()));
-                tvRenshu3Zhibo.setText(NumUtils.getNum(partitionsBean.getLives().get(2).getOnline()));
-                tvRenshu4Zhibo.setText(NumUtils.getNum(partitionsBean.getLives().get(3).getOnline()));
-
-                tvUper1Zhibo.setText(partitionsBean.getLives().get(0).getOwner().getName());
-                tvUper2Zhibo.setText(partitionsBean.getLives().get(1).getOwner().getName());
-                tvUper3Zhibo.setText(partitionsBean.getLives().get(2).getOwner().getName());
-                tvUper4Zhibo.setText(partitionsBean.getLives().get(3).getOwner().getName());
-
-                tvItemRecycleZhibo.setText(partitionsBean.getPartition().getName());
-//                tvRenshuRecycleZhibo.setText("当前" + partitionsBean.getPartition().getCount() + "个直播");
-
-                tvItemMore.setText("查看更多");
-
-                String str = "当前" + "<font color='#FB7299'>" + partitionsBean.getPartition().getCount() + "</font>" + "个直播";
+                    String[] data = new String[]{cover,url,title,des,play,danmu};
+                    Intent intent = new Intent(context, PlayActivity.class);
+                    intent.putExtra("data",data);
+                    context.startActivity(intent);
 
 
-                tvItemShuaxin.setText(partitionsBean.getPartition().getCount() + "条新动态，点击刷新！");
-                tvRenshuRecycleZhibo.setText(Html.fromHtml(str));
+                }
+            });
+            tvItemRecycleZhibo.setText(datas.getPartitions().get(position).getPartition().getName());
+            String str = "当前" + "<font color='#FB7299'>" + datas.getPartitions().get(position).getPartition().getCount() + "</font>" + "个直播";
 
+            tvItemMore.setText("查看更多");
+            tvItemShuaxin.setText((int)(Math.random()*100) + "条新动态，点击刷新！");
+            tvRenshuRecycleZhibo.setText(Html.fromHtml(str));
 
-                Glide.with(context).load(partitionsBean.getPartition().getSub_icon().getSrc()).into(ivItemRecycleZhibo);
-            }
+            Glide.with(context).load(datas.getPartitions().get(position).getPartition().getSub_icon().getSrc()).into(ivItemRecycleZhibo);
 
         }
 
 
     }
-
-
 }
