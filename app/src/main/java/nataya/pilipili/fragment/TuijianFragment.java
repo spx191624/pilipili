@@ -87,7 +87,7 @@ public class TuijianFragment extends BaseFragment {
 
             @Override
             public void failed(String error) {
-                Log.e("TAG", error);
+
             }
         });
     }

@@ -205,6 +205,10 @@ public class FaxianFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(),QuanquActivity.class));
                 break;
             case R.id.youxizhongxin_faxian:
+                Intent intent1 = new Intent(getActivity(),WebActivity.class);
+                intent1.putExtra("url","http://vipgift.biligame.com/h5/");
+                intent1.putExtra("title","礼包礼包，到我碗里来");
+                startActivity(intent1);
                 break;
             case R.id.zhoubian_faxian:
                 Intent intent = new Intent(getActivity(),WebActivity.class);

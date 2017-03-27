@@ -1,5 +1,6 @@
 package nataya.pilipili.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +13,13 @@ import com.alibaba.fastjson.JSON;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
+import nataya.pilipili.activity.PlayActivity;
 import nataya.pilipili.adapter.YuanchuangAdapter;
 import nataya.pilipili.bean.YuanchuangBean;
 import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
+import nataya.pilipili.utils.NumUtils;
 import nataya.pilipili.view.MyListView;
 
 /**
@@ -42,7 +45,21 @@ public class QuanzhanFragment extends BaseFragment {
         lvYuanchuang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), yuanchuangBean.getData().get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                String cover = yuanchuangBean.getData().get(position).getCover();
+                String url = "www.bilibili.com/video/av"+yuanchuangBean.getData().get(position).getParam()+"/";
+                String title = yuanchuangBean.getData().get(position).getTitle();
+                String des = "";
+                String play = NumUtils.getNum(yuanchuangBean.getData().get(position).getPlay());
+                String danmu =NumUtils.getNum(yuanchuangBean.getData().get(position).getDanmaku());
+
+                String[] data = new String[]{cover,url,title,des,play,danmu};
+                Intent intent = new Intent(getActivity(), PlayActivity.class);
+                intent.putExtra("data",data);
+
+
+
+
+                startActivity(intent);
             }
         });
     }
