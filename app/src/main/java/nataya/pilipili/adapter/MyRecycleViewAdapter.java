@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
 import nataya.pilipili.activity.PlayActivity;
+import nataya.pilipili.activity.ZhiboActivity;
 import nataya.pilipili.bean.ZhiboBean;
 import nataya.pilipili.utils.NumUtils;
 import nataya.pilipili.view.MyGridView;
@@ -116,14 +117,14 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     String cover = lives.get(position).getCover().getSrc();
-                    String url = "";
+                    String url = lives.get(position).getPlayurl();
                     String title = lives.get(position).getTitle();
                     String des = "假的！\n这里的一切都是假的！";
                     String play =NumUtils.getNum(lives.get(position).getOnline());
                     String danmu =NumUtils.getNum(0);
 
                     String[] data = new String[]{cover,url,title,des,play,danmu};
-                    Intent intent = new Intent(context, PlayActivity.class);
+                    Intent intent = new Intent(context, ZhiboActivity.class);
                     intent.putExtra("data",data);
                     context.startActivity(intent);
 

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,7 +19,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import de.greenrobot.event.EventBus;
 import nataya.pilipili.R;
 import nataya.pilipili.adapter.MyViewPagerAdapter;
 import nataya.pilipili.fragment.BaseFragment;
@@ -32,6 +32,18 @@ import nataya.pilipili.fragment.ZhuifanFragment;
 public class MainActivity extends AppCompatActivity {
 
 
+    @InjectView(R.id.iv_tool)
+    ImageView ivTool;
+    @InjectView(R.id.iv_tool2)
+    ImageView ivTool2;
+    @InjectView(R.id.iv_tool_sousuo)
+    ImageView ivToolSousuo;
+    @InjectView(R.id.iv_tool_xiazai)
+    ImageView ivToolXiazai;
+    @InjectView(R.id.iv_tool_youxi)
+    ImageView ivToolYouxi;
+    @InjectView(R.id.navigation_layout)
+    RelativeLayout navigationLayout;
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
     @InjectView(R.id.tablayout)
@@ -42,12 +54,6 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     @InjectView(R.id.id_drawer_layout)
     DrawerLayout idDrawerLayout;
-    @InjectView(R.id.iv_tool_sousuo)
-    ImageView ivToolSousuo;
-    @InjectView(R.id.iv_tool_xiazai)
-    ImageView ivToolXiazai;
-    @InjectView(R.id.iv_tool_youxi)
-    ImageView ivToolYouxi;
     private String[] titles = new String[]{"直播", "推荐", "追番", "分区", "发现"};
     private List<BaseFragment> fragments;
     private MyViewPagerAdapter adapter;

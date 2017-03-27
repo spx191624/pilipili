@@ -48,6 +48,10 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-2.8.1.jar')
     compile files('libs/ShareSDK-Wechat-Core-2.8.1.jar')
     compile files('libs/ShareSDK-Wechat-Moments-2.8.1.jar')
+    compile 'com.github.CarGuo:GSYVideoPlayer:v1.6.1'
+    compile 'com.github.ctiao:dfm:0.7.3'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'cn.yipianfengye.android:zxing-library:2.1'
 }
 
 
@@ -56,8 +60,10 @@ dependencies {
 buildscript {
     repositories {
         mavenCentral()
+
     }
     dependencies {
+
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'
     }
 }

@@ -9,6 +9,7 @@ import com.anye.greendao.gen.DaoSession;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 import cn.sharesdk.framework.ShareSDK;
 
@@ -26,6 +27,7 @@ public class MyApplication extends Application {
         super.onCreate();
         instances = this;
         setDatabase();
+        ZXingLibrary.initDisplayOpinion(this);
         ShareSDK.initSDK(this);
     }
     public static MyApplication getInstances(){
