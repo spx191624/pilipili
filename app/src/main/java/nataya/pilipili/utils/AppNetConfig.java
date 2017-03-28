@@ -22,8 +22,8 @@ public class AppNetConfig {
     public static final String Q_YINYUE = "http://app.bilibili.com/x/v2/rank/region?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&pn=1&ps=20&rid=3&ts=1490017056000&sign=2761d1376ec5b4c10e205944b92b5fbd";
     public static final String Q_WUDAO = "http://app.bilibili.com/x/v2/rank/region?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&pn=1&ps=20&rid=129&ts=1490017069000&sign=36e17456b521ecf094712050a7e944bb";
     public static final String Q_YOUXI = "http://app.bilibili.com/x/v2/rank/region?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&pn=1&ps=20&rid=4&ts=1490017429000&sign=1c56af2a2383cf4e29f29d26a9909a13";
-
-
+    public static final String SHOP = "http://bmall.bilibili.com/api/product/list.do?pn=1&ps=6";
+    public static final String SHOP_BANNER = "http://bmall.bilibili.com/apiSecond/public/getModelData.do?mark_code=7f7d1ac0796211e6ab5352223301d29a";
 
 
 

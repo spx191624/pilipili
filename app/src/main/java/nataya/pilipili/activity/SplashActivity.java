@@ -8,6 +8,7 @@ import android.os.Bundle;
 import java.util.Timer;
 
 import nataya.pilipili.R;
+import nataya.pilipili.utils.MyApplication;
 
 public class SplashActivity extends AppCompatActivity {
     private Handler handler = new Handler();
@@ -18,11 +19,18 @@ public class SplashActivity extends AppCompatActivity {
 
 
         handler.postDelayed(new Runnable() {
+
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
-                startActivity(intent);
-                finish();
+                if (MyApplication.getInstances().spUtils.getBoolean(MyApplication.isLogin)){
+                    Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else {
+                    Intent intent = new Intent(SplashActivity.this,LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         },2000);
 

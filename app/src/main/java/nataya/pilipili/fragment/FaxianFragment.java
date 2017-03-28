@@ -1,6 +1,8 @@
 package nataya.pilipili.fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import nataya.pilipili.R;
+import nataya.pilipili.activity.GouwucheActivity;
 import nataya.pilipili.activity.HuatiActivity;
 import nataya.pilipili.activity.HuodongActivity;
 import nataya.pilipili.activity.QuanquActivity;
@@ -64,6 +67,8 @@ public class FaxianFragment extends BaseFragment {
     LinearLayout lineMore;
     @InjectView(R.id.ll_faxian_search)
     LinearLayout llFaxianSearch;
+    @InjectView(R.id.gouwuche_faxian)
+    TextView gouwucheFaxian;
 
     private Boolean isShowAll = false;
     private TagBean tagBean;
@@ -82,7 +87,6 @@ public class FaxianFragment extends BaseFragment {
         initListener();
         showTag(isShowAll);
     }
-
 
 
     private void showTag(Boolean isShowAll) {
@@ -122,7 +126,7 @@ public class FaxianFragment extends BaseFragment {
     }
 
     private void processData(String context) {
-        if (getActivity()==null ){
+        if (getActivity() == null) {
             return;
         }
         tagBean = JSON.parseObject(context, TagBean.class);
@@ -170,11 +174,10 @@ public class FaxianFragment extends BaseFragment {
         });
 
 
-
     }
 
 
-    @OnClick({R.id.ll_faxian_search, R.id.scrollview_faxian, R.id.line_more, R.id.xingququan_faxian, R.id.huati_faxian, R.id.huodong_faxian, R.id.xiaoheiwu_faxian, R.id.yuanchuang_faxian, R.id.quanqu_faxian, R.id.youxizhongxin_faxian, R.id.zhoubian_faxian})
+    @OnClick({R.id.gouwuche_faxian,R.id.ll_faxian_search, R.id.scrollview_faxian, R.id.line_more, R.id.xingququan_faxian, R.id.huati_faxian, R.id.huodong_faxian, R.id.xiaoheiwu_faxian, R.id.yuanchuang_faxian, R.id.quanqu_faxian, R.id.youxizhongxin_faxian, R.id.zhoubian_faxian})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_faxian_search:
@@ -190,32 +193,38 @@ public class FaxianFragment extends BaseFragment {
                 Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.huati_faxian:
-                startActivity(new Intent(getActivity(),HuatiActivity.class));
+                startActivity(new Intent(getActivity(), HuatiActivity.class));
                 break;
             case R.id.huodong_faxian:
-                startActivity(new Intent(getActivity(),HuodongActivity.class));
+                startActivity(new Intent(getActivity(), HuodongActivity.class));
                 break;
             case R.id.xiaoheiwu_faxian:
                 Toast.makeText(getContext(), "小黑屋", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.yuanchuang_faxian:
-                startActivity(new Intent(getActivity(),YuanchuangActivity.class));
+                startActivity(new Intent(getActivity(), YuanchuangActivity.class));
                 break;
             case R.id.quanqu_faxian:
-                startActivity(new Intent(getActivity(),QuanquActivity.class));
+                startActivity(new Intent(getActivity(), QuanquActivity.class));
                 break;
             case R.id.youxizhongxin_faxian:
-                Intent intent1 = new Intent(getActivity(),WebActivity.class);
-                intent1.putExtra("url","http://vipgift.biligame.com/h5/");
-                intent1.putExtra("title","礼包礼包，到我碗里来");
+                Intent intent1 = new Intent(getActivity(), WebActivity.class);
+                intent1.putExtra("url", "http://vipgift.biligame.com/h5/");
+                intent1.putExtra("title", "礼包礼包，到我碗里来");
                 startActivity(intent1);
                 break;
             case R.id.zhoubian_faxian:
-                Intent intent = new Intent(getActivity(),WebActivity.class);
-                intent.putExtra("title","bilibili _ 周边商城");
-                intent.putExtra("url","http://bmall.bilibili.com");
+                Intent intent = new Intent(getActivity(), WebActivity.class);
+                intent.putExtra("title", "bilibili _ 周边商城");
+                intent.putExtra("url", "http://bmall.bilibili.com");
                 startActivity(intent);
+                break;
+            case R.id.gouwuche_faxian:
+                Intent intent2 = new Intent(getActivity(), GouwucheActivity.class);
+                startActivity(intent2);
                 break;
         }
     }
+
+
 }

@@ -188,6 +188,17 @@
             android:paddingLeft="10dp"
             android:text="    周边商城"
             android:textColor="#000000" />
+        <TextView
+            android:id="@+id/gouwuche_faxian"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_btn_shop"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="    购物车"
+            android:textColor="#000000" />
 
 
     </LinearLayout>

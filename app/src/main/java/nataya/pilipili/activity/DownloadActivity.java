@@ -64,6 +64,7 @@ public class DownloadActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back_download:
+                finish();
                 break;
             case R.id.ic_download_edit:
                 break;

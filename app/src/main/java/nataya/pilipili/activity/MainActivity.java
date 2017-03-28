@@ -2,15 +2,19 @@ package nataya.pilipili.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,6 +31,7 @@ import nataya.pilipili.fragment.FenquFragment;
 import nataya.pilipili.fragment.TuijianFragment;
 import nataya.pilipili.fragment.ZhiboFragment;
 import nataya.pilipili.fragment.ZhuifanFragment;
+import nataya.pilipili.utils.MyApplication;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -54,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     @InjectView(R.id.id_drawer_layout)
     DrawerLayout idDrawerLayout;
+    @InjectView(R.id.username_main)
+    TextView usernameMain;
+
     private String[] titles = new String[]{"直播", "推荐", "追番", "分区", "发现"};
     private List<BaseFragment> fragments;
     private MyViewPagerAdapter adapter;
@@ -65,11 +73,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
 
+
         initData();
 
     }
 
     private void initData() {
+        usernameMain.setText(MyApplication.getInstances().spUtils.getString(MyApplication.USERNAME));
         fragments = new ArrayList<>();
         fragments.add(new ZhiboFragment());
         fragments.add(new TuijianFragment());
@@ -96,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.iv_tool_youxi:
                 Toast.makeText(this, "游戏管理", Toast.LENGTH_SHORT).show();
                 break;
+
         }
     }
 
@@ -116,4 +127,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
     }
+
+
 }

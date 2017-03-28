@@ -18,17 +18,21 @@ import cn.sharesdk.framework.ShareSDK;
  */
 
 public class MyApplication extends Application {
+    public static final String USERNAME = "usernaem";
+    public static final String isLogin = "isLogin";
     private DaoMaster.DevOpenHelper mHelper;
     private SQLiteDatabase db;
     private DaoMaster mDaoMaster;
     private DaoSession mDaoSession;
     public static MyApplication instances;
+    public SPUtils spUtils;
     @Override    public void onCreate() {
         super.onCreate();
         instances = this;
         setDatabase();
         ZXingLibrary.initDisplayOpinion(this);
         ShareSDK.initSDK(this);
+        spUtils = new SPUtils(this,"SPX");
     }
     public static MyApplication getInstances(){
         return instances;
@@ -54,17 +58,5 @@ public class MyApplication extends Application {
     public SQLiteDatabase getDb() {
         return db;
     }
-
-//    public static void initImageLoader(Context context) {
-//
-//        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-//                context).threadPriority(Thread.NORM_PRIORITY - 2)
-//                .denyCacheImageMultipleSizesInMemory()
-//                .tasksProcessingOrder(QueueProcessingType.LIFO)
-//                .writeDebugLogs()
-//                .build();
-//
-//        ImageLoader.getInstance().init(config);
-//    }
 
 }
