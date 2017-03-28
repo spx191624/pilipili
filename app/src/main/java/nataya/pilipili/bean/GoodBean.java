@@ -30,6 +30,16 @@ public class GoodBean implements Serializable{
 
     private int shuid;
     private int num = 0;
+    private boolean ischecked = true;
+
+    public boolean ischecked() {
+        return ischecked;
+    }
+
+    public void setIschecked(boolean ischecked) {
+        this.ischecked = ischecked;
+    }
+
     @NotNull
     private double price;
     @NotNull
@@ -73,6 +83,10 @@ public class GoodBean implements Serializable{
         this.url = url;
     }
 
+    public boolean getIschecked() {
+        return this.ischecked;
+    }
+
     public GoodBean(int num, double price, String name,int shuid,String url) {
         this.num = num;
         this.price = price;
@@ -81,12 +95,13 @@ public class GoodBean implements Serializable{
         this.url =url;
     }
 
-    @Generated(hash = 1912222350)
-    public GoodBean(String url, int shuid, int num, double price,
+    @Generated(hash = 629219344)
+    public GoodBean(String url, int shuid, int num, boolean ischecked, double price,
             @NotNull String name, Long id) {
         this.url = url;
         this.shuid = shuid;
         this.num = num;
+        this.ischecked = ischecked;
         this.price = price;
         this.name = name;
         this.id = id;
@@ -95,6 +110,7 @@ public class GoodBean implements Serializable{
     @Generated(hash = 1348485518)
     public GoodBean() {
     }
+
 
 
 }

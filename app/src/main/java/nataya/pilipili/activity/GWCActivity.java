@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -34,7 +35,10 @@ public class GWCActivity extends AppCompatActivity {
     LinearLayout llBtn;
     @InjectView(R.id.activity_gwc)
     RelativeLayout activityGwc;
+    @InjectView(R.id.all)
+    CheckBox all;
     private GoodsAdapter adapter;
+    private boolean ischechall = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,21 +48,46 @@ public class GWCActivity extends AppCompatActivity {
         adapter = new GoodsAdapter(this, new NumChangeListener() {
             @Override
             public void changed() {
-               setPrice();
+                setPrice();
+                all.setChecked(isIscheckall());
             }
         });
         ll.setAdapter(adapter);
         initData();
         setPrice();
-
+        all.setChecked(isIscheckall());
+        all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<GoodBean> list = MyApplication.getInstances().getDaoSession().getGoodBeanDao().loadAll();
+                for (int i = 0; i < list.size(); i++) {
+                    list.get(i).setIschecked(all.isChecked());
+                    MyApplication.getInstances().getDaoSession().getGoodBeanDao().update(list.get(i));
+                }
+                initData();
+                setPrice();
+            }
+        });
     }
-    private void setPrice(){
+    private boolean isIscheckall(){
         List<GoodBean> list = MyApplication.getInstances().getDaoSession().getGoodBeanDao().loadAll();
-        double price =0;
-        for (int i = 0; i <list.size() ; i++) {
-            price+= list.get(i).getNum()*list.get(i).getPrice();
+        for (int i = 0; i < list.size(); i++) {
+            if (!list.get(i).getIschecked()){
+                return false;
+            }
         }
-        zongjia.setText("￥"+(int)(price)+"");
+        return true;
+    }
+
+    private void setPrice() {
+        List<GoodBean> list = MyApplication.getInstances().getDaoSession().getGoodBeanDao().loadAll();
+        double price = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getIschecked()) {
+                price += list.get(i).getNum() * list.get(i).getPrice();
+            }
+        }
+        zongjia.setText("￥" + (int) (price) + "");
     }
 
     private void initData() {

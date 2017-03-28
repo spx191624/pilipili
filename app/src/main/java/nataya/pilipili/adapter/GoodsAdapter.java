@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -67,6 +68,7 @@ public class GoodsAdapter extends BaseAdapter {
         if (data == null) {
             return convertView;
         }
+        viewHolder.checkbox.setChecked(data.get(position).getIschecked());
         viewHolder.num.setText(data.get(position).getNum() + "");
         viewHolder.tvGoodinfoName.setText(data.get(position).getName());
         viewHolder.tvGoodinfoPrice.setText(data.get(position).getPrice() + "");
@@ -74,10 +76,10 @@ public class GoodsAdapter extends BaseAdapter {
         viewHolder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewHolder.num.setText(Integer.parseInt(String.valueOf(viewHolder.num.getText()))+1+"");
-                for (int i = 0; i <olddata.size() ; i++) {
-                    if (olddata.get(i).getShuid()==data.get(position).getShuid()){
-                        data.get(position).setNum(data.get(position).getNum()+1);
+                viewHolder.num.setText(Integer.parseInt(String.valueOf(viewHolder.num.getText())) + 1 + "");
+                for (int i = 0; i < olddata.size(); i++) {
+                    if (olddata.get(i).getShuid() == data.get(position).getShuid()) {
+                        data.get(position).setNum(data.get(position).getNum() + 1);
                         dao.update(data.get(position));
                     }
                 }
@@ -87,11 +89,11 @@ public class GoodsAdapter extends BaseAdapter {
         viewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewHolder.num.setText(Integer.parseInt(String.valueOf(viewHolder.num.getText()))-1+"");
-                for (int i = 0; i <olddata.size() ; i++) {
-                    if (olddata.get(i).getShuid()==data.get(position).getShuid()){
-                        data.get(position).setNum(data.get(position).getNum()-1);
-                        if (data.get(position).getNum()==0){
+                viewHolder.num.setText(Integer.parseInt(String.valueOf(viewHolder.num.getText())) - 1 + "");
+                for (int i = 0; i < olddata.size(); i++) {
+                    if (olddata.get(i).getShuid() == data.get(position).getShuid()) {
+                        data.get(position).setNum(data.get(position).getNum() - 1);
+                        if (data.get(position).getNum() == 0) {
                             dao.delete(data.get(position));
                             data.remove(position);
                             listener.changed();
@@ -105,6 +107,14 @@ public class GoodsAdapter extends BaseAdapter {
                 listener.changed();
             }
         });
+        viewHolder.checkbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                data.get(position).setIschecked(!data.get(position).getIschecked());
+                dao.update(data.get(position));
+                listener.changed();
+            }
+        });
 
         return convertView;
     }
@@ -112,6 +122,8 @@ public class GoodsAdapter extends BaseAdapter {
     public void setData(List<GoodBean> list) {
         this.data = list;
     }
+
+
 
     static class ViewHolder {
         @InjectView(R.id.iv_goodinfo_photo)
@@ -126,9 +138,14 @@ public class GoodsAdapter extends BaseAdapter {
         TextView num;
         @InjectView(R.id.delete)
         TextView delete;
+        @InjectView(R.id.checkbox)
+        CheckBox checkbox;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);
         }
+
     }
+
+
 }
