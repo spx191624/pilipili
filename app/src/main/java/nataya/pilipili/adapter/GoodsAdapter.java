@@ -98,10 +98,11 @@ public class GoodsAdapter extends BaseAdapter {
                             notifyDataSetChanged();
                             return;
                         }
+
                         dao.update(data.get(position));
                     }
                 }
-
+                listener.changed();
             }
         });
 
