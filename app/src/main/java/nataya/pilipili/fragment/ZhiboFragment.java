@@ -1,10 +1,10 @@
 package nataya.pilipili.fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
@@ -44,6 +46,8 @@ public class ZhiboFragment extends BaseFragment {
     TextView tvSousuoZhibo;
     @InjectView(R.id.tv_fenlei_zhibo)
     TextView tvFenleiZhibo;
+    @InjectView(R.id.refresh)
+    MaterialRefreshLayout refresh;
     private MyRecycleViewAdapter adapter;
 
     @InjectView(R.id.banner_zhibo)
@@ -66,6 +70,17 @@ public class ZhiboFragment extends BaseFragment {
         recycleviewZhibo.setHasFixedSize(true);
         recycleviewZhibo.setNestedScrollingEnabled(false);
 
+
+        refresh.setWaveColor(Color.parseColor("#88FB7299"));
+        refresh.setIsOverLay(true);
+        refresh.setWaveShow(true);
+        refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
+            @Override
+            public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
+                initData();
+                refresh.finishRefresh();
+            }
+        });
         return view;
     }
 
@@ -128,8 +143,8 @@ public class ZhiboFragment extends BaseFragment {
                     i = position % zhiboBean.getData().getBanner().size();
                 }
                 Intent intent = new Intent(getActivity(), WebActivity.class);
-                intent.putExtra("title",zhiboBean.getData().getBanner().get(i).getRemark());
-                intent.putExtra("url",zhiboBean.getData().getBanner().get(i).getLink());
+                intent.putExtra("title", zhiboBean.getData().getBanner().get(i).getRemark());
+                intent.putExtra("url", zhiboBean.getData().getBanner().get(i).getLink());
                 startActivity(intent);
             }
         });
@@ -141,8 +156,6 @@ public class ZhiboFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
-
-
 
 
     @OnClick({R.id.tv_guanzhu_zhibo, R.id.tv_zhongxin_zhibo, R.id.tv_sousuo_zhibo, R.id.tv_fenlei_zhibo})
@@ -161,5 +174,13 @@ public class ZhiboFragment extends BaseFragment {
                 Toast.makeText(getContext(), "分类", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.inject(this, rootView);
+        return rootView;
     }
 }

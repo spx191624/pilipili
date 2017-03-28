@@ -2,14 +2,23 @@ package nataya.pilipili.fragment;
 
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListAdapter;
+
 import com.alibaba.fastjson.JSON;
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
@@ -32,9 +41,13 @@ public class TuijianFragment extends BaseFragment {
     GridView gvTuijian;
     @InjectView(R.id.tablayout_tuijian)
     TabLayout tablayoutTuijian;
-    private TuijianAdapter adapter ;
+    @InjectView(R.id.refresh)
+    MaterialRefreshLayout refresh;
+    private TuijianAdapter adapter;
     private TuijianBean tuijianBean;
-
+    private List datas;
+    private List newdatas;
+    private boolean isDown;
 
     @Override
     public View initView() {
@@ -44,9 +57,34 @@ public class TuijianFragment extends BaseFragment {
         adapter = new TuijianAdapter(getContext());
         gvTuijian.setAdapter(adapter);
         initListener();
+        tablayoutTuijian.addTab(tablayoutTuijian.newTab().setText("综合"));
+        tablayoutTuijian.addTab(tablayoutTuijian.newTab().setText("动态"));
+        datas = new ArrayList();
+
+        refresh.setLoadMore(true);
+        refresh.setWaveColor(Color.parseColor("#88FB7299"));
+        refresh.setIsOverLay(true);
+        refresh.setWaveShow(true);
+
+        refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
+            @Override
+            public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
+                isDown = true;
+                initData();
+                refresh.finishRefresh();
+            }
+
+            @Override
+            public void onRefreshLoadMore(MaterialRefreshLayout materialRefreshLayout) {
+                isDown = false;
+                initData();
+                refresh.finishRefreshLoadMore();
+            }
+        });
+
+
         return view;
     }
-
 
 
     private void initListener() {
@@ -54,17 +92,15 @@ public class TuijianFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String cover = tuijianBean.getData().get(position).getCover();
-                String url = "www.bilibili.com/video/av"+tuijianBean.getData().get(position).getParam()+"/";
+                String url = "www.bilibili.com/video/av" + tuijianBean.getData().get(position).getParam() + "/";
                 String title = tuijianBean.getData().get(position).getTitle();
                 String des = tuijianBean.getData().get(position).getDesc();
                 String play = NumUtils.getNum(tuijianBean.getData().get(position).getPlay());
-                String danmu =NumUtils.getNum(tuijianBean.getData().get(position).getDanmaku());
+                String danmu = NumUtils.getNum(tuijianBean.getData().get(position).getDanmaku());
 
-                String[] data = new String[]{cover,url,title,des,play,danmu};
+                String[] data = new String[]{cover, url, title, des, play, danmu};
                 Intent intent = new Intent(getActivity(), PlayActivity.class);
-                intent.putExtra("data",data);
-
-
+                intent.putExtra("data", data);
 
 
                 startActivity(intent);
@@ -76,12 +112,11 @@ public class TuijianFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        tablayoutTuijian.addTab(tablayoutTuijian.newTab().setText("综合"));
-        tablayoutTuijian.addTab(tablayoutTuijian.newTab().setText("动态"));
+
         LoadFromNet.getFromNet(AppNetConfig.BASE_TUIJIAN, new LoadNet() {
             @Override
             public void success(String context) {
-                tuijianBean= JSON.parseObject(context, TuijianBean.class);
+                tuijianBean = JSON.parseObject(context, TuijianBean.class);
                 processData(tuijianBean);
             }
 
@@ -93,10 +128,24 @@ public class TuijianFragment extends BaseFragment {
     }
 
     private void processData(TuijianBean tuijianBean) {
-        if (getActivity()==null ){
+
+        if (getActivity() == null) {
             return;
         }
-        adapter.setData(tuijianBean);
+        List temp = new ArrayList();
+        temp = datas;
+        datas = new ArrayList();
+        if (isDown) {
+            datas.addAll(tuijianBean.getData());
+            datas.addAll(temp);
+        } else {
+            datas.addAll(temp);
+            datas.addAll(tuijianBean.getData());
+        }
+        temp = null;
+
+
+        adapter.setData(datas);
         adapter.notifyDataSetChanged();
         setListViewHeightBasedOnChildren(gvTuijian);
     }
@@ -137,7 +186,6 @@ public class TuijianFragment extends BaseFragment {
         // 设置参数
         listView.setLayoutParams(params);
     }
-
 
 
 }

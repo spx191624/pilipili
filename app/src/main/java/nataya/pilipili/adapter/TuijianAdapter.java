@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
@@ -20,7 +22,7 @@ import nataya.pilipili.utils.NumUtils;
  */
 public class TuijianAdapter extends BaseAdapter {
     private final Context context;
-    private TuijianBean data;
+    private List<TuijianBean.DataBean> list;
 
     public TuijianAdapter(Context context) {
         this.context = context;
@@ -28,10 +30,10 @@ public class TuijianAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        if (data==null){
+        if (list==null){
             return 0;
         }else{
-            return data.getData().size();
+            return list.size();
         }
     }
 
@@ -55,24 +57,24 @@ public class TuijianAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        if (data==null){
+        if (list==null){
             return convertView;
         }
-        Glide.with(context).load(data.getData().get(position).getCover()).into(viewHolder.ivItemTuijian1);
-        viewHolder.tvItemTuijian1Danmu.setText(NumUtils.getNum(data.getData().get(position).getDanmaku()));
-        viewHolder.tvItemTuijian1Miaoshu.setText(data.getData().get(position).getTname() + "");
-        viewHolder.tvItemTuijian1Play.setText(NumUtils.getNum(data.getData().get(position).getPlay()));
-        viewHolder.tvItemTuijian1Shijian.setText(NumUtils.getTime(data.getData().get(position).getDuration()));
-        viewHolder.tvItemTuijian1Title.setText(data.getData().get(position).getTitle() + "");
+        Glide.with(context).load(list.get(position).getCover()).into(viewHolder.ivItemTuijian1);
+        viewHolder.tvItemTuijian1Danmu.setText(NumUtils.getNum(list.get(position).getDanmaku()));
+        viewHolder.tvItemTuijian1Miaoshu.setText(list.get(position).getTname() + "");
+        viewHolder.tvItemTuijian1Play.setText(NumUtils.getNum(list.get(position).getPlay()));
+        viewHolder.tvItemTuijian1Shijian.setText(NumUtils.getTime(list.get(position).getDuration()));
+        viewHolder.tvItemTuijian1Title.setText(list.get(position).getTitle() + "");
 
         return convertView;
     }
 
-    public void setData(TuijianBean tuijianBean) {
-        if (tuijianBean==null){
-            return;
+    public void setData(List datas) {
+        if (datas!=null){
+            this.list = datas;
         }
-        this.data = tuijianBean;
+
     }
 
 

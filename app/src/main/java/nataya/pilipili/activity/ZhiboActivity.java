@@ -56,8 +56,8 @@ public class ZhiboActivity extends AppCompatActivity {
         danmakuPlayer.setEnlargeImageRes(R.drawable.bili_drawerbg_logined);
         data = getIntent().getStringArrayExtra("data");
         String cover = data[0];
-//        String url = data[1];
-        String url = "http://dl.live-play.acgvideo.com/live-dl/108915/live_41377690_7896366";
+        String url = data[1];
+//        String url = "http://dl.live-play.acgvideo.com/live-dl/108915/live_41377690_7896366";
 
 
         String title = data[2];

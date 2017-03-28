@@ -1,66 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:id="@+id/refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAEAEA">
+    app:overlay="true"
+    app:progress_colors="@array/material_colors"
+    app:wave_color="#90ffffff"
+    app:wave_height_type="higher"
+    app:isLoadMore="true"
+    app:wave_show="true">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EAEAEA">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <LinearLayout
-                android:gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="40dp">
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <android.support.design.widget.TabLayout
-                    android:layout_marginLeft="20dp"
-
-                    app:tabIndicatorColor="#FB7299"
                     android:id="@+id/tablayout_tuijian"
+
                     style="@style/AppTheme"
-                    app:tabGravity="fill"
-                    app:tabMode="fixed"
-                    app:tabTextColor="#44000000"
-                    app:tabSelectedTextColor="#FB7299"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:background="#EAEAEA" />
+                    android:layout_marginLeft="20dp"
+                    android:background="#EAEAEA"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="#FB7299"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="#FB7299"
+                    app:tabTextColor="#44000000" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
+
                 <ImageView
-                    android:layout_marginRight="20dp"
                     android:id="@+id/iv_table_tuijian"
-                    android:src="@drawable/tag_center_icon_my_tag"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/tag_center_icon_my_tag" />
             </LinearLayout>
 
             <TextView
-                android:background="#22000000"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                />
+                android:background="#22000000" />
 
             <nataya.pilipili.view.MyGridView
-                android:horizontalSpacing="10dp"
-                android:verticalSpacing="10dp"
-                android:numColumns="2"
                 android:id="@+id/gv_tuijian"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></nataya.pilipili.view.MyGridView>
-
-
-
+                android:layout_height="match_parent"
+                android:horizontalSpacing="10dp"
+                android:numColumns="2"
+                android:verticalSpacing="10dp"></nataya.pilipili.view.MyGridView>
 
 
         </LinearLayout>
 
 
-
-</android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
+</com.cjj.MaterialRefreshLayout>

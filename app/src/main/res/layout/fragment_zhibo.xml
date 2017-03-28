@@ -1,79 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refresh"
+    app:overlay="true"
+    app:wave_show="true"
+    app:wave_color="#90ffffff"
+    app:progress_colors="@array/material_colors"
+    app:wave_height_type="higher"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
 
-    android:orientation="vertical">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:descendantFocusability="blocksDescendants"
-            android:background="#EAEAEA"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#EAEAEA"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
             <com.youth.banner.Banner
                 android:id="@+id/banner_zhibo"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"></com.youth.banner.Banner>
+
             <TextView
-                android:background="#FFFFFF"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+                android:layout_height="5dp"
+                android:background="#FFFFFF" />
+
             <LinearLayout
-                android:background="#FFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:background="#FFFFFF"
                 android:orientation="horizontal">
+
                 <TextView
-                    android:textColor="#000000"
+                    android:id="@+id/tv_guanzhu_zhibo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/live_home_follow_anchor"
                     android:gravity="center"
                     android:text="关注"
-                    android:drawableTop="@drawable/live_home_follow_anchor"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:id="@+id/tv_guanzhu_zhibo"/>
+                    android:textColor="#000000" />
+
                 <TextView
-                    android:textColor="#000000"
+                    android:id="@+id/tv_zhongxin_zhibo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/live_home_live_center"
                     android:gravity="center"
                     android:text="中心"
-                    android:drawableTop="@drawable/live_home_live_center"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:id="@+id/tv_zhongxin_zhibo"/>
+                    android:textColor="#000000" />
+
                 <TextView
-                    android:textColor="#000000"
+                    android:id="@+id/tv_sousuo_zhibo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/live_home_search_room"
                     android:gravity="center"
                     android:text="搜索"
-                    android:drawableTop="@drawable/live_home_search_room"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:id="@+id/tv_sousuo_zhibo"/>
+                    android:textColor="#000000" />
+
                 <TextView
-                    android:textColor="#000000"
+                    android:id="@+id/tv_fenlei_zhibo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/live_home_all_category"
                     android:gravity="center"
                     android:text="分类"
-                    android:drawableTop="@drawable/live_home_all_category"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:id="@+id/tv_fenlei_zhibo"/>
+                    android:textColor="#000000" />
             </LinearLayout>
+
             <TextView
-                android:background="#FFFFFF"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+                android:layout_height="5dp"
+                android:background="#FFFFFF" />
+
             <android.support.v7.widget.RecyclerView
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
                 android:id="@+id/recycleview_zhibo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"></android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 
-</android.support.v4.widget.NestedScrollView>
+</com.cjj.MaterialRefreshLayout>
