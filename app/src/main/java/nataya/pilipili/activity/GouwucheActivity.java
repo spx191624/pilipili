@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.anye.greendao.gen.GoodBeanDao;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
@@ -30,6 +31,7 @@ import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.GlideImageLoder;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
+import nataya.pilipili.utils.MyApplication;
 
 public class GouwucheActivity extends AppCompatActivity {
 
@@ -43,8 +45,10 @@ public class GouwucheActivity extends AppCompatActivity {
     ImageView ivBackHuodong;
     @InjectView(R.id.iv_more_web)
     ImageView ivMoreWeb;
+
     private ShopAdapter adapter;
     private ShopBean shopBean;
+    private GoodBeanDao dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +62,27 @@ public class GouwucheActivity extends AppCompatActivity {
         gvShop.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent =new Intent(GouwucheActivity.this,GWCActivity.class);
-                GoodBean good = new GoodBean(1,shopBean.getResult().getRecords().get(position).getSalvePrice(),shopBean.getResult().getRecords().get(position).getTitle());
-                Bundle bundle =new Bundle();
-                bundle.putSerializable("good",good);
-                intent.putExtra("good",bundle);
+
+                GoodBean good = new GoodBean(1, shopBean.getResult().getRecords().get(position).getSalvePrice(),
+                        shopBean.getResult().getRecords().get(position).getTitle(),
+                        shopBean.getResult().getRecords().get(position).getSkuId(),
+                        shopBean.getResult().getRecords().get(position).getImgUrl()
+                        );
+                dao = MyApplication.getInstances().getDaoSession().getGoodBeanDao();
+                List<GoodBean> list = dao.loadAll();
+                for (int i = 0; i <list.size() ; i++) {
+                    if (good.getShuid()==list.get(i).getShuid()){
+
+                        Intent intent = new Intent(GouwucheActivity.this, GWCActivity.class);
+                        startActivity(intent);
+                        return;
+                    }
+                }
+                dao.insert(good);
+                Intent intent = new Intent(GouwucheActivity.this, GWCActivity.class);
                 startActivity(intent);
+
+
             }
         });
     }
@@ -93,6 +112,8 @@ public class GouwucheActivity extends AppCompatActivity {
                 intent.putExtra("url", bean.getResult().getModelDetails().get(position).getImgLink());
                 startActivity(intent);
             }
+
+
         });
     }
 
@@ -141,6 +162,9 @@ public class GouwucheActivity extends AppCompatActivity {
             case R.id.iv_more_web:
                 Toast.makeText(this, "more", Toast.LENGTH_SHORT).show();
                 break;
+
         }
     }
+
+
 }

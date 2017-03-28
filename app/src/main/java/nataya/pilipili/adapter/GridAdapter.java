@@ -61,6 +61,7 @@ public class GridAdapter extends BaseAdapter {
         viewHolder.tvGrid.setText(data.getData().get(position).getName());
         Glide.with(context).load(data.getData().get(position).getLogo()).into(viewHolder.ivGrid);
 
+
         return convertView;
     }
 
