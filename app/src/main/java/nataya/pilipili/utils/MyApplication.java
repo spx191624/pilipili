@@ -11,6 +11,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
+import cn.jpush.android.api.JPushInterface;
 import cn.sharesdk.framework.ShareSDK;
 
 /**
@@ -28,6 +29,9 @@ public class MyApplication extends Application {
     public SPUtils spUtils;
     @Override    public void onCreate() {
         super.onCreate();
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
+
         instances = this;
         setDatabase();
         ZXingLibrary.initDisplayOpinion(this);
