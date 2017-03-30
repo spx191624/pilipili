@@ -9,6 +9,7 @@ import com.anye.greendao.gen.DaoSession;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.umeng.socialize.PlatformConfig;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 import cn.jpush.android.api.JPushInterface;
@@ -31,7 +32,7 @@ public class MyApplication extends Application {
         super.onCreate();
         JPushInterface.setDebugMode(true);
         JPushInterface.init(this);
-
+        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
         instances = this;
         setDatabase();
         ZXingLibrary.initDisplayOpinion(this);

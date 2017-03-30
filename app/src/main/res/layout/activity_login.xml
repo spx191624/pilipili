@@ -141,6 +141,17 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
         </LinearLayout>
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#99000000"
+            android:id="@+id/qqlogin"
+            android:text="QQ登录"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+/>
 
 
 

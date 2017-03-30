@@ -11,8 +11,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anye.greendao.gen.UserDao;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.utils.Log;
 
 import java.util.List;
+import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -20,6 +27,7 @@ import butterknife.OnClick;
 import nataya.pilipili.R;
 import nataya.pilipili.bean.User;
 import nataya.pilipili.utils.MyApplication;
+import nataya.pilipili.utils.ThreadPool;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -43,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView login;
     @InjectView(R.id.activity_login)
     LinearLayout activityLogin;
+    @InjectView(R.id.qqlogin)
+    TextView qqlogin;
     private UserDao dao;
 
     @Override
@@ -51,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
 
-        username.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener() {
+        username.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
@@ -71,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.iv_back, R.id.forget_pwd, R.id.zhuce, R.id.login})
+    @OnClick({R.id.iv_back, R.id.forget_pwd, R.id.zhuce, R.id.login,R.id.qqlogin})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
@@ -94,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 List<User> list1 = MyApplication.getInstances().getDaoSession().getUserDao().loadAll();
                 for (int i = 0; i < list1.size(); i++) {
-                    if (list1.get(i).getUsername().toString().equals(user)){
+                    if (list1.get(i).getUsername().toString().equals(user)) {
                         Toast.makeText(this, "用户名已存在", Toast.LENGTH_SHORT).show();
                         return;
                     }
@@ -126,6 +136,61 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
                 Toast.makeText(this, "账号或密码错误", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.qqlogin:
+                UMShareAPI mShareAPI = UMShareAPI.get( LoginActivity.this );
+                mShareAPI.doOauthVerify(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
+
+
+                break;
         }
+
+
+
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+       
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
+            @Override
+            public void run() {
+
+                MyApplication.getInstances().spUtils.putBoolean(MyApplication.isLogin, true);
+                MyApplication.getInstances().spUtils.putString(MyApplication.USERNAME, "QQ游客");
+            }
+        });
+
+        finish();
+    }
+
+    private UMAuthListener umAuthListener = new UMAuthListener() {
+        @Override
+        public void onStart(SHARE_MEDIA share_media) {
+
+        }
+
+        @Override
+        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+            Toast.makeText(getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
+
+
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
+            Toast.makeText( getApplicationContext(), "Authorize fail", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform, int action) {
+            Toast.makeText( getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
+        }
+    };
+
+
+
 }
