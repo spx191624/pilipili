@@ -72,6 +72,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        if (MyApplication.getInstances().spUtils.getBoolean(MyApplication.isqq)){
+            ivTool2.setImageResource(R.drawable.ic_share_qq);
+        }
+        ivTool2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyApplication.getInstances().spUtils.putBoolean(MyApplication.isLogin,false);
+                finish();
+            }
+        });
         initData();
     }
 

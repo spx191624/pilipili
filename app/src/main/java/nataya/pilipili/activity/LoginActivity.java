@@ -163,21 +163,18 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+        public void onComplete(SHARE_MEDIA platform, int action, final Map<String, String> data) {
             Toast.makeText(getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
                 @Override
                 public void run() {
-
+                    MyApplication.getInstances().spUtils.putBoolean(MyApplication.isqq, true);
                     MyApplication.getInstances().spUtils.putBoolean(MyApplication.isLogin, true);
                     MyApplication.getInstances().spUtils.putString(MyApplication.USERNAME, "QQ游客");
                 }
             });
-
             finish();
-
-
         }
 
         @Override

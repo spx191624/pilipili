@@ -35,7 +35,6 @@
                     <ImageView
                         android:id="@+id/iv_tool"
                         android:layout_width="wrap_content"
-
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="15dp"
@@ -44,7 +43,7 @@
                     <ImageView
                         android:id="@+id/iv_tool2"
                         android:layout_width="30dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_toRightOf="@+id/iv_tool"
                         android:paddingLeft="5dp"
                         android:src="@drawable/bili_default_avatar" />

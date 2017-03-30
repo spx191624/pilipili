@@ -22,6 +22,7 @@ import cn.sharesdk.framework.ShareSDK;
 public class MyApplication extends Application {
     public static final String USERNAME = "usernaem";
     public static final String isLogin = "isLogin";
+    public static final String isqq = "isqq";
     private DaoMaster.DevOpenHelper mHelper;
     private SQLiteDatabase db;
     private DaoMaster mDaoMaster;
