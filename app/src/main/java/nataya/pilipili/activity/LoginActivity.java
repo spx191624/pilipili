@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.iv_back, R.id.forget_pwd, R.id.zhuce, R.id.login,R.id.qqlogin})
+    @OnClick({R.id.iv_back, R.id.forget_pwd, R.id.zhuce, R.id.login, R.id.qqlogin})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
@@ -138,7 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "账号或密码错误", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.qqlogin:
-                UMShareAPI mShareAPI = UMShareAPI.get( LoginActivity.this );
+                UMShareAPI mShareAPI = UMShareAPI.get(LoginActivity.this);
                 mShareAPI.doOauthVerify(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
 
 
@@ -146,25 +146,14 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
 
-       
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
-            @Override
-            public void run() {
 
-                MyApplication.getInstances().spUtils.putBoolean(MyApplication.isLogin, true);
-                MyApplication.getInstances().spUtils.putString(MyApplication.USERNAME, "QQ游客");
-            }
-        });
-
-        finish();
     }
 
     private UMAuthListener umAuthListener = new UMAuthListener() {
@@ -176,21 +165,31 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
             Toast.makeText(getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
+                @Override
+                public void run() {
+
+                    MyApplication.getInstances().spUtils.putBoolean(MyApplication.isLogin, true);
+                    MyApplication.getInstances().spUtils.putString(MyApplication.USERNAME, "QQ游客");
+                }
+            });
+
+            finish();
 
 
         }
 
         @Override
         public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-            Toast.makeText( getApplicationContext(), "Authorize fail", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Authorize fail", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onCancel(SHARE_MEDIA platform, int action) {
-            Toast.makeText( getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
         }
     };
-
 
 
 }
