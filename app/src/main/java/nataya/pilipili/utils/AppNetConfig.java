@@ -24,8 +24,8 @@ public class AppNetConfig {
     public static final String Q_YOUXI = "http://app.bilibili.com/x/v2/rank/region?appkey=1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&pn=1&ps=20&rid=4&ts=1490017429000&sign=1c56af2a2383cf4e29f29d26a9909a13";
     public static final String SHOP = "http://bmall.bilibili.com/api/product/list.do?pn=1&ps=6";
     public static final String SHOP_BANNER = "http://bmall.bilibili.com/apiSecond/public/getModelData.do?mark_code=7f7d1ac0796211e6ab5352223301d29a";
-
-
+    public static final String SEARCH_LEFT = "http://app.bilibili.com/x/v2/search?appkey=1d8b6e7d45233436&build=501000&duration=0&keyword=";
+    public static final String SEARCH_RIGHT = "&mobi_app=android&platform=android&pn=1&ps=20";
 
 
 

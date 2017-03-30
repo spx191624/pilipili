@@ -7,8 +7,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.ViewGroup;
 
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.List;
 
+import nataya.pilipili.bean.SearchBean;
 import nataya.pilipili.fragment.BaseFragment;
 
 /**
@@ -49,6 +52,7 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return titles[position];
     }
+
 
 
 }

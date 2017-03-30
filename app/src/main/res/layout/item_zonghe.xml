@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/item"
+    android:layout_height="120dp"
+    android:background="#EAEAEA"
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:id="@+id/iv_item_yuanchuang"
+        android:layout_width="250dp"
+        android:layout_height="120dp"
+        android:padding="5dp"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_uper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_category_up"
+            android:textColor="#44000000"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_clip_view_num"
+                android:textColor="#44000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_danmu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_clip_danmaku_num"
+                android:textColor="#44000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

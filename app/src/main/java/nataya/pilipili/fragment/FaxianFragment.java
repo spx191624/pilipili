@@ -27,6 +27,7 @@ import nataya.pilipili.activity.HuatiActivity;
 import nataya.pilipili.activity.HuodongActivity;
 import nataya.pilipili.activity.QuanquActivity;
 import nataya.pilipili.activity.SearchActivity;
+import nataya.pilipili.activity.SearchShowActivity;
 import nataya.pilipili.activity.WebActivity;
 import nataya.pilipili.activity.YuanchuangActivity;
 import nataya.pilipili.bean.TagBean;
@@ -175,7 +176,10 @@ public class FaxianFragment extends BaseFragment {
         flowFaxian.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
             @Override
             public boolean onTagClick(View view, int position, FlowLayout parent) {
-                Toast.makeText(getContext(), tagBean.getData().getList().get(position).getKeyword(), Toast.LENGTH_SHORT).show();
+                String key = tagBean.getData().getList().get(position).getKeyword();
+                Intent intent1 = new Intent(getActivity(), SearchShowActivity.class);
+                intent1.putExtra("key", key);
+                startActivity(intent1);
                 return true;
             }
         });
@@ -184,7 +188,7 @@ public class FaxianFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.gouwuche_faxian,R.id.ll_faxian_search, R.id.scrollview_faxian, R.id.line_more, R.id.xingququan_faxian, R.id.huati_faxian, R.id.huodong_faxian, R.id.xiaoheiwu_faxian, R.id.yuanchuang_faxian, R.id.quanqu_faxian, R.id.youxizhongxin_faxian, R.id.zhoubian_faxian})
+    @OnClick({R.id.gouwuche_faxian, R.id.ll_faxian_search, R.id.scrollview_faxian, R.id.line_more, R.id.xingququan_faxian, R.id.huati_faxian, R.id.huodong_faxian, R.id.xiaoheiwu_faxian, R.id.yuanchuang_faxian, R.id.quanqu_faxian, R.id.youxizhongxin_faxian, R.id.zhoubian_faxian})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_faxian_search:

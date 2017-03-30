@@ -48,6 +48,7 @@ public class SearchActivity extends AppCompatActivity {
     private HistoryDao dao;
     private long num;
     private HistoryAdapter adapter;
+    private String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,8 @@ public class SearchActivity extends AppCompatActivity {
         lvSearchHistory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(SearchActivity.this, histories.get(position).getText(), Toast.LENGTH_SHORT).show();
+                key = histories.get(position).getText();
+                toShow();
             }
         });
         finish.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +99,13 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
+    private void toShow() {
+        Intent intent1 = new Intent(SearchActivity.this, SearchShowActivity.class);
+        intent1.putExtra("key", key);
+        startActivity(intent1);
+        finish();
+    }
+
     @OnClick({R.id.back_search, R.id.erweima_search, R.id.clean, R.id.search_search})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -117,12 +126,13 @@ public class SearchActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
                 break;
             case R.id.search_search:
-                String s = etSearch.getText().toString();
-                if (s == null || s.length() == 0) {
+                key = etSearch.getText().toString();
+                if (key == null || key.length() == 0) {
                     return;
                 }
                 for (int i = 0; i < dao.loadAll().size(); i++) {
-                    if (s.toString().equals(dao.loadAll().get(i).getText().toString())) {
+                    if (key.toString().equals(dao.loadAll().get(i).getText().toString())) {
+                        toShow();
                         return;
                     }
                 }
@@ -131,6 +141,8 @@ public class SearchActivity extends AppCompatActivity {
                 initData();
                 initView();
                 adapter.notifyDataSetChanged();
+
+                toShow();
                 break;
         }
     }
