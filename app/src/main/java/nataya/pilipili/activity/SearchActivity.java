@@ -136,13 +136,14 @@ public class SearchActivity extends AppCompatActivity {
                         return;
                     }
                 }
+                toShow();
                 History his = new History((num + 1), etSearch.getText().toString().trim());
                 dao.insert(his);
                 initData();
                 initView();
                 adapter.notifyDataSetChanged();
 
-                toShow();
+
                 break;
         }
     }

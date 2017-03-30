@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
@@ -28,9 +29,11 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -75,9 +78,10 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
 
 
     public int position = 0;
-    public TuijianBean tuijianBean=null;
+    public TuijianBean tuijianBean = null;
     public String[] data;
-    public String[] getData(){
+
+    public String[] getData() {
         return data;
     }
 
@@ -91,6 +95,7 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
 
         initData();
     }
+
     private void initUniversalImageLoader() {
         DisplayImageOptions options = new DisplayImageOptions.Builder()
                 .showImageOnLoading(new ColorDrawable(Color.parseColor("#f0f0f0")))
@@ -127,6 +132,7 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config);
     }
+
     private void initData() {
         passData();
         initViewPager();
@@ -135,9 +141,9 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
 
     private void passData() {
 
-        position = getIntent().getIntExtra("position",0);
-        Log.e("TAG","position =="+position);
-        tuijianBean= (TuijianBean) getIntent().getSerializableExtra("bean");
+        position = getIntent().getIntExtra("position", 0);
+        Log.e("TAG", "position ==" + position);
+        tuijianBean = (TuijianBean) getIntent().getSerializableExtra("bean");
         jianjie = new JianjieFragment();
         fragments.add(jianjie);
         fragments.add(new Q6Fragment());
@@ -147,12 +153,12 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
     private void initVideo() {
         data = getIntent().getStringArrayExtra("data");
         String cover = data[0];
-//        String url = data[1];
-        String trueUrl = "http://vfx.mtime.cn/Video/2017/03/15/mp4/170315222409670447.mp4";
+        //  String url = data[1];
+        String url = "http://vfx.mtime.cn/Video/2017/03/15/mp4/170315222409670447.mp4";
         String title = data[2];
         String des = data[3];
         videoController = (JCVideoPlayer) findViewById(R.id.videocontroller1);
-        videoController.setUp(trueUrl,cover,title);
+        videoController.setUp(url, cover, title);
     }
 
     private void initViewPager() {
@@ -162,10 +168,7 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
     }
 
 
-
-
-
-    @OnClick({ R.id.tv_play, R.id.iv_back_play, R.id.iv_more})
+    @OnClick({R.id.tv_play, R.id.iv_back_play, R.id.iv_more})
     public void onClick(View view) {
         switch (view.getId()) {
 
@@ -183,14 +186,12 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
     }
 
 
-
     @Override
     public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-        if (verticalOffset>-255){
+        if (verticalOffset > -255) {
             tvPlay.setVisibility(View.INVISIBLE);
 
-        }
-        else{
+        } else {
             tvPlay.setVisibility(View.VISIBLE);
         }
     }
@@ -206,7 +207,6 @@ public class PlayActivity extends AppCompatActivity implements AppBarLayout.OnOf
         super.onPause();
         appBarLayout.removeOnOffsetChangedListener(this);
     }
-
 
 
 }
