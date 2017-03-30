@@ -29,6 +29,7 @@ import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.NumUtils;
+import nataya.pilipili.utils.ThreadPool;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -112,17 +113,21 @@ public class TuijianFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-
-        LoadFromNet.getFromNet(AppNetConfig.BASE_TUIJIAN, new LoadNet() {
+        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
             @Override
-            public void success(String context) {
-                tuijianBean = JSON.parseObject(context, TuijianBean.class);
-                processData(tuijianBean);
-            }
+            public void run() {
+                LoadFromNet.getFromNet(AppNetConfig.BASE_TUIJIAN, new LoadNet() {
+                    @Override
+                    public void success(String context) {
+                        tuijianBean = JSON.parseObject(context, TuijianBean.class);
+                        processData(tuijianBean);
+                    }
 
-            @Override
-            public void failed(String error) {
+                    @Override
+                    public void failed(String error) {
 
+                    }
+                });
             }
         });
     }
@@ -136,9 +141,19 @@ public class TuijianFragment extends BaseFragment {
         temp = datas;
         datas = new ArrayList();
         if (isDown) {
+            if (datas.size()>=60){
+                for (int i = datas.size()-20; i < datas.size(); i++) {
+                    datas.remove(i);
+                }
+            }
             datas.addAll(tuijianBean.getData());
             datas.addAll(temp);
         } else {
+            if (datas.size()>=60){
+                for (int i = 0; i < 20; i++) {
+                    datas.remove(i);
+                }
+            }
             datas.addAll(temp);
             datas.addAll(tuijianBean.getData());
         }

@@ -92,6 +92,13 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(this, "你还没有想好密码吗？", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                List<User> list1 = MyApplication.getInstances().getDaoSession().getUserDao().loadAll();
+                for (int i = 0; i < list1.size(); i++) {
+                    if (list1.get(i).getUsername().toString().equals(user)){
+                        Toast.makeText(this, "用户名已存在", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
                 User newuser = new User(user, pass);
                 dao.save(newuser);
                 Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();

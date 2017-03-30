@@ -19,6 +19,7 @@ import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.NumUtils;
+import nataya.pilipili.utils.ThreadPool;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -47,7 +48,13 @@ public class ZhuifanFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        initFromNet();
+        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
+            @Override
+            public void run() {
+                initFromNet();
+            }
+        });
+
     }
 
     private void setChildViewVyInclude(View parent, int childID, FanjuBean fanjuBean, int position,int type) {

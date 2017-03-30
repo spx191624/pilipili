@@ -33,6 +33,7 @@ import nataya.pilipili.bean.TagBean;
 import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
+import nataya.pilipili.utils.ThreadPool;
 import nataya.pilipili.utils.UIUtils;
 import nataya.pilipili.view.MyScrollView;
 
@@ -83,7 +84,13 @@ public class FaxianFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        initNet();
+        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
+            @Override
+            public void run() {
+                initNet();
+            }
+        });
+
         initListener();
         showTag(isShowAll);
     }

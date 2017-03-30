@@ -37,6 +37,7 @@ public class DownloadActivity extends AppCompatActivity {
     private List<BaseFragment> fragments;
     private MyViewPagerAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

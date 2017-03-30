@@ -29,6 +29,7 @@ import nataya.pilipili.utils.GlideImageLoder;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.NumUtils;
+import nataya.pilipili.utils.ThreadPool;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -139,7 +140,13 @@ public class FenquFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        loadFromNet();
+        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
+            @Override
+            public void run() {
+                loadFromNet();
+            }
+        });
+
     }
 
     private void loadFromNet() {

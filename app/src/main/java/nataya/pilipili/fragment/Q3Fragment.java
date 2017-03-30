@@ -17,6 +17,7 @@ import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.NumUtils;
+import nataya.pilipili.utils.ThreadPool;
 import nataya.pilipili.view.MyListView;
 
 /**
@@ -67,24 +68,30 @@ public class Q3Fragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-
-        LoadFromNet.getFromNet(AppNetConfig.Q_YINYUE, new LoadNet() {
+        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
             @Override
-            public void success(String context) {
-                if (context != null) {
-                    yuanchuangBean = JSON.parseObject(context, YuanchuangBean.class);
-                    if (yuanchuangBean==null){
-                        return;
+            public void run() {
+                LoadFromNet.getFromNet(AppNetConfig.Q_YINYUE, new LoadNet() {
+                    @Override
+                    public void success(String context) {
+                        if (context != null) {
+                            yuanchuangBean = JSON.parseObject(context, YuanchuangBean.class);
+                            if (yuanchuangBean==null){
+                                return;
+                            }
+                            processData(yuanchuangBean);
+                        }
                     }
-                    processData(yuanchuangBean);
-                }
-            }
 
-            @Override
-            public void failed(String error) {
+                    @Override
+                    public void failed(String error) {
 
+                    }
+                });
             }
         });
+
+
 
     }
 

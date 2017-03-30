@@ -32,6 +32,7 @@ import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.GlideImageLoder;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
+import nataya.pilipili.utils.ThreadPool;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -88,20 +89,26 @@ public class ZhiboFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-
-        LoadFromNet.getFromNet(AppNetConfig.BASE_ZHIBO, new LoadNet() {
+        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
             @Override
-            public void success(String context) {
-                if (context != null) {
-                    processData(context);
-                }
-            }
+            public void run() {
+                LoadFromNet.getFromNet(AppNetConfig.BASE_ZHIBO, new LoadNet() {
+                    @Override
+                    public void success(String context) {
+                        if (context != null) {
+                            processData(context);
+                        }
+                    }
 
-            @Override
-            public void failed(String error) {
+                    @Override
+                    public void failed(String error) {
 
+                    }
+                });
             }
         });
+
+
 
     }
 
