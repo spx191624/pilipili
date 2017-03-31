@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.inject(this);
         if (MyApplication.getInstances().spUtils.getBoolean(MyApplication.isqq)){
             ivTool2.setImageResource(R.drawable.ic_share_qq);
+        }else{
+            ivTool2.setImageResource(R.drawable.bili_default_avatar);
         }
         ivTool2.setOnClickListener(new View.OnClickListener() {
             @Override

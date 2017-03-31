@@ -23,6 +23,9 @@ public class MyApplication extends Application {
     public static final String USERNAME = "usernaem";
     public static final String isLogin = "isLogin";
     public static final String isqq = "isqq";
+    public static final String zhibo = "zhibo";
+    public static final String tuijian = "tuijian";
+
     private DaoMaster.DevOpenHelper mHelper;
     private SQLiteDatabase db;
     private DaoMaster mDaoMaster;

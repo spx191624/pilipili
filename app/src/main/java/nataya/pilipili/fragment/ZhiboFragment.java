@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,7 @@ import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.GlideImageLoder;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
+import nataya.pilipili.utils.MyApplication;
 import nataya.pilipili.utils.ThreadPool;
 
 /**
@@ -88,6 +90,7 @@ public class ZhiboFragment extends BaseFragment {
 
     @Override
     public void initData() {
+
         super.initData();
         ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
             @Override
@@ -97,20 +100,24 @@ public class ZhiboFragment extends BaseFragment {
                     public void success(String context) {
                         if (context != null) {
                             processData(context);
+                            Log.e("SPX", "从网络获取数据");
+                            MyApplication.getInstances().spUtils.putString(MyApplication.zhibo, context);
                         }
                     }
 
                     @Override
                     public void failed(String error) {
-
+                        if (MyApplication.getInstances().spUtils.getString(MyApplication.zhibo) != null) {
+                            Log.e("SPX", "从SP获取数据");
+                            Toast.makeText(getActivity(), "好可怜，没有网络连接了", Toast.LENGTH_SHORT).show();
+                            processData(MyApplication.getInstances().spUtils.getString(MyApplication.zhibo));
+                        }
                     }
                 });
             }
         });
-
-
-
     }
+
 
     private void processData(String context) {
         if (getActivity() == null) {
