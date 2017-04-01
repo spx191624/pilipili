@@ -3,12 +3,15 @@ package nataya.pilipili.utils;
 import android.app.Application;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.app.FragmentActivity;
 
 import com.anye.greendao.gen.DaoMaster;
 import com.anye.greendao.gen.DaoSession;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import com.umeng.socialize.PlatformConfig;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
@@ -25,7 +28,7 @@ public class MyApplication extends Application {
     public static final String isqq = "isqq";
     public static final String zhibo = "zhibo";
     public static final String tuijian = "tuijian";
-
+    private RefWatcher refWatcher;
     private DaoMaster.DevOpenHelper mHelper;
     private SQLiteDatabase db;
     private DaoMaster mDaoMaster;
@@ -34,13 +37,24 @@ public class MyApplication extends Application {
     public SPUtils spUtils;
     @Override    public void onCreate() {
         super.onCreate();
+
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        refWatcher = LeakCanary.install(this);
+
         JPushInterface.setDebugMode(true);
         JPushInterface.init(this);
+
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
         instances = this;
         setDatabase();
         ZXingLibrary.initDisplayOpinion(this);
         ShareSDK.initSDK(this);
+
+
         spUtils = new SPUtils(this,"SPX");
     }
     public static MyApplication getInstances(){
@@ -68,4 +82,8 @@ public class MyApplication extends Application {
         return db;
     }
 
+    public static RefWatcher getRefWatcher(Context context) {
+        MyApplication application = (MyApplication) context.getApplicationContext();
+        return application.refWatcher;
+    }
 }

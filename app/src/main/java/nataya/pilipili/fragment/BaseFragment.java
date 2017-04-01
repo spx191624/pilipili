@@ -7,6 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.leakcanary.RefWatcher;
+
+import nataya.pilipili.utils.MyApplication;
+
 /**
  * Created by 191624 on 2017/3/21.
  */
@@ -19,7 +23,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       return initView();
+        return initView();
     }
 
 
@@ -32,6 +36,14 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void initData() {
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        RefWatcher refWatcher = MyApplication.getRefWatcher(getActivity());
+        refWatcher.watch(this);
 
     }
 
