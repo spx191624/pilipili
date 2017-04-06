@@ -22,6 +22,7 @@ public class MyApplication extends Application {
     public static final String isqq = "isqq";
     public static final String zhibo = "zhibo";
     public static final String tuijian = "tuijian";
+    public static final String zhuifan = "zhuifan";
 
     private DaoMaster.DevOpenHelper mHelper;
     private SQLiteDatabase db;

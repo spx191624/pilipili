@@ -1,4 +1,4 @@
-package nataya.pilipili.fragment;
+package nataya.pilipili.view;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -14,12 +14,8 @@ import nataya.pilipili.R;
 import nataya.pilipili.bean.FanjuBean;
 import nataya.pilipili.presenter.GetDataPresenter;
 import nataya.pilipili.utils.AppNetConfig;
-import nataya.pilipili.utils.LoadFromNet;
-import nataya.pilipili.utils.LoadNet;
+import nataya.pilipili.utils.MyApplication;
 import nataya.pilipili.utils.NumUtils;
-import nataya.pilipili.utils.ThreadPool;
-import nataya.pilipili.view.BaseFragment;
-import nataya.pilipili.view.IgetDataView;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -43,6 +39,10 @@ public class ZhuifanFragment extends BaseFragment implements IgetDataView{
         View view = View.inflate(getContext(), R.layout.fragment_zhuifan, null);
         ButterKnife.inject(this, view);
         getDataPresenter = new GetDataPresenter(ZhuifanFragment.this);
+        if (MyApplication.getInstances().spUtils.getString(MyApplication.zhuifan)!=null){
+            processData(JSON.parseObject(MyApplication.getInstances().spUtils.getString(MyApplication.zhuifan),FanjuBean.class));
+        }
+
         return view;
     }
 
@@ -54,6 +54,9 @@ public class ZhuifanFragment extends BaseFragment implements IgetDataView{
     }
 
     private void setChildViewVyInclude(View parent, int childID, FanjuBean fanjuBean, int position,int type) {
+        if (fanjuBean==null){
+            return;
+        }
 
         View childview = parent.findViewById(childID);
         ImageView imageView = (ImageView) childview.findViewById(R.id.iv_item_tuijian_small);
@@ -113,8 +116,10 @@ public class ZhuifanFragment extends BaseFragment implements IgetDataView{
     @Override
     public void show(String data) {
         if (data != null) {
+            MyApplication.getInstances().spUtils.putString(MyApplication.zhuifan, data);
             FanjuBean fanjuBean = JSON.parseObject(data, FanjuBean.class);
             processData(fanjuBean);
+
         }
     }
 }
