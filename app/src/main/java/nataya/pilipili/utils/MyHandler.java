@@ -5,7 +5,7 @@ import android.os.Message;
 
 import java.lang.ref.WeakReference;
 
-import nataya.pilipili.activity.SplashActivity;
+import nataya.pilipili.view.SplashActivity;
 
 /**
  * Created by 191624 on 2017/3/31.

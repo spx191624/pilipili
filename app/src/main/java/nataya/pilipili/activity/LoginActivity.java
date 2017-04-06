@@ -11,12 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anye.greendao.gen.UserDao;
-import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.utils.Log;
 
 import java.util.List;
 import java.util.Map;
@@ -28,6 +25,7 @@ import nataya.pilipili.R;
 import nataya.pilipili.bean.User;
 import nataya.pilipili.utils.MyApplication;
 import nataya.pilipili.utils.ThreadPool;
+import nataya.pilipili.view.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

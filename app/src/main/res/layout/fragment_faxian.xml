@@ -43,7 +43,7 @@
             android:paddingLeft="10dp"
             android:text="大家都在搜"
             android:textColor="#66000000" />
-        <nataya.pilipili.view.MyScrollView
+        <nataya.pilipili.utils.MyScrollView
             android:id="@+id/scrollview_faxian"
             android:layout_width="match_parent"
             android:layout_height="360dp">
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="20dp"/>
-        </nataya.pilipili.view.MyScrollView>
+        </nataya.pilipili.utils.MyScrollView>
 
 
 

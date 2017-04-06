@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
@@ -24,8 +23,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
 import nataya.pilipili.utils.GlideImageLoder;
-import nataya.pilipili.view.DanmakuVideoPlayer;
-import nataya.pilipili.view.SampleListener;
+import nataya.pilipili.utils.DanmakuVideoPlayer;
+import nataya.pilipili.utils.SampleListener;
 
 public class ZhiboActivity extends AppCompatActivity {
 

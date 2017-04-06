@@ -1,10 +1,6 @@
 package nataya.pilipili.fragment;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +8,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
 import nataya.pilipili.utils.StorageUtil;
-import nataya.pilipili.view.MyListView;
+import nataya.pilipili.utils.MyListView;
+import nataya.pilipili.view.BaseFragment;
 
 /**
  * Created by 191624 on 2017/3/25.
@@ -53,6 +50,5 @@ public class HuancunFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
-
 
 }

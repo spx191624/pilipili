@@ -15,7 +15,7 @@
             android:layout_height="300dp"
             android:scaleType="center"
             android:src="@drawable/img_tips_error_no_downloads" />
-        <nataya.pilipili.view.MyListView
+        <nataya.pilipili.utils.MyListView
             android:id="@+id/lv_huancun"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

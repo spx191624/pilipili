@@ -8,10 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -20,11 +18,10 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
-import nataya.pilipili.activity.PlayActivity;
 import nataya.pilipili.activity.ZhiboActivity;
 import nataya.pilipili.bean.ZhiboBean;
 import nataya.pilipili.utils.NumUtils;
-import nataya.pilipili.view.MyGridView;
+import nataya.pilipili.utils.MyGridView;
 
 /**
  * Created by 191624 on 2017/3/21.

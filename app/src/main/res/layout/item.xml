@@ -46,13 +46,13 @@
 
     </LinearLayout>
 
-   <nataya.pilipili.view.MyGridView
+   <nataya.pilipili.utils.MyGridView
        android:horizontalSpacing="10dp"
        android:verticalSpacing="10dp"
        android:numColumns="2"
        android:id="@+id/gv_zhibo"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"></nataya.pilipili.view.MyGridView>
+       android:layout_height="wrap_content"></nataya.pilipili.utils.MyGridView>
     <LinearLayout
 
         android:orientation="horizontal"

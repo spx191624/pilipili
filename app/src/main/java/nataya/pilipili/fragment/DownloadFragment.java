@@ -4,6 +4,7 @@ import android.view.View;
 
 import butterknife.ButterKnife;
 import nataya.pilipili.R;
+import nataya.pilipili.view.BaseFragment;
 
 /**
  * Created by 191624 on 2017/3/25.

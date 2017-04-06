@@ -129,13 +129,13 @@
 
     </RadioGroup>
 
-    <nataya.pilipili.view.MyGridView
+    <nataya.pilipili.utils.MyGridView
         android:verticalSpacing="10dp"
         android:horizontalSpacing="10dp"
         android:id="@+id/gv_shop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2"></nataya.pilipili.view.MyGridView>
+        android:numColumns="2"></nataya.pilipili.utils.MyGridView>
     </LinearLayout>
 
 

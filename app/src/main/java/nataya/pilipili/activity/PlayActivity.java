@@ -41,7 +41,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import nataya.pilipili.R;
 import nataya.pilipili.adapter.MyViewPagerAdapter;
 import nataya.pilipili.bean.TuijianBean;
-import nataya.pilipili.fragment.BaseFragment;
+import nataya.pilipili.view.BaseFragment;
 import nataya.pilipili.fragment.JianjieFragment;
 import nataya.pilipili.fragment.Q6Fragment;
 

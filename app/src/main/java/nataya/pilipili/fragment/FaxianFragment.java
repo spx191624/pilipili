@@ -1,8 +1,6 @@
 package nataya.pilipili.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +34,8 @@ import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.ThreadPool;
 import nataya.pilipili.utils.UIUtils;
-import nataya.pilipili.view.MyScrollView;
+import nataya.pilipili.utils.MyScrollView;
+import nataya.pilipili.view.BaseFragment;
 
 /**
  * Created by 191624 on 2017/3/21.

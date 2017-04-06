@@ -1,9 +1,6 @@
 package nataya.pilipili.fragment;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,17 +12,20 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nataya.pilipili.R;
 import nataya.pilipili.bean.FanjuBean;
+import nataya.pilipili.presenter.GetDataPresenter;
 import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.NumUtils;
 import nataya.pilipili.utils.ThreadPool;
+import nataya.pilipili.view.BaseFragment;
+import nataya.pilipili.view.IgetDataView;
 
 /**
  * Created by 191624 on 2017/3/21.
  */
 
-public class ZhuifanFragment extends BaseFragment {
+public class ZhuifanFragment extends BaseFragment implements IgetDataView{
 
     private static final int GUOMAN=0;
     private static final int FANJU=1;
@@ -35,25 +35,21 @@ public class ZhuifanFragment extends BaseFragment {
     LinearLayout llTuijian;
     @InjectView(R.id.ll_guoman)
     LinearLayout llGuoman;
+    private GetDataPresenter getDataPresenter;
 
 
     @Override
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_zhuifan, null);
         ButterKnife.inject(this, view);
-
+        getDataPresenter = new GetDataPresenter(ZhuifanFragment.this);
         return view;
     }
 
     @Override
     public void initData() {
         super.initData();
-        ThreadPool.getInstance().getGlobalThread().execute(new Runnable() {
-            @Override
-            public void run() {
-                initFromNet();
-            }
-        });
+        getDataPresenter.getdata(AppNetConfig.FANJUTUIJIAN);
 
     }
 
@@ -91,25 +87,6 @@ public class ZhuifanFragment extends BaseFragment {
 
     }
 
-    private void initFromNet() {
-        LoadFromNet.getFromNet(AppNetConfig.FANJUTUIJIAN, new LoadNet() {
-            @Override
-            public void success(String context) {
-                if (context != null) {
-                    FanjuBean fanjuBean = JSON.parseObject(context, FanjuBean.class);
-                    processData(fanjuBean);
-
-                }
-            }
-
-            @Override
-            public void failed(String error) {
-
-            }
-        });
-
-    }
-
     private void processData(FanjuBean fanjuBean) {
         if (getActivity()==null ){
             return;
@@ -133,4 +110,12 @@ public class ZhuifanFragment extends BaseFragment {
     }
 
 
+    @Override
+    public void show(String data) {
+        if (data != null) {
+            FanjuBean fanjuBean = JSON.parseObject(data, FanjuBean.class);
+            processData(fanjuBean);
+
+        }
+    }
 }

@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import nataya.pilipili.R;
 import nataya.pilipili.adapter.MyViewPagerAdapter;
-import nataya.pilipili.fragment.BaseFragment;
+import nataya.pilipili.view.BaseFragment;
 import nataya.pilipili.fragment.ZongheFragment;
 import nataya.pilipili.utils.AppNetConfig;
 import nataya.pilipili.utils.LoadFromNet;

@@ -59,13 +59,13 @@
                 android:layout_height="2dp"
                 android:background="#22000000" />
 
-            <nataya.pilipili.view.MyGridView
+            <nataya.pilipili.utils.MyGridView
                 android:id="@+id/gv_tuijian"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:horizontalSpacing="10dp"
                 android:numColumns="2"
-                android:verticalSpacing="10dp"></nataya.pilipili.view.MyGridView>
+                android:verticalSpacing="10dp"></nataya.pilipili.utils.MyGridView>
 
 
         </LinearLayout>

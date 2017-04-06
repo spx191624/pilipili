@@ -10,6 +10,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         ndk {
@@ -46,6 +47,9 @@ android {
 
 
 dependencies {
+    compile 'com.android.support:multidex:1.0.0'
+
+
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -54,6 +58,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.2.0'
     compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'com.github.xxl6097:okhttputils:2.4.1'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.alibaba:fastjson:1.2.29'
@@ -88,9 +95,7 @@ dependencies {
     compile files('libs/umeng_social_net.jar')
     compile files('libs/umeng_social_tool.jar')
 
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
-    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+
 }
 
 

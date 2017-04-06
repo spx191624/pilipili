@@ -3,7 +3,6 @@ package nataya.pilipili.fragment;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 
@@ -18,7 +17,8 @@ import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.NumUtils;
 import nataya.pilipili.utils.ThreadPool;
-import nataya.pilipili.view.MyListView;
+import nataya.pilipili.utils.MyListView;
+import nataya.pilipili.view.BaseFragment;
 
 /**
  * Created by 191624 on 2017/3/24.
@@ -109,7 +109,5 @@ public class Q5Fragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
-
-
 
 }

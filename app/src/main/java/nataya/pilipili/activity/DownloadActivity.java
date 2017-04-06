@@ -15,7 +15,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import nataya.pilipili.R;
 import nataya.pilipili.adapter.MyViewPagerAdapter;
-import nataya.pilipili.fragment.BaseFragment;
+import nataya.pilipili.view.BaseFragment;
 import nataya.pilipili.fragment.DownloadFragment;
 import nataya.pilipili.fragment.HuancunFragment;
 

@@ -1,13 +1,9 @@
 package nataya.pilipili.fragment;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
@@ -30,6 +26,7 @@ import nataya.pilipili.utils.LoadFromNet;
 import nataya.pilipili.utils.LoadNet;
 import nataya.pilipili.utils.NumUtils;
 import nataya.pilipili.utils.ThreadPool;
+import nataya.pilipili.view.BaseFragment;
 
 /**
  * Created by 191624 on 2017/3/21.
@@ -247,7 +244,6 @@ public class FenquFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
-
 
 
 }

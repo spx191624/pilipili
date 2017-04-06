@@ -1,11 +1,6 @@
 package nataya.pilipili.fragment;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +12,7 @@ import butterknife.OnClick;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import nataya.pilipili.R;
 import nataya.pilipili.activity.PlayActivity;
+import nataya.pilipili.view.BaseFragment;
 
 
 /**
